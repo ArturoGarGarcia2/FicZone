@@ -4,6 +4,9 @@ using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
 public class CrankController : MonoBehaviour
 {
+    public static CrankController Instance;
+
+
     public UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable grab;
     public Transform pivot;
     public Vector3 rotationAxis = Vector3.forward;
@@ -15,6 +18,18 @@ public class CrankController : MonoBehaviour
 
     private float smoothedDelta;
     public float smoothSpeed = 15f;
+
+    [Header("NºVueltas")]
+    public int completedTurns = 0;
+    private float totalRotation = 0f;
+
+    void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Instance = this;  
+        }
+    }
 
     void OnEnable()
     {
@@ -60,6 +75,20 @@ public class CrankController : MonoBehaviour
         smoothedDelta = Mathf.Lerp(smoothedDelta, delta, Time.deltaTime * smoothSpeed);
         delta = smoothedDelta;
 
+        if (delta > 0f)
+        {
+            delta = 0f;
+        }
+
+        totalRotation += delta;
+
+        int currentTurn = Mathf.FloorToInt(-totalRotation / 360f);
+        
+        if(currentTurn > completedTurns)
+        {
+            completedTurns = currentTurn;
+            Debug.Log("Vueltas completas: " + completedTurns);
+        }
         transform.Rotate(rotationAxis, delta, Space.Self);
 
         previousAngle = currentAngle;
