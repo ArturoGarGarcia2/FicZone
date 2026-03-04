@@ -897,6 +897,8 @@ MonoBehaviour:
   grab: {fileID: 1084327606}
   pivot: {fileID: 1176737765}
   rotationAxis: {x: 0, y: 0, z: 1}
+  sensitivity: 10
+  smoothSpeed: 20
 --- !u!1 &1711053179
 GameObject:
   m_ObjectHideFlags: 0

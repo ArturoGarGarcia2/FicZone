@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
 public class CrankController : MonoBehaviour
 {
@@ -9,6 +10,11 @@ public class CrankController : MonoBehaviour
 
     private Transform hand;
     private float previousAngle;
+
+    public float sensitivity = 2f;
+
+    private float smoothedDelta;
+    public float smoothSpeed = 15f;
 
     void OnEnable()
     {
@@ -24,7 +30,9 @@ public class CrankController : MonoBehaviour
 
     void OnGrab(SelectEnterEventArgs args)
     {
-        hand = args.interactorObject.transform;
+        var interactor = args.interactorObject as XRBaseInteractor;
+        hand = interactor.GetAttachTransform(grab);
+
         previousAngle = GetHandAngle();
     }
 
@@ -33,16 +41,26 @@ public class CrankController : MonoBehaviour
         hand = null;
     }
 
-    void Update()
+    void LateUpdate()
     {
         if (hand == null) return;
 
         float currentAngle = GetHandAngle();
-        float delta = Mathf.DeltaAngle(previousAngle, currentAngle);
+        float rawDelta = Mathf.DeltaAngle(previousAngle, currentAngle);
 
-        float sensitivity = 1.5f;
+        Vector3 localHandPos = pivot.InverseTransformPoint(hand.position);
+        float radius = new Vector2(localHandPos.x, localHandPos.y).magnitude;
 
-        transform.Rotate(rotationAxis, delta * sensitivity, Space.Self);
+        if (radius < 0.05f) return; 
+
+        float delta = rawDelta * sensitivity;
+
+        delta = Mathf.Clamp(delta, -50f, 50f);
+
+        smoothedDelta = Mathf.Lerp(smoothedDelta, delta, Time.deltaTime * smoothSpeed);
+        delta = smoothedDelta;
+
+        transform.Rotate(rotationAxis, delta, Space.Self);
 
         previousAngle = currentAngle;
     }
