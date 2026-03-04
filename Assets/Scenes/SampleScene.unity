@@ -853,6 +853,10 @@ PrefabInstance:
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 1711053180}
+    - target: {fileID: 2534212472836819597, guid: e693f8053f02ddc4a8e1793b62377cc5, type: 3}
+      propertyPath: m_Constraints
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5073303847591483650, guid: e693f8053f02ddc4a8e1793b62377cc5, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.19
@@ -897,6 +901,14 @@ PrefabInstance:
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 1711053180}
+    - target: {fileID: 8161058573202405903, guid: e693f8053f02ddc4a8e1793b62377cc5, type: 3}
+      propertyPath: m_Axis.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8161058573202405903, guid: e693f8053f02ddc4a8e1793b62377cc5, type: 3}
+      propertyPath: m_Axis.z
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 445765573704449145, guid: e693f8053f02ddc4a8e1793b62377cc5, type: 3}
     - {fileID: 6326095709333192078, guid: e693f8053f02ddc4a8e1793b62377cc5, type: 3}
