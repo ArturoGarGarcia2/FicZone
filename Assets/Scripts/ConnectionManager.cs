@@ -9,7 +9,6 @@ public class ConnectionManager : MonoBehaviour
     public TMP_Text txt;
     public CablePort[] ports;
 
-    // ✅ Guardamos el código correcto
     public string correctCode { get; private set; }
 
     void Awake()
