@@ -21,7 +21,7 @@ public class ConnectionManager : MonoBehaviour
         AssignColors();
         correctCode = GenerateCorrectCode();
         txt.text = "";
-        Debug.Log("Código correcto guardado: " + correctCode);
+        // Debug.Log("Código correcto guardado: " + correctCode);
     }
 
     void Update()
@@ -69,24 +69,13 @@ public class ConnectionManager : MonoBehaviour
             Colors.YELLOW,
         };
 
-        ShuffleArray(colors);
+        F.ShuffleArray(colors);
 
         for (int i = 0; i < ports.Length; i++)
             ports[i].color = colors[i];
         
-        foreach(CablePort cb in ports)
-            Debug.Log(cb.color);
-    }
-
-    void ShuffleArray<T>(T[] array)
-    {
-        for (int i = 0; i < array.Length; i++)
-        {
-            int randomIndex = UnityEngine.Random.Range(i, array.Length);
-            T temp = array[i];
-            array[i] = array[randomIndex];
-            array[randomIndex] = temp;
-        }
+        // foreach(CablePort cb in ports)
+        //     Debug.Log(cb.color);
     }
 
     string GenerateCorrectCode()
@@ -154,7 +143,6 @@ public class ConnectionManager : MonoBehaviour
             result.Append(c);
         }
 
-        // Si salió solo números, forzamos una letra
         if (!hasLetter)
         {
             int pos = rng.Next(4);
