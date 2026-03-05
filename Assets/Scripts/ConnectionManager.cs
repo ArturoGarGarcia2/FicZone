@@ -66,12 +66,16 @@ public class ConnectionManager : MonoBehaviour
             Colors.RED,
             Colors.GREEN,
             Colors.BLUE,
+            Colors.YELLOW,
         };
 
         ShuffleArray(colors);
 
         for (int i = 0; i < ports.Length; i++)
             ports[i].color = colors[i];
+        
+        foreach(CablePort cb in ports)
+            Debug.Log(cb.color);
     }
 
     void ShuffleArray<T>(T[] array)
@@ -127,25 +131,34 @@ public class ConnectionManager : MonoBehaviour
 
     string GenerateCode(bool correct)
     {
+        if (correct)
+            return correctCode;
+
         string key = GetCurrentOrderKey();
         int seed = StableHash(key);
 
         System.Random rng = new System.Random(seed);
 
-        int length = 4;
+        const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+
         StringBuilder result = new StringBuilder();
 
-        if (correct)
-        {
-            for (int i = 0; i < length; i++)
-                result.Append(rng.Next(0, 10));
-        }
-        else
-        {
-            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        bool hasLetter = false;
 
-            for (int i = 0; i < length; i++)
-                result.Append(chars[rng.Next(chars.Length)]);
+        for (int i = 0; i < 4; i++)
+        {
+            char c = chars[rng.Next(chars.Length)];
+            if (char.IsLetter(c))
+                hasLetter = true;
+
+            result.Append(c);
+        }
+
+        // Si salió solo números, forzamos una letra
+        if (!hasLetter)
+        {
+            int pos = rng.Next(4);
+            result[pos] = (char)('A' + rng.Next(26));
         }
 
         return result.ToString();
