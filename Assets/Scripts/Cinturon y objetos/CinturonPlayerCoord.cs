@@ -16,6 +16,6 @@ public class CinturonPlayerCoord : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.gameObject.transform.position = jugador.transform.position + controles.posicionCabeza - new Vector3(0, -0.2f, 0);
+        this.gameObject.transform.position = jugador.transform.position + controles.posicionCabeza - new Vector3(0, 0.4f, 0);
     }
 }
