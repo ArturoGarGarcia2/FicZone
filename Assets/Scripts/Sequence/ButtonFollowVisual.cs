@@ -6,6 +6,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class ButtonFollowVisual : MonoBehaviour
 {
     public Transform visualTarget;
+    public Vector3 localAxis;
 
     private Vector3 offset;
     private Transform pokeAttachTransform;
