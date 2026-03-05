@@ -101,6 +101,7 @@ public class SimonGameManager : MonoBehaviour
             // Error: el jugador se equivocó
             resultText.text = "¡Incorrecto!";
             playerInput.Clear();
+            StartCoroutine(PlaySequence());
             //GameOver();
             //return;
         }
