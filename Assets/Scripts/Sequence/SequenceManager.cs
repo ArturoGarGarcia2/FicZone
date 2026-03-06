@@ -5,7 +5,7 @@ using System.Collections;
 
 public class SequenceManager : MonoBehaviour
 {
-    // [SerializeField] TMP_Text txt;
+    public static SequenceManager Instance;
 
     public GameObject[] lightbulbs;
     public GameObject[] buttons;
@@ -22,7 +22,7 @@ public class SequenceManager : MonoBehaviour
         Colors.PURPLE,
     };
 
-    private Colors[] sequence =
+    public Colors[] sequence =
     {
         Colors.RED,
         Colors.GREEN,
@@ -36,6 +36,12 @@ public class SequenceManager : MonoBehaviour
     int sequenceStep = 0;
     bool puzzleSolved = false;
     bool inputLocked = false;
+
+    void Awake()
+    {
+        F.ShuffleArray(sequence);
+        Instance = this;
+    }
 
     void Start()
     {
@@ -55,14 +61,6 @@ public class SequenceManager : MonoBehaviour
                 .GetComponent<XRPushButton>()
                 .onPress.AddListener(() => Press(index));
         }
-
-        F.ShuffleArray(sequence);
-
-        // string seq = "";
-        // foreach (Colors c in sequence)
-        //     seq += c + "\n";
-
-        // txt.text = seq;
     }
 
     void Update()
