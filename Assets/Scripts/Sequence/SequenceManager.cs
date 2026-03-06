@@ -61,6 +61,16 @@ public class SequenceManager : MonoBehaviour
                 .GetComponent<XRPushButton>()
                 .onPress.AddListener(() => Press(index));
         }
+
+        string sequenceShapes = "";
+        foreach (Colors c in sequence)
+        {
+            sequenceShapes += ColorShapes.shapes[c] + " ";
+        }
+
+        UVPattern3D.Instance.SetSequence(sequenceShapes);
+
+
     }
 
     void Update()
