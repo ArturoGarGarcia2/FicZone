@@ -69,8 +69,6 @@ public class SequenceManager : MonoBehaviour
         }
 
         UVPattern3D.Instance.SetSequence(sequenceShapes);
-
-
     }
 
     void Update()
