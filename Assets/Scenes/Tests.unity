@@ -2027,24 +2027,6 @@ MonoBehaviour:
   sensitivity: 10
   smoothSpeed: 20
   completedTurns: 0
---- !u!1 &1335661407 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5968072805522111767, guid: 140008b01c5cfe941a6fbff80c16aa38, type: 3}
-  m_PrefabInstance: {fileID: 1948205065}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1335661409
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1335661407}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a31e9d23cf12d5649b06b4ceae42f9e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CinturonPlayerCoord
-  jugador: {fileID: 642552820}
 --- !u!1 &1711053179
 GameObject:
   m_ObjectHideFlags: 0
@@ -2329,6 +2311,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5323645151832121039, guid: 140008b01c5cfe941a6fbff80c16aa38, type: 3}
+      propertyPath: jugador
+      value: 
+      objectReference: {fileID: 642552820}
     - target: {fileID: 5968072805522111767, guid: 140008b01c5cfe941a6fbff80c16aa38, type: 3}
       propertyPath: m_Name
       value: cinturon
@@ -2337,9 +2323,6 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5968072805522111767, guid: 140008b01c5cfe941a6fbff80c16aa38, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1335661409}
     - targetCorrespondingSourceObject: {fileID: 5769343530762871160, guid: 140008b01c5cfe941a6fbff80c16aa38, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1948205069}
