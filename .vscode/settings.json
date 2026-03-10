@@ -67,5 +67,5 @@
         "*.sln": "*.csproj",
         "*.slnx": "*.csproj"
     },
-    "dotnet.defaultSolution": "juego ficzone.slnx"
+    "dotnet.defaultSolution": "FicZone.slnx"
 }
