@@ -1283,6 +1283,7 @@ MonoBehaviour:
   - {fileID: 2132837245}
   - {fileID: 945298349}
   - {fileID: 1611503800}
+  rotationSmooth: 5
 --- !u!1 &186097566 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8112409182464415413, guid: b7a136df220a9294a9737589e2ed055c, type: 3}

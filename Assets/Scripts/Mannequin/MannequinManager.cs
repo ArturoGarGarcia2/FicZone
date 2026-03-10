@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 public class MannequinManager : MonoBehaviour
 {
+    public static MannequinManager Instance;
     public Mannequin[] mannequins;
 
     public TMP_Text[] clueTexts;
@@ -13,6 +14,13 @@ public class MannequinManager : MonoBehaviour
 
     private Dictionary<Mannequin.Location, Mannequin.Location> lookSolution =
         new Dictionary<Mannequin.Location, Mannequin.Location>();
+
+    public float rotationSmooth = 5f;
+
+    void Awake()
+    {
+        Instance = this;
+    }
 
     void Start()
     {
@@ -30,9 +38,10 @@ public class MannequinManager : MonoBehaviour
         foreach (var m in mannequins)
         {
             Mannequin target = null;
+
             foreach (var other in mannequins)
             {
-                if (other.location == m.lookingTarget)
+                if (other.location == m.lookingAt)
                 {
                     target = other;
                     break;
@@ -46,10 +55,15 @@ public class MannequinManager : MonoBehaviour
 
                 if (dir != Vector3.zero)
                 {
-                    float angle = Mathf.Atan2(dir.y, dir.z) * Mathf.Rad2Deg;
-
                     Transform child = m.transform.GetChild(0);
-                    child.localEulerAngles = new Vector3(0, angle, 0);
+
+                    Quaternion targetRot = Quaternion.LookRotation(dir);
+
+                    child.rotation = Quaternion.Slerp(
+                        child.rotation,
+                        targetRot,
+                        rotationSmooth * Time.deltaTime
+                    );
 
                     m.lookingAt = target.location;
                 }
@@ -78,11 +92,16 @@ public class MannequinManager : MonoBehaviour
         F.ShuffleArray(hats);
         F.ShuffleArray(locs);
 
+        hatSolution.Clear();
+        lookSolution.Clear();
+
         for (int i = 0; i < 4; i++)
         {
             mannequins[i].lookingTarget = locs[i];
             mannequins[i].targetHat = hats[i];
-            Debug.Log("Mannequin Manager: "+ mannequins[i] + " " + locs[i] + " " + hats[i]);
+
+            hatSolution.Add(mannequins[i].location, hats[i]);
+            lookSolution.Add(mannequins[i].location, locs[i]);
         }
     }
 
