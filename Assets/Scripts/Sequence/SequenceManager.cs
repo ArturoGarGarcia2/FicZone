@@ -144,7 +144,7 @@ public class SequenceManager : MonoBehaviour
         inputLocked = false;
     }
 
-    void ResetPuzzle()
+    public void ResetPuzzle()
     {
         lightsOn = new bool[5];
         playerSequence = new Colors[5];

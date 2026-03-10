@@ -19,6 +19,8 @@ public class SimonGameManager : MonoBehaviour
 
     public TMP_Text resultText;
 
+    public bool gameStart = false;
+
     public void Awake()
     {
         if (Instance == null)
@@ -36,6 +38,19 @@ public class SimonGameManager : MonoBehaviour
 
     public void StartGame()
     {
+        if(gameStart)
+        {
+            return;
+        }
+        foreach (Light light in lights)
+        {
+            if (light != null)
+            {
+                light.intensity = 0f;
+                light.enabled = false;
+            }
+        }
+        gameStart = true;
         sequence.Clear();
         playerInput.Clear();
         resultText.text = "";
@@ -156,6 +171,7 @@ public class SimonGameManager : MonoBehaviour
 
     IEnumerator Ganar()
     {
+        gameStart = false;
         yield return new WaitForSeconds(0.5f);
 
         
