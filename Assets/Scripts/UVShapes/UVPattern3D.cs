@@ -28,24 +28,37 @@ public class UVPattern3D : MonoBehaviour
 
     void Update()
     {
-        Vector3 dir = flashlight.transform.forward;
-        Vector3 origin = flashlight.transform.position;
+        foreach (var obj in shapeObjects)
+        {
+            Vector3 dirToObj = obj.transform.position - flashlight.transform.position;
+            float distance = dirToObj.magnitude;
 
-        if (Physics.Raycast(origin, dir, out RaycastHit hit, 5f))
-        {
-            if (hit.collider.gameObject == this.gameObject)
+            // comprobar rango
+            if (distance > flashlight.range)
             {
-                foreach (var obj in shapeObjects)
-                    obj.SetActive(true);
-            }
-        }
-        else
-        {
-            foreach (var obj in shapeObjects)
                 obj.SetActive(false);
+                continue;
+            }
+
+            // comprobar ángulo del cono
+            float angle = Vector3.Angle(flashlight.transform.forward, dirToObj);
+
+            if (angle > flashlight.spotAngle * 0.5f)
+            {
+                obj.SetActive(false);
+                continue;
+            }
+
+            // comprobar si algo bloquea la luz
+            if (Physics.Raycast(flashlight.transform.position, dirToObj.normalized, distance))
+            {
+                obj.SetActive(false);
+                continue;
+            }
+
+            obj.SetActive(true);
         }
     }
-
     void UpdateShapesText()
     {
         // Asume que shapeObjects.Length == number of symbols in sequence
