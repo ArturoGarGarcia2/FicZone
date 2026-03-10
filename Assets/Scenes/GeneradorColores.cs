@@ -2,17 +2,34 @@ using UnityEngine;
 
 public class GeneradorColores : MonoBehaviour
 {
-    public Color[] colores = {Color.red, Color.green, Color.blue, Color.yellow};
+    public GameObject[] cubosHojaA;
+    public GameObject[] cubosHojaB;
+    public Color[] colores = {Color.red, Color.green, Color.blue, Color.yellow, Color.black};
+    [Range(0, 1)] public float probabilidadDeCubo = 0.5f;
 
     private void Start()
     {
-        MeshRenderer[] hijos = GetComponentsInChildren<MeshRenderer>();
-
-        foreach (MeshRenderer colorHijo in hijos)
+        for(int i = 0; i < 9; i++)
         {
             Color colorAleatorio = colores[Random.Range(0, colores.Length)];
-
-            colorHijo.material.color = colorAleatorio;
+            if (Random.value > probabilidadDeCubo)
+            {
+                ConfigurarCubo(cubosHojaA[i], colorAleatorio, true);
+                ConfigurarCubo(cubosHojaB[i], Color.clear, false);
+            }
+            else
+            {
+                ConfigurarCubo(cubosHojaA[i], Color.clear, false);
+                ConfigurarCubo(cubosHojaB[i], colorAleatorio, true);
+            }
+        }
+    }
+    void ConfigurarCubo(GameObject cubo, Color Col, bool activo)
+    {
+        cubo.SetActive(activo);
+        if (activo)
+        {
+            cubo.GetComponent<MeshRenderer>().material.color = Col;
         }
     }
 }
