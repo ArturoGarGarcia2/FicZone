@@ -4,9 +4,9 @@ using UnityEngine.XR;
 public class ControlesExternos : MonoBehaviour
 {
 
-    UnityEngine.XR.InputDevice leftHand =InputDevices.GetDeviceAtXRNode(XRNode.LeftHand);
-    UnityEngine.XR.InputDevice rightHand = InputDevices.GetDeviceAtXRNode(XRNode.RightHand);
-    UnityEngine.XR.InputDevice head =InputDevices.GetDeviceAtXRNode(XRNode.Head);
+    UnityEngine.XR.InputDevice leftHand;
+    UnityEngine.XR.InputDevice rightHand;
+    UnityEngine.XR.InputDevice head;
 
     [Header ("No tocar")]
 
@@ -14,6 +14,17 @@ public class ControlesExternos : MonoBehaviour
 
     public Quaternion rotacionCabeza;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    void Awake()
+    {
+
+        leftHand = InputDevices.GetDeviceAtXRNode(XRNode.LeftHand);
+
+        rightHand = InputDevices.GetDeviceAtXRNode(XRNode.RightHand);
+
+        head = InputDevices.GetDeviceAtXRNode(XRNode.Head);
+
+    }
 
     void OnEnable()
     {
