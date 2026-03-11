@@ -1,4 +1,6 @@
+using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class UVPattern3D : MonoBehaviour
 {
@@ -61,14 +63,15 @@ public class UVPattern3D : MonoBehaviour
     }
     void UpdateShapesText()
     {
-        // Asume que shapeObjects.Length == number of symbols in sequence
-        string[] symbols = sequenceShapes.Split(' ');
+        string[] symbols = sequenceShapes.Split(new char[] { ' ' }, System.StringSplitOptions.RemoveEmptyEntries);
 
         for (int i = 0; i < symbols.Length && i < shapeObjects.Length; i++)
         {
-            var textMesh = shapeObjects[i].GetComponent<TMPro.TextMeshPro>();
+            var textMesh = shapeObjects[i].GetComponent<TextMeshPro>();
             if (textMesh != null)
                 textMesh.text = symbols[i];
+            else
+                Debug.LogWarning("TextMeshPro no encontrado en " + shapeObjects[i].name);
         }
     }
 }

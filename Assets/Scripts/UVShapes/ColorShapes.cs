@@ -5,19 +5,19 @@ public static class ColorShapes
 {
     public static Dictionary<Colors, string> shapes = new Dictionary<Colors, string>()
     {
-       { Colors.RED, "Ω" },
-        { Colors.YELLOW, "X" },
-        { Colors.BLUE, "α" },
-        { Colors.GREEN, "β" },
-        { Colors.PURPLE, "Σ" } 
+       { Colors.RED, ":P" },
+        { Colors.YELLOW, "XD" },
+        { Colors.BLUE, ":(" },
+        { Colors.GREEN, ":D" },
+        { Colors.PURPLE, ":/" } 
     };
 
     public static Dictionary<string, Colors> shapesToColor = new Dictionary<string, Colors>()
     {
-       { "Ω", Colors.RED },
-        { "X", Colors.YELLOW },
-        { "α", Colors.BLUE },
-        { "β", Colors.GREEN },
-        { "Σ", Colors.PURPLE }
+       { ":P", Colors.RED },
+        { "XD", Colors.YELLOW },
+        { ":(", Colors.BLUE },
+        { ":D", Colors.GREEN },
+        { ":/", Colors.PURPLE }
     };
 }
