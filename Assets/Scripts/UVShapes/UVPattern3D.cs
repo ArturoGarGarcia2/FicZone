@@ -36,6 +36,7 @@ public class UVPattern3D : MonoBehaviour
             // comprobar rango
             if (distance > flashlight.range)
             {
+                // Debug.Log("Fuera de rango");
                 obj.SetActive(false);
                 continue;
             }
@@ -45,6 +46,7 @@ public class UVPattern3D : MonoBehaviour
 
             if (angle > flashlight.spotAngle * 0.5f)
             {
+                // Debug.Log("Fuera de cono");
                 obj.SetActive(false);
                 continue;
             }
@@ -52,10 +54,12 @@ public class UVPattern3D : MonoBehaviour
             // comprobar si algo bloquea la luz
             if (Physics.Raycast(flashlight.transform.position, dirToObj.normalized, distance))
             {
+                // Debug.Log("Algo en medio");
                 obj.SetActive(false);
                 continue;
             }
 
+            Debug.Log("Todo piola");
             obj.SetActive(true);
         }
     }

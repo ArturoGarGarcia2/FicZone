@@ -8,6 +8,7 @@ public class MannequinManager : MonoBehaviour
     public Mannequin[] mannequins;
 
     public TMP_Text[] clueTexts;
+    public TMP_Text debugText;
 
     private Dictionary<Mannequin.Location, Hat.Family> hatSolution =
         new Dictionary<Mannequin.Location, Hat.Family>();
@@ -31,6 +32,7 @@ public class MannequinManager : MonoBehaviour
     void Update()
     {
         AlignMannequins();
+        CheckPuzzle();
     }
 
     public void AlignMannequins()
@@ -64,8 +66,6 @@ public class MannequinManager : MonoBehaviour
                         targetRot,
                         rotationSmooth * Time.deltaTime
                     );
-
-                    m.lookingAt = target.location;
                 }
             }
         }
@@ -90,7 +90,23 @@ public class MannequinManager : MonoBehaviour
         };
 
         F.ShuffleArray(hats);
-        F.ShuffleArray(locs);
+
+        bool valid = false;
+
+        while (!valid)
+        {
+            F.ShuffleArray(locs);
+            valid = true;
+
+            for (int i = 0; i < mannequins.Length; i++)
+            {
+                if (mannequins[i].location == locs[i])
+                {
+                    valid = false;
+                    break;
+                }
+            }
+        }
 
         hatSolution.Clear();
         lookSolution.Clear();
@@ -141,7 +157,7 @@ public class MannequinManager : MonoBehaviour
             string fam = FamilyToString(pair.Value);
 
             clueTexts[i].text =
-                "El sombrero del " + fam + " está en el maniquí del " + loc + ".";
+                "El sombrero del " + fam + " está\nen el maniquí del " + loc + ".";
 
             i++;
         }
@@ -152,7 +168,7 @@ public class MannequinManager : MonoBehaviour
             string to = LocationToString(pair.Value);
 
             clueTexts[i].text =
-                "El maniquí del " + from + " está mirando al maniquí del " + to + ".";
+                "El maniquí del " + from + " está\nmirando al maniquí del " + to + ".";
 
             i++;
         }
@@ -161,10 +177,11 @@ public class MannequinManager : MonoBehaviour
     public void CheckPuzzle()
     {
         foreach (var m in mannequins)
-        {
-            if(!m.CorrectMannequin()) return;
-        }
+            if(!m.CorrectMannequin()){
+                debugText.text = "Está mal";
+                return;
+            }
 
-        Debug.Log("Puzzle resuelto!");
+        debugText.text = "Está perfe";
     }
 }
