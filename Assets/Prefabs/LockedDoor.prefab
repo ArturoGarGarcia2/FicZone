@@ -250,6 +250,8 @@ GameObject:
   - component: {fileID: 8065749642802275512}
   - component: {fileID: 383298261421916725}
   - component: {fileID: 2573283406073942823}
+  - component: {fileID: 2523380686594016355}
+  - component: {fileID: 1389076174645103995}
   m_Layer: 0
   m_Name: DoorLocked
   m_TagString: Untagged
@@ -354,6 +356,48 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!65 &2523380686594016355
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4387934427487272655}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.9285279, y: 2.0319114, z: 0.10736623}
+  m_Center: {x: -0.45276377, y: -0.036634684, z: 0.042182956}
+--- !u!65 &1389076174645103995
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4387934427487272655}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.9285279, y: 2.0319114, z: 0.10736623}
+  m_Center: {x: -0.45276377, y: -0.036634684, z: 0.042182956}
 --- !u!1 &5066330273401333176
 GameObject:
   m_ObjectHideFlags: 0
@@ -396,7 +440,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1357012883350074131}
-  - component: {fileID: 113109961601264736}
+  - component: {fileID: 8970901759225716329}
   m_Layer: 0
   m_Name: DoorHandleInteractable
   m_TagString: Untagged
@@ -420,7 +464,7 @@ Transform:
   - {fileID: 8816367252157851197}
   m_Father: {fileID: 4279143209846632746}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!114 &113109961601264736
+--- !u!114 &8970901759225716329
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -429,7 +473,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6121739508247802838}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 765336f40be6d7347a3d2899f8c67673, type: 3}
+  m_Script: {fileID: 11500000, guid: e0373fbea63f2ac49b252a6e56e3469f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UnityEngine.XR.Content.Interaction.XRKnob
   m_InteractionManager: {fileID: 0}

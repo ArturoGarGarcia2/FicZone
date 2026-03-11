@@ -91,6 +91,11 @@ namespace UnityEngine.XR.Content.Interaction
         [Tooltip("The value of the knob")]
         [Range(0.0f, 1.0f)]
         float m_Value = 0.5f;
+        bool m_HasReachedZero = false;
+        public Keyhole keyhole;
+        public Transform Door;
+        public Animator doorAnimator;
+        bool IsDoorOpen;
 
         [SerializeField]
         [Tooltip("Whether this knob's rotation should be clamped by the angle limits")]
@@ -198,6 +203,7 @@ namespace UnityEngine.XR.Content.Interaction
         {
             SetValue(m_Value);
             SetKnobRotation(ValueToRotation());
+            IsDoorOpen = false;
         }
 
         protected override void OnEnable()
@@ -356,7 +362,20 @@ namespace UnityEngine.XR.Content.Interaction
                 value = Mathf.InverseLerp(0.0f, angleRange, angle);
             }
 
+            float previousValue = m_Value;
             m_Value = value;
+
+            // El jugador abre la puerta
+            if (!m_HasReachedZero && previousValue > 0f && m_Value <= 0f && keyhole.hasKeyInside)
+            {
+                m_HasReachedZero = true;
+                doorAnimator.SetTrigger("OpenDoor");
+
+                // La puerta deja de ser interactuable
+                interactionLayers = 0;
+                enabled = false; 
+            }
+
             m_OnValueChange.Invoke(m_Value);
         }
 
