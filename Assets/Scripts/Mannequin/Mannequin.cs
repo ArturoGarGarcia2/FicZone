@@ -1,4 +1,5 @@
 using UnityEngine;
+using TMPro;
 
 public class Mannequin : MonoBehaviour
 {
@@ -10,11 +11,13 @@ public class Mannequin : MonoBehaviour
         Sofa
     }
 
+    public TMP_Text txt;
+    public HatSocket hs;
     public Location location;
 
     public Transform hatSocket;
 
-    public Hat.Family currentHat;
+    public Hat.Family currentHat = Hat.Family.None;
     public Hat.Family targetHat;
 
     public Location lookingAt;
@@ -34,17 +37,13 @@ public class Mannequin : MonoBehaviour
             }
 
         lookingAt = possibleLooking[lookingAtInt];
+    }
 
-        string debug = gameObject.name+"("+location+"): ";
-
-        foreach(Location loc in possibleLooking)
-        {
-            debug += loc + " - ";
-        }
-
-        debug += "(mira a: "+lookingAtInt +"-"+ lookingAt +")(debe mirar a: "+lookingTarget+")";
-
-        Debug.Log(debug);         
+    void Update()
+    {
+        UpdateHat();
+        // Lights();
+        txt.text = lookingAt+"\n"+lookingTarget+"\n\n"+currentHat+"\n"+targetHat;
     }
 
     public void Next()
@@ -67,18 +66,13 @@ public class Mannequin : MonoBehaviour
 
     public void UpdateHat()
     {
-        if (hatSocket.childCount == 0)
-            return;
-
-        Hat hat = hatSocket.GetComponentInChildren<Hat>();
-        if (hat != null)
-        {
-            currentHat = hat.family;
-        }
+        currentHat = hs.currentHatInSocket;
     }
     
     public bool CorrectMannequin()
     {
         return lookingAt == lookingTarget && currentHat == targetHat;
     }
+
+    public void Lights() => transform.GetChild(4).gameObject.SetActive(CorrectMannequin());
 }
