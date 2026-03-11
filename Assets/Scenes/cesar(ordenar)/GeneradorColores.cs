@@ -1,10 +1,14 @@
+using System.Linq.Expressions;
 using UnityEngine;
 
 public class GeneradorColores : MonoBehaviour
 {
     public GameObject[] cubosHojaA;
     public GameObject[] cubosHojaB;
-    public Color[] colores = {Color.red, Color.green, Color.blue, Color.yellow, Color.black};
+    public Color[] colores = {Color.red, Color.green, Color.blue, Color.yellow, Color.purple};
+    // los simbolos son para los daltonicos y se pondran encima de cubo color
+    //public Symbol[] simbolos = { cuadrado, hexagono, triangulo, circulo, pentagono};
+
     [Range(0, 1)] public float probabilidadDeCubo = 0.5f;
 
     private void Start()
