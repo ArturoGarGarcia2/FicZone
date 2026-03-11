@@ -19,6 +19,8 @@ public class SimonGameManager : MonoBehaviour
 
     public TMP_Text resultText;
 
+    public bool gameStart = false;
+
     public void Awake()
     {
         if (Instance == null)
@@ -36,6 +38,19 @@ public class SimonGameManager : MonoBehaviour
 
     public void StartGame()
     {
+        if(gameStart)
+        {
+            return;
+        }
+        foreach (Light light in lights)
+        {
+            if (light != null)
+            {
+                light.intensity = 0f;
+                light.enabled = false;
+            }
+        }
+        gameStart = true;
         sequence.Clear();
         playerInput.Clear();
         resultText.text = "";
@@ -59,6 +74,8 @@ public class SimonGameManager : MonoBehaviour
 
         foreach (int index in sequence)
         {
+            lights[index].intensity = 0f;   
+            lights[index].enabled = false; 
             if(lights[index] != null)
             {
                 lights[index].enabled = true;   
@@ -100,6 +117,7 @@ public class SimonGameManager : MonoBehaviour
         {
             // Error: el jugador se equivocó
             resultText.text = "¡Incorrecto!";
+            StartCoroutine(Equivocarse());
             playerInput.Clear();
             //GameOver();
             //return;
@@ -111,10 +129,62 @@ public class SimonGameManager : MonoBehaviour
             if(sequence.Count >= 5)
             {
                 resultText.text = "¡Ganaste!";
+                StartCoroutine(Ganar());
                 return;
             }
             resultText.text = "¡Correcto!";
             NewRound();
         }
+    }
+
+    IEnumerator Equivocarse()
+    {
+        yield return new WaitForSeconds(0.5f);
+
+        
+        foreach (Light light in lights)
+        {
+            if (light != null)
+            {
+                light.color = Color.red;
+                light.enabled = true;
+                light.intensity = 5f;
+            }
         }
+
+        yield return new WaitForSeconds(1f);
+
+        
+        foreach (Light light in lights)
+        {
+            if (light != null)
+            {
+                light.intensity = 0f;
+                light.enabled = false;
+            }
+        }
+
+        yield return new WaitForSeconds(1f);
+
+        StartCoroutine(PlaySequence());
+    }
+
+    IEnumerator Ganar()
+    {
+        gameStart = false;
+        yield return new WaitForSeconds(0.5f);
+
+        
+        foreach (Light light in lights)
+        {
+            if (light != null)
+            {
+                light.color = Color.green;
+                light.enabled = true;
+                light.intensity = 5f;
+            }
+        }
+
+        yield return new WaitForSeconds(1f);
+    }
 }
