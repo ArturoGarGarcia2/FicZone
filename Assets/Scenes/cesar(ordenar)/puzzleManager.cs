@@ -9,6 +9,7 @@ public class puzzleManager : MonoBehaviour
     public GeneradorColores generador;
     private List<GameObject> secuenciaCorrecta;
     public XRSocketInteractor[] socket;
+    public bool puzzleCuboColores = false;
 
     private void Start()
     {
@@ -18,8 +19,9 @@ public class puzzleManager : MonoBehaviour
     {
         for (int i = 0; i < socket.Length ; i++)
         {
+            //Debug.Log("posicion " + i + "antes de todo");
             IXRSelectInteractable objetoCogido = socket[i].GetOldestInteractableSelected();
-            if (objetoCogido != null)
+            if (objetoCogido == null)
             {
                 Debug.Log("no hay cubo en la posicion " + i);
                 return;
@@ -27,14 +29,16 @@ public class puzzleManager : MonoBehaviour
             MeshRenderer colorCubo = objetoCogido.transform.GetComponent<MeshRenderer>();
             if(colorCubo.material.color != secuenciaCorrecta[i].GetComponent<MeshRenderer>().material.color)
             {
-                Debug.Log("fallo en la posicion "+i);
+                Debug.Log("fallo en la posicion "+i + "color cubo: " + colorCubo.material.color + " color correcto: " + secuenciaCorrecta[i].GetComponent<MeshRenderer>().material.color);
                 return;
             }
+            //Debug.Log("posicion " + i + "despues de todo");
         }
         PuzzleResuelto();
     }
     private void PuzzleResuelto()
     {
         Debug.Log("puzzle resuelto");
+        puzzleCuboColores = true;
     }
 }
