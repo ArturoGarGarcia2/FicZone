@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6393334694379224822}
   - component: {fileID: 8064970166375754048}
   m_Layer: 0
-  m_Name: pruebaColor
+  m_Name: cuboRojo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

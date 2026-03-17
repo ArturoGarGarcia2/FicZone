@@ -7,7 +7,7 @@ using UnityEngine.XR.Interaction.Toolkit.Interactors;
 public class puzzleManager : MonoBehaviour
 {
     public GeneradorColores generador;
-    private List<GameObject> secuenciaCorrecta;
+    private List<Color> secuenciaCorrecta;
     public XRSocketInteractor[] socket;
     public bool puzzleCuboColores = false;
 
@@ -27,9 +27,9 @@ public class puzzleManager : MonoBehaviour
                 return;
             }
             MeshRenderer colorCubo = objetoCogido.transform.GetComponent<MeshRenderer>();
-            if(colorCubo.material.color != secuenciaCorrecta[i].GetComponent<MeshRenderer>().material.color)
+            if(colorCubo.material.color != secuenciaCorrecta[i])
             {
-                Debug.Log("fallo en la posicion "+i + "color cubo: " + colorCubo.material.color + " color correcto: " + secuenciaCorrecta[i].GetComponent<MeshRenderer>().material.color);
+                Debug.Log("fallo en la posicion "+i + "color cubo: " + colorCubo.material.color + " color correcto: " + secuenciaCorrecta[i]);
                 return;
             }
             //Debug.Log("posicion " + i + "despues de todo");
