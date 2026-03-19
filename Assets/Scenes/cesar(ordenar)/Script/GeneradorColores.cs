@@ -13,26 +13,10 @@ public class GeneradorColores : MonoBehaviour
 
     [Range(0, 1)] public float probabilidadDeCubo = 0.5f;
 
-    /*private void Start()
+    private void Start()
     {
-        for(int i = 0; i < 9; i++)
-        {
-            Color colorAleatorio = colores[Random.Range(0, colores.Length)];
-            if (Random.value > probabilidadDeCubo)
-            {
-                ConfigurarCubo(cubosHojaA[i], colorAleatorio, true);
-                ConfigurarCubo(cubosHojaB[i], Color.clear, false);
-                
-            }
-            else
-            {
-                ConfigurarCubo(cubosHojaA[i], Color.clear, false);
-                ConfigurarCubo(cubosHojaB[i], colorAleatorio, true);
-            }
-            cubosPuzzle.Add(colorAleatorio);
-            Debug.Log("Posicion " + i + " cubo color: " + colorAleatorio);
-        }
-    }*/
+        GenerarPuzzle();
+    }
     public void GenerarPuzzle()
     {
         for (int i = 0; i < 9; i++)
@@ -58,7 +42,8 @@ public class GeneradorColores : MonoBehaviour
         cubo.SetActive(activo);
         if (activo)
         {
-            cubo.GetComponent<MeshRenderer>().material.color = Col;
+            //cubo.GetComponent<MeshRenderer>().material.color = Col;
+            cubo.GetComponent<ColorConTexto>().SetColor(Col);
         }
     }
 
