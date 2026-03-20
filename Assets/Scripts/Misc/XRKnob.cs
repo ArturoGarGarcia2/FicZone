@@ -96,6 +96,7 @@ namespace UnityEngine.XR.Content.Interaction
         public Transform Door;
         public Animator doorAnimator;
         bool IsDoorOpen;
+        public bool isDoorOutside;
 
         [SerializeField]
         [Tooltip("Whether this knob's rotation should be clamped by the angle limits")]
@@ -369,7 +370,15 @@ namespace UnityEngine.XR.Content.Interaction
             if (!m_HasReachedZero && previousValue > 0f && m_Value <= 0f && keyhole.hasKeyInside)
             {
                 m_HasReachedZero = true;
-                doorAnimator.SetTrigger("OpenDoor");
+                if (isDoorOutside)
+                {
+                    doorAnimator.SetTrigger("OpenDoor");    
+                }
+                else
+                {
+                    doorAnimator.SetTrigger("OpenDoorParents");
+                }
+                
 
                 // La puerta deja de ser interactuable
                 interactionLayers = 0;
