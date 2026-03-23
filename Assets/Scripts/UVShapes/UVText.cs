@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
@@ -20,14 +21,13 @@ public class UVText : MonoBehaviour
 
     void Update()
     {
-        
-            Vector3 dirToObj = transform.position - flashlight.transform.position;
+            Vector3 dirToObj = text.gameObject.transform.position - flashlight.transform.position;
             float distance = dirToObj.magnitude;
 
             // comprobar rango
             if (distance > flashlight.range)
             {
-                Debug.Log("Fuera de rango");
+                //Debug.Log("Fuera de rango: " + distance + " Rango de la linterna: " + flashlight.range);
                 text.gameObject.SetActive(false);
                 return;
             }
@@ -37,7 +37,7 @@ public class UVText : MonoBehaviour
 
             if (angle > flashlight.spotAngle * 0.5f)
             {
-                Debug.Log("Fuera de cono");
+                //Debug.Log("Fuera de cono");
                 text.gameObject.SetActive(false);
                 return;
             }
@@ -45,12 +45,12 @@ public class UVText : MonoBehaviour
             // comprobar si algo bloquea la luz
             if (Physics.Raycast(flashlight.transform.position, dirToObj.normalized, distance))
             {
-                Debug.Log("Algo en medio");
+                //Debug.Log("Algo en medio");
                 text.gameObject.SetActive(false);
                 return;
             }
 
-            Debug.Log("Todo piola");
+            //Debug.Log("Todo piola");
             text.gameObject.SetActive(true);
         
     }
