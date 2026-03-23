@@ -25,6 +25,7 @@ public class MannequinManager : MonoBehaviour
 
     void Start()
     {
+        F.ShuffleArray(clueTexts);
         GenerateSolution();
         GenerateClues();
     }
@@ -125,10 +126,10 @@ public class MannequinManager : MonoBehaviour
     {
         switch (loc)
         {
-            case Mannequin.Location.Cocina: return "cocina";
-            case Mannequin.Location.Baño: return "baño";
-            case Mannequin.Location.Pasillo: return "pasillo";
-            case Mannequin.Location.Sofa: return "sofá";
+            case Mannequin.Location.Cocina: return "la cocina";
+            case Mannequin.Location.Baño: return "el baño";
+            case Mannequin.Location.Pasillo: return "el pasillo";
+            case Mannequin.Location.Sofa: return "el sofá";
         }
 
         return "";
@@ -138,10 +139,10 @@ public class MannequinManager : MonoBehaviour
     {
         switch (fam)
         {
-            case Hat.Family.Padre: return "padre";
-            case Hat.Family.Madre: return "madre";
-            case Hat.Family.Hijo: return "hijo";
-            case Hat.Family.Hija: return "hija";
+            case Hat.Family.Padre: return "El padre";
+            case Hat.Family.Madre: return "La madre";
+            case Hat.Family.Hijo: return "El hijo";
+            case Hat.Family.Hija: return "La hija";
         }
 
         return "";
@@ -157,7 +158,7 @@ public class MannequinManager : MonoBehaviour
             string fam = FamilyToString(pair.Value);
 
             clueTexts[i].text =
-                "El sombrero del " + fam + " está\nen el maniquí del " + loc + ".";
+                fam + " está\nen " + loc + ".";
 
             i++;
         }
@@ -168,7 +169,7 @@ public class MannequinManager : MonoBehaviour
             string to = LocationToString(pair.Value);
 
             clueTexts[i].text =
-                "El maniquí del " + from + " está\nmirando al maniquí del " + to + ".";
+                "El maniquí del " + from + " mira\n al de " + to + ".";
 
             i++;
         }

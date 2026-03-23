@@ -1,43 +1,35 @@
 using UnityEngine;
+using TMPro;
 
 public class UVText : MonoBehaviour
 {
     public static UVText Instance;
 
     public Light flashlight;
-    public GameObject[] shapeObjects; 
-    private string sequenceShapes = "";
+    public TMP_Text text;
 
     void Awake()
     {
         Instance = this;
     }
 
-    public void SetSequence(string sequence)
-    {
-        sequenceShapes = sequence;
-    }
-
     void Start()
     {
-        
-        foreach (var obj in shapeObjects)
-            obj.SetActive(false);
+        text.gameObject.SetActive(false);
     }
 
     void Update()
     {
-        foreach (var obj in shapeObjects)
-        {
-            Vector3 dirToObj = obj.transform.position - flashlight.transform.position;
+        
+            Vector3 dirToObj = transform.position - flashlight.transform.position;
             float distance = dirToObj.magnitude;
 
             // comprobar rango
             if (distance > flashlight.range)
             {
                 Debug.Log("Fuera de rango");
-                obj.SetActive(false);
-                continue;
+                text.gameObject.SetActive(false);
+                return;
             }
 
             // comprobar ángulo del cono
@@ -46,20 +38,20 @@ public class UVText : MonoBehaviour
             if (angle > flashlight.spotAngle * 0.5f)
             {
                 Debug.Log("Fuera de cono");
-                obj.SetActive(false);
-                continue;
+                text.gameObject.SetActive(false);
+                return;
             }
 
             // comprobar si algo bloquea la luz
             if (Physics.Raycast(flashlight.transform.position, dirToObj.normalized, distance))
             {
                 Debug.Log("Algo en medio");
-                obj.SetActive(false);
-                continue;
+                text.gameObject.SetActive(false);
+                return;
             }
 
             Debug.Log("Todo piola");
-            obj.SetActive(true);
-        }
+            text.gameObject.SetActive(true);
+        
     }
 }
