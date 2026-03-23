@@ -489,6 +489,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColorConTexto
   texto: {fileID: 252204105}
+  daltonismo: 0
 --- !u!1 &65181265
 GameObject:
   m_ObjectHideFlags: 0
@@ -797,6 +798,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColorConTexto
   texto: {fileID: 490470135}
+  daltonismo: 0
 --- !u!1 &88569008
 GameObject:
   m_ObjectHideFlags: 0
@@ -2233,6 +2235,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColorConTexto
   texto: {fileID: 1920083486}
+  daltonismo: 0
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -3466,6 +3469,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColorConTexto
   texto: {fileID: 694224458}
+  daltonismo: 0
 --- !u!1 &687715014
 GameObject:
   m_ObjectHideFlags: 0
@@ -4066,6 +4070,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColorConTexto
   texto: {fileID: 1984281792}
+  daltonismo: 0
 --- !u!1 &908136712
 GameObject:
   m_ObjectHideFlags: 0
@@ -4353,6 +4358,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColorConTexto
   texto: {fileID: 835994596}
+  daltonismo: 0
 --- !u!1 &1011481692
 GameObject:
   m_ObjectHideFlags: 0
@@ -5382,6 +5388,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab80baa644fcfa446944faa0054cd092, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnCubosPuzzle
+  daltonismo: 0
   cuboRojo: {fileID: 7227893879929352714, guid: 1cba46029feaa1340989c35692f9c059, type: 3}
   cuboVerde: {fileID: 8805041508777927924, guid: deb75e8b26aa10b4ab6f5bda040c7abf, type: 3}
   cuboAzul: {fileID: 4292568635153634165, guid: 56a70b472edd57241b3aca579ec39ac9, type: 3}
@@ -5834,6 +5841,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColorConTexto
   texto: {fileID: 9802506}
+  daltonismo: 0
 --- !u!1 &1150317470
 GameObject:
   m_ObjectHideFlags: 0
@@ -5961,6 +5969,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColorConTexto
   texto: {fileID: 88569010}
+  daltonismo: 0
 --- !u!1 &1197087350
 GameObject:
   m_ObjectHideFlags: 0
@@ -6305,6 +6314,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColorConTexto
   texto: {fileID: 1393434005}
+  daltonismo: 0
 --- !u!1 &1393434003
 GameObject:
   m_ObjectHideFlags: 0
@@ -6613,6 +6623,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColorConTexto
   texto: {fileID: 65181267}
+  daltonismo: 0
 --- !u!1 &1490207143
 GameObject:
   m_ObjectHideFlags: 0
@@ -6771,6 +6782,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColorConTexto
   texto: {fileID: 1011481694}
+  daltonismo: 0
 --- !u!1 &1546986933
 GameObject:
   m_ObjectHideFlags: 0
@@ -6943,6 +6955,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColorConTexto
   texto: {fileID: 644721913}
+  daltonismo: 0
 --- !u!1 &1581662055
 GameObject:
   m_ObjectHideFlags: 0
@@ -7157,6 +7170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColorConTexto
   texto: {fileID: 1029109222}
+  daltonismo: 0
 --- !u!1 &1616495846
 GameObject:
   m_ObjectHideFlags: 0
@@ -7315,6 +7329,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColorConTexto
   texto: {fileID: 303375056}
+  daltonismo: 0
 --- !u!1 &1653491844
 GameObject:
   m_ObjectHideFlags: 0
@@ -7814,6 +7829,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColorConTexto
   texto: {fileID: 1905952033}
+  daltonismo: 0
 --- !u!1 &1817740184
 GameObject:
   m_ObjectHideFlags: 0
@@ -7972,6 +7988,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColorConTexto
   texto: {fileID: 416221459}
+  daltonismo: 0
 --- !u!1 &1870272711
 GameObject:
   m_ObjectHideFlags: 0
@@ -9256,6 +9273,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColorConTexto
   texto: {fileID: 267651685}
+  daltonismo: 0
 --- !u!1 &2009590577
 GameObject:
   m_ObjectHideFlags: 0
@@ -9694,6 +9712,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColorConTexto
   texto: {fileID: 1653491846}
+  daltonismo: 0
 --- !u!1 &2113753970
 GameObject:
   m_ObjectHideFlags: 0
