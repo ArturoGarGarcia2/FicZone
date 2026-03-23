@@ -8,6 +8,7 @@ public class MannequinManager : MonoBehaviour
     public Mannequin[] mannequins;
 
     public TMP_Text[] clueTexts;
+    public TMP_Text debugText;
 
     private Dictionary<Mannequin.Location, Hat.Family> hatSolution =
         new Dictionary<Mannequin.Location, Hat.Family>();
@@ -24,6 +25,7 @@ public class MannequinManager : MonoBehaviour
 
     void Start()
     {
+        F.ShuffleArray(clueTexts);
         GenerateSolution();
         GenerateClues();
     }
@@ -31,6 +33,7 @@ public class MannequinManager : MonoBehaviour
     void Update()
     {
         AlignMannequins();
+        CheckPuzzle();
     }
 
     public void AlignMannequins()
@@ -64,8 +67,6 @@ public class MannequinManager : MonoBehaviour
                         targetRot,
                         rotationSmooth * Time.deltaTime
                     );
-
-                    m.lookingAt = target.location;
                 }
             }
         }
@@ -90,7 +91,23 @@ public class MannequinManager : MonoBehaviour
         };
 
         F.ShuffleArray(hats);
-        F.ShuffleArray(locs);
+
+        bool valid = false;
+
+        while (!valid)
+        {
+            F.ShuffleArray(locs);
+            valid = true;
+
+            for (int i = 0; i < mannequins.Length; i++)
+            {
+                if (mannequins[i].location == locs[i])
+                {
+                    valid = false;
+                    break;
+                }
+            }
+        }
 
         hatSolution.Clear();
         lookSolution.Clear();
@@ -109,10 +126,10 @@ public class MannequinManager : MonoBehaviour
     {
         switch (loc)
         {
-            case Mannequin.Location.Cocina: return "cocina";
-            case Mannequin.Location.Baño: return "baño";
-            case Mannequin.Location.Pasillo: return "pasillo";
-            case Mannequin.Location.Sofa: return "sofá";
+            case Mannequin.Location.Cocina: return "la cocina";
+            case Mannequin.Location.Baño: return "el baño";
+            case Mannequin.Location.Pasillo: return "el pasillo";
+            case Mannequin.Location.Sofa: return "el sofá";
         }
 
         return "";
@@ -122,10 +139,10 @@ public class MannequinManager : MonoBehaviour
     {
         switch (fam)
         {
-            case Hat.Family.Padre: return "padre";
-            case Hat.Family.Madre: return "madre";
-            case Hat.Family.Hijo: return "hijo";
-            case Hat.Family.Hija: return "hija";
+            case Hat.Family.Padre: return "El padre";
+            case Hat.Family.Madre: return "La madre";
+            case Hat.Family.Hijo: return "El hijo";
+            case Hat.Family.Hija: return "La hija";
         }
 
         return "";
@@ -141,7 +158,7 @@ public class MannequinManager : MonoBehaviour
             string fam = FamilyToString(pair.Value);
 
             clueTexts[i].text =
-                "El sombrero del " + fam + " está en el maniquí del " + loc + ".";
+                fam + " está\nen " + loc + ".";
 
             i++;
         }
@@ -152,7 +169,7 @@ public class MannequinManager : MonoBehaviour
             string to = LocationToString(pair.Value);
 
             clueTexts[i].text =
-                "El maniquí del " + from + " está mirando al maniquí del " + to + ".";
+                "El maniquí del " + from + " mira\n al de " + to + ".";
 
             i++;
         }
@@ -161,10 +178,11 @@ public class MannequinManager : MonoBehaviour
     public void CheckPuzzle()
     {
         foreach (var m in mannequins)
-        {
-            if(!m.CorrectMannequin()) return;
-        }
+            if(!m.CorrectMannequin()){
+                debugText.text = "Está mal";
+                return;
+            }
 
-        Debug.Log("Puzzle resuelto!");
+        debugText.text = "Está perfe";
     }
 }

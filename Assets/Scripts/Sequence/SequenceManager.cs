@@ -10,6 +10,9 @@ public class SequenceManager : MonoBehaviour
     public GameObject[] lightbulbs;
     public GameObject[] buttons;
 
+    //public GameObject[] daltonicTexts;
+    public bool daltonicMode = false;   
+
     public bool[] lightsOn = new bool[5];
 
     Colors[] originalColors = new Colors[5];
@@ -40,6 +43,8 @@ public class SequenceManager : MonoBehaviour
     void Awake()
     {
         F.ShuffleArray(sequence);
+        foreach (var text in lightbulbs)
+            text.transform.GetChild(2).gameObject.SetActive(false);
         Instance = this;
     }
 
@@ -74,7 +79,26 @@ public class SequenceManager : MonoBehaviour
     void Update()
     {
         for (int i = 0; i < lightbulbs.Length; i++)
+        {
             lightbulbs[i].transform.GetChild(1).gameObject.SetActive(lightsOn[i]);
+            
+            if(daltonicMode && lightsOn[i])
+            {
+                GameObject text = lightbulbs[i].transform.GetChild(2).gameObject;
+
+                text.SetActive(true);
+
+                Colors color = lightbulbs[i].GetComponent<LightbulbColor>().color;
+
+                var tmp = text.GetComponent<TextMeshPro>();
+                if (tmp != null && ColorShapes.shapes.ContainsKey(color))
+                    tmp.text = ColorShapes.shapes[color];
+            }
+             else
+            {
+                lightbulbs[i].transform.GetChild(2).gameObject.SetActive(false);
+            }
+        }
     }
 
     void Press(int i)
