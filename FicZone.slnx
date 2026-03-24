@@ -3,9 +3,13 @@
   <Project Path="UniTask.csproj" />
   <Project Path="UniTask.Linq.csproj" />
   <Project Path="Unity.XR.Hands.Samples.VisualizerSample.csproj" />
+  <Project Path="Assembly-CSharp.csproj" />
   <Project Path="UniTask.Addressables.csproj" />
   <Project Path="Unity.XR.Interaction.Toolkit.Samples.StarterAssets.csproj" />
+<<<<<<< HEAD
+=======
   <Project Path="Assembly-CSharp.csproj" />
+>>>>>>> 8998944e5b374c2e66efcd6e319d1f40470acecd
 =======
   <Project Path="Unity.Timeline.csproj" />
   <Project Path="Unity.RenderPipelines.GPUDriven.Runtime.csproj" />
@@ -88,7 +92,11 @@
   <Project Path="Unity.Mathematics.Editor.csproj" />
   <Project Path="Unity.VisualScripting.SettingsProvider.Editor.csproj" />
   <Project Path="Unity.XR.Hands.Editor.csproj" />
+<<<<<<< HEAD
+>>>>>>> 57573fc5188089f9f86388f37dc1647652d851e8
+=======
 >>>>>>> 6c9f8b550254fbf576130dad45f72a449866a1a9
+>>>>>>> 8998944e5b374c2e66efcd6e319d1f40470acecd
   <Project Path="UniTask.TextMeshPro.csproj" />
   <Project Path="Assembly-CSharp-Editor.csproj" />
   <Project Path="Unity.InputSystem.TestFramework.csproj" />
@@ -139,5 +147,9 @@
   <Project Path="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.csproj" />
   <Project Path="Unity.RenderPipelines.Core.ShaderLibrary.csproj" />
   <Project Path="Unity.XR.OpenXR.Features.OculusQuestSupport.csproj" />
+<<<<<<< HEAD
+>>>>>>> 57573fc5188089f9f86388f37dc1647652d851e8
+=======
 >>>>>>> 6c9f8b550254fbf576130dad45f72a449866a1a9
+>>>>>>> 8998944e5b374c2e66efcd6e319d1f40470acecd
 </Solution>

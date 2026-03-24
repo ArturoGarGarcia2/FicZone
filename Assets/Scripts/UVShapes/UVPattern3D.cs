@@ -1,4 +1,6 @@
+using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class UVPattern3D : MonoBehaviour
 {
@@ -36,7 +38,7 @@ public class UVPattern3D : MonoBehaviour
             // comprobar rango
             if (distance > flashlight.range)
             {
-                // Debug.Log("Fuera de rango");
+                 //Debug.Log("Fuera de rango");
                 obj.SetActive(false);
                 continue;
             }
@@ -46,15 +48,16 @@ public class UVPattern3D : MonoBehaviour
 
             if (angle > flashlight.spotAngle * 0.5f)
             {
-                // Debug.Log("Fuera de cono");
+                 //Debug.Log("Fuera de cono");
                 obj.SetActive(false);
                 continue;
             }
 
             // comprobar si algo bloquea la luz
+            RaycastHit hit;
             if (Physics.Raycast(flashlight.transform.position, dirToObj.normalized, distance))
             {
-                // Debug.Log("Algo en medio");
+                //Debug.Log("Algo en medio");
                 obj.SetActive(false);
                 continue;
             }
@@ -65,14 +68,15 @@ public class UVPattern3D : MonoBehaviour
     }
     void UpdateShapesText()
     {
-        // Asume que shapeObjects.Length == number of symbols in sequence
-        string[] symbols = sequenceShapes.Split(' ');
+        string[] symbols = sequenceShapes.Split(new char[] { ' ' }, System.StringSplitOptions.RemoveEmptyEntries);
 
         for (int i = 0; i < symbols.Length && i < shapeObjects.Length; i++)
         {
-            var textMesh = shapeObjects[i].GetComponent<TMPro.TextMeshPro>();
+            var textMesh = shapeObjects[i].GetComponent<TextMeshPro>();
             if (textMesh != null)
                 textMesh.text = symbols[i];
+            else
+                Debug.LogWarning("TextMeshPro no encontrado en " + shapeObjects[i].name);
         }
     }
 }

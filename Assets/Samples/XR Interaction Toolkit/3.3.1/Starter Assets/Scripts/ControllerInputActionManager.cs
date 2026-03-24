@@ -76,11 +76,11 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
 
         [SerializeField]
         [Tooltip("If true, continuous movement will be enabled. If false, teleport will be enabled.")]
-        bool m_SmoothMotionEnabled;
+        public bool m_SmoothMotionEnabled;
 
         [SerializeField]
         [Tooltip("If true, continuous turn will be enabled. If false, snap turn will be enabled. Note: If smooth motion is enabled and enable strafe is enabled on the continuous move provider, turn will be overriden in favor of strafe.")]
-        bool m_SmoothTurnEnabled;
+        public bool m_SmoothTurnEnabled;
 
         [SerializeField]
         [Tooltip("With the Near-Far Interactor, if true, teleport will be enabled during near interaction. If false, teleport will be disabled during near interaction.")]
