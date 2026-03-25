@@ -115,7 +115,7 @@ MonoBehaviour:
       - m_Target: {fileID: 5159530991328175484}
         m_TargetAssemblyTypeName: GrabLayerFix, Assembly-CSharp
         m_MethodName: OnGrab
-        m_Mode: 1
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -130,7 +130,7 @@ MonoBehaviour:
       - m_Target: {fileID: 5159530991328175484}
         m_TargetAssemblyTypeName: GrabLayerFix, Assembly-CSharp
         m_MethodName: OnRelease
-        m_Mode: 1
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
