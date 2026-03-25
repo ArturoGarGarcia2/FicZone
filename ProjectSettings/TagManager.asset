@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Keyhole
   - Key
+  - Cinturon
+  - KeyMain
+  - KeyFather
   layers:
   - Default
   - TransparentFX
@@ -16,13 +19,8 @@ TagManager:
   - Cable
   - BulbInside
   - Hats
-<<<<<<< HEAD
-  - Walls
-  - 
-=======
   - Grabbed
   - Player
->>>>>>> 2d101f573fec6ea0e0514b4009561a5f3dbc081e
   - 
   - 
   - 

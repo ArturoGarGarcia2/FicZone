@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Keyhole : MonoBehaviour
+public class KeyholeFather : MonoBehaviour
 {
     public bool hasKeyInside;
 
@@ -11,7 +11,7 @@ public class Keyhole : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("KeyMain"))
+        if (other.CompareTag("KeyFather"))
         {
             hasKeyInside = true;
             Destroy(other.gameObject);
