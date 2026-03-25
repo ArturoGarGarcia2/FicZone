@@ -51,8 +51,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.38704944, y: 0.022382379, z: 0.582448}
-  m_Center: {x: 0.00000011920929, y: -0.116383016, z: 0.008721828}
+  m_Size: {x: 0.38704944, y: 0.036893368, z: 0.582448}
+  m_Center: {x: 0.00000011920929, y: -0.10912752, z: 0.008721828}
 --- !u!1 &1875182682343738032
 GameObject:
   m_ObjectHideFlags: 0
@@ -831,8 +831,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.38704944, y: 0.022382379, z: 0.582448}
-  m_Center: {x: 0.00000011920929, y: -0.116383016, z: 0.008721828}
+  m_Size: {x: 0.38704944, y: 0.043577254, z: 0.582448}
+  m_Center: {x: 0.00000011920929, y: -0.10578558, z: 0.008721828}
 --- !u!1 &8542621826033710390
 GameObject:
   m_ObjectHideFlags: 0
@@ -874,7 +874,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 270082881127532208, guid: b6363fb4d1176924da5a92a5383f569f, type: 3}
       propertyPath: m_Name
-      value: Bed Table Variant
+      value: Cajonera Piola
       objectReference: {fileID: 0}
     - target: {fileID: 270082881127532208, guid: b6363fb4d1176924da5a92a5383f569f, type: 3}
       propertyPath: m_IsActive
