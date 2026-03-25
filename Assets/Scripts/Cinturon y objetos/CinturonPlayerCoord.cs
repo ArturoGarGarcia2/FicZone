@@ -1,3 +1,4 @@
+using System;
 using Unity.Mathematics;
 using UnityEngine;
 
@@ -9,6 +10,8 @@ public class CinturonPlayerCoord : MonoBehaviour
     private ControlesExternos controles;
 
     public float desfaseRotacion, tamaño, desfasePosicion;
+
+    public int vecesGiradas;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -28,13 +31,30 @@ public class CinturonPlayerCoord : MonoBehaviour
 
         desfasePosicion = configManager.GetComponent<ConfigManager>().alturaCinturon;
 
-        this.gameObject.transform.position = jugador.transform.position + controles.posicionCabeza + new Vector3(0, desfasePosicion, 0);
-
         desfaseRotacion = configManager.GetComponent<ConfigManager>().rotacionCinturon;
 
         //this.gameObject.transform.rotation = quaternion.Euler(jugador.transform.rotation.x + controles.rotacionCabeza.x, jugador.transform.rotation.y + controles.rotacionCabeza.y + desfaseRotacion, jugador.transform.rotation.z + controles.rotacionCabeza.z);
 
-        this.gameObject.transform.SetLocalPositionAndRotation(jugador.gameObject.transform.position, quaternion.Euler (jugador.transform.rotation.x, jugador.transform.rotation.y + controles.rotacionCabeza.y + desfaseRotacion, jugador.transform.rotation.z));
+        if (configManager.GetComponent<ConfigManager>().rotacionASaltos)
+        {
+            if (controles.GirarDer)
+            {
+                vecesGiradas++;
+                desfaseRotacion += VicGenLib.Calc.Angles.NormalToEulerSingleAngle(45f * vecesGiradas);
+            }
+
+            if (controles.GirarIzq)
+            {
+                vecesGiradas--;
+                desfaseRotacion += VicGenLib.Calc.Angles.NormalToEulerSingleAngle(45f * vecesGiradas);
+            }
+        }
+        else
+        {
+            vecesGiradas = 0;
+        }
+        
+        this.gameObject.transform.SetLocalPositionAndRotation(jugador.transform.position + controles.posicionCabeza + new Vector3(0, -desfasePosicion -1.3f, 0), quaternion.Euler(jugador.transform.rotation.x, jugador.transform.rotation.y + jugador.transform.GetChild(0).GetChild(0).transform.rotation.y + controles.rotacionCabeza.y * (float)Math.PI - desfaseRotacion, jugador.transform.rotation.z));
 
         tamaño = configManager.GetComponent<ConfigManager>().tamañoCinturón;
 

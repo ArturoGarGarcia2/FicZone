@@ -883,6 +883,7 @@ GameObject:
   - component: {fileID: 1178791450436251564}
   - component: {fileID: 6232745470614056090}
   - component: {fileID: 6520291404937146767}
+  - component: {fileID: 9086948697116382657}
   - component: {fileID: 5826056641483426609}
   - component: {fileID: 5033801203051696737}
   m_Layer: 2
@@ -965,6 +966,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ActionAssets:
   - {fileID: -944628639613478452, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+--- !u!114 &9086948697116382657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1717954561962503725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ea3d4b777b6a454dae98a3b1977bdfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ControlesExternos
+  posicionCabeza: {x: 0, y: 0, z: 0}
+  rotacionCabeza: {x: 0, y: 0, z: 0, w: 0}
+  GirarDer: 0
+  GirarIzq: 0
+  GiroVect: {x: 0, y: 0}
+  TurnDelay: 0
 --- !u!114 &5826056641483426609
 MonoBehaviour:
   m_ObjectHideFlags: 0

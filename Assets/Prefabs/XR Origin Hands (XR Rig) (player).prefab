@@ -2017,6 +2017,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ControlesExternos
   posicionCabeza: {x: 0, y: 0, z: 0}
   rotacionCabeza: {x: 0, y: 0, z: 0, w: 0}
+  GirarDer: 0
+  GirarIzq: 0
+  GiroVect: {x: 0, y: 0}
+  TurnDelay: 0
 --- !u!4 &2201560458197557789 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1680501587, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}

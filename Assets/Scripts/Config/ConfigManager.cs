@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets;
 
 public class ConfigManager : MonoBehaviour
 {
@@ -9,7 +10,11 @@ public class ConfigManager : MonoBehaviour
     public Slider sliderAlturaPlayer, sliderAlturaCinturon, sliderRotacionCinturon,
     sliderVelGir, sliderTamañoCinturon;
 
-    public bool modoDaltonico;
+    public Button tipoRotacion;
+
+    public bool modoDaltonico, rotacionASaltos, rectificarGiro;
+
+    public ControllerInputActionManager controlRotacion;
 
     public float alturaPlayer, alturaCinturon, rotacionCinturon, velGiro, tamañoCinturón;
 
@@ -48,7 +53,29 @@ public class ConfigManager : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("Juego");
+        SceneManager.LoadScene("MapaCasa");
+    }
+
+    public void CambiarRotacion()
+    {
+        rotacionASaltos = !rotacionASaltos;
+
+        if (rotacionASaltos == true)
+        {
+            controlRotacion.m_SmoothTurnEnabled = false;
+
+            tipoRotacion.image.color = Color.black;
+            tipoRotacion.transform.GetChild(0).GetChild(0).GetComponent<Text>().color = Color.white;
+            tipoRotacion.transform.GetChild(0).GetChild(0).GetComponent<Text>().text = "Actual: \n\nPor saltos";
+        }
+        else
+        {
+            controlRotacion.m_SmoothTurnEnabled = true;
+
+            tipoRotacion.image.color = Color.white;
+            tipoRotacion.transform.GetChild(0).GetChild(0).GetComponent<Text>().color = Color.black;
+            tipoRotacion.transform.GetChild(0).GetChild(0).GetComponent<Text>().text = "Actual: \n\nContinua (puede provocar mareos)";
+        }
     }
 
     public void ModoDaltonico()
@@ -62,5 +89,10 @@ public class ConfigManager : MonoBehaviour
         {
             modoDaltonico = false;
         }
+    }
+
+    public void RectificarGiro()
+    {
+        rectificarGiro = !rectificarGiro;
     }
 }
