@@ -20,7 +20,7 @@ public class CableStretch : MonoBehaviour
         float distance = direction.magnitude;
         cableMesh.localScale = new Vector3(
             cableMesh.localScale.x,
-            distance / 2f,
+            distance / 3.5f,
             cableMesh.localScale.z
         );
     }

@@ -54,12 +54,14 @@ public class GuardarEnCinturon : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Cinturon"))
+        if (other.gameObject.CompareTag("Cinturon") && other.gameObject.GetComponent<Bolsillos>().espaciosDisponibles > 0)
         {
 
             bolsillo = other.gameObject;
 
             guardado = true;
+
+            bolsillo.GetComponent<Bolsillos>().espaciosDisponibles--;
         }
 
         if (this.gameObject.name == "Linterna")
@@ -70,9 +72,13 @@ public class GuardarEnCinturon : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("Cinturon"))
+        if (other.gameObject.CompareTag("Cinturon") && other.gameObject.GetComponent<Bolsillos>().espaciosDisponibles > 0)
         {
-           guardado = false; 
+            bolsillo = other.gameObject;
+
+            guardado = false; 
+
+            bolsillo.GetComponent<Bolsillos>().espaciosDisponibles++;
 
             if (this.gameObject.name == "Linterna")
             {

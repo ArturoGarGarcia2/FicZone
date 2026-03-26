@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 3
   tags:
   - Keyhole
+  - Key
+  - Cinturon
+  - KeyMain
+  - KeyFather
   layers:
   - Default
   - TransparentFX
@@ -14,9 +18,9 @@ TagManager:
   - UI
   - Cable
   - BulbInside
-  - 
-  - 
-  - 
+  - Hats
+  - Grabbed
+  - Player
   - 
   - 
   - 

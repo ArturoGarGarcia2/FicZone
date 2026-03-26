@@ -3,6 +3,8 @@ using UnityEngine;
 public class Keyhole : MonoBehaviour
 {
     public bool hasKeyInside;
+    public string requiredKeyID;
+
 
     void Start()
     {
@@ -11,7 +13,9 @@ public class Keyhole : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Key"))
+        KeyID key = other.GetComponent<KeyID>();
+
+        if (key != null && key.keyID == requiredKeyID)
         {
             hasKeyInside = true;
             Destroy(other.gameObject);

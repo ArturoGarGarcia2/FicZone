@@ -21,9 +21,9 @@ public class CodeManager : MonoBehaviour
             res += dial.currentNumber;
         }
 
-        if(res == ConnectionManager.Instance.correctCode)
+        /*if(res == ConnectionManager.Instance.correctCode)
             txt.text = "Piola";
         else
-            txt.text = "Piolan't";
+            txt.text = "Piolan't";*/
     }
 }
