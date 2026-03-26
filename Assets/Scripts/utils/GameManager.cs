@@ -38,7 +38,8 @@ public class GameManager : MonoBehaviour
         if (index < 0 || index >= puzzlesCompleted.Length) return;
 
         puzzlesCompleted[index] = true;
-        rewards[index].SetActive(true);
+        if (rewards[index] != null)
+            rewards[index].SetActive(true);;
         
         if(puzzlesCompleted[0] && puzzlesCompleted[1] && puzzlesCompleted[2] && puzzlesCompleted[3] && puzzlesCompleted[4])
         {
