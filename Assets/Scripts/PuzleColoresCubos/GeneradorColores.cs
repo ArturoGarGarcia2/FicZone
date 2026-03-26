@@ -34,7 +34,6 @@ public class GeneradorColores : MonoBehaviour
                 ConfigurarCubo(cubosHojaB[i], colorAleatorio, true);
             }
             cubosPuzzle.Add(colorAleatorio);
-            Debug.Log("Posicion " + i + " cubo color: " + colorAleatorio);
         }
     }
     void ConfigurarCubo(GameObject cubo, Color Col, bool activo)

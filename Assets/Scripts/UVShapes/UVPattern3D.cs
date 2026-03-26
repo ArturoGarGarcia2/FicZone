@@ -23,7 +23,7 @@ public class UVPattern3D : MonoBehaviour
 
     void Start()
     {
-
+            
     }
 
     void Update()
