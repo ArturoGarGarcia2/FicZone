@@ -6288,11 +6288,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d8da085ced0b0742b6f78a38821db27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UVPattern3D
-<<<<<<< HEAD
-  flashlight: {fileID: 1904611616}
-=======
   flashlight: {fileID: 0}
->>>>>>> 9b12a3c10dfb41dd3c595c2f059691f41e70fc33
   shapeObjects:
   - {fileID: 1298233835}
   - {fileID: 1536893061}
