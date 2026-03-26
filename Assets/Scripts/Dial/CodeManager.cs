@@ -5,7 +5,6 @@ using System.Text;
 public class CodeManager : MonoBehaviour
 {
     public DialNumber[] dials;
-    public TMP_Text txt;
 
     void Start()
     {
@@ -21,9 +20,7 @@ public class CodeManager : MonoBehaviour
             res += dial.currentNumber;
         }
 
-        /*if(res == ConnectionManager.Instance.correctCode)
-            txt.text = "Piola";
-        else
-            txt.text = "Piolan't";*/
+        if(res == ConnectionManager.Instance.correctCode)
+            GameManager.Instance.CompletePuzzle(0);
     }
 }
