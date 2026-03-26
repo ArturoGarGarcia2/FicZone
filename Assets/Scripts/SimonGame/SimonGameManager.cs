@@ -130,6 +130,7 @@ public class SimonGameManager : MonoBehaviour
             {
                 resultText.text = "¡Ganaste!";
                 StartCoroutine(Ganar());
+                GameManager.Instance.CompletePuzzle(1);
                 return;
             }
             resultText.text = "¡Correcto!";

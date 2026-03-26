@@ -184,5 +184,6 @@ public class MannequinManager : MonoBehaviour
             }
 
         debugText.text = "Está perfe";
+        GameManager.Instance.CompletePuzzle(4);
     }
 }

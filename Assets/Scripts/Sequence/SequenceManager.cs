@@ -141,6 +141,8 @@ public class SequenceManager : MonoBehaviour
         inputLocked = true;
         puzzleSolved = true;
 
+        GameManager.Instance.CompletePuzzle(2);
+
         for (int j = 0; j < 2; j++)
         {
             SetAllColors(Colors.GREEN);

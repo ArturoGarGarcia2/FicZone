@@ -40,6 +40,7 @@ public class puzzleCuboColoresManager : MonoBehaviour
     {   
         Debug.Log("puzzle resuelto");
         puzzleCuboColores = true;
+         GameManager.Instance.CompletePuzzle(3);
         for (int i = 0; i < socket.Length; i++)
         {
 
