@@ -7,11 +7,10 @@ public class SequenceManager : MonoBehaviour
 {
     public static SequenceManager Instance;
 
-    public GameObject[] lightbulbs;
-    public GameObject[] buttons;
+    public GameObject[] lightbulbs; 
+    public GameObject[] buttons;    
 
-    //public GameObject[] daltonicTexts;
-    public bool daltonicMode = false;   
+    public bool daltonicMode = false;
 
     public bool[] lightsOn = new bool[5];
 
@@ -50,22 +49,19 @@ public class SequenceManager : MonoBehaviour
 
     void Start()
     {
-        int n = Mathf.Min(buttons.Length, lightbulbs.Length, colors.Length);
+        int n = Mathf.Min(lightbulbs.Length, buttons.Length, colors.Length);
 
-        F.ShuffleArray(lightbulbs);
-        F.ShuffleArray(buttons);
+        Colors[] shuffledColors = (Colors[])colors.Clone();
+        F.ShuffleArray(shuffledColors);
 
         for (int i = 0; i < n; i++)
         {
-            int index = i;
+            lightbulbs[i].GetComponent<LightbulbColor>().color = shuffledColors[i];
+            originalColors[i] = shuffledColors[i];
+        }     
 
-            lightbulbs[index].GetComponent<LightbulbColor>().color = colors[index];
-            originalColors[index] = colors[index];
-
-            buttons[index]
-                .GetComponent<XRPushButton>()
-                .onPress.AddListener(() => Press(index));
-        }
+        for (int i = 0; i < n; i++)
+            playerSequence[i] = default;      
 
         string sequenceShapes = "";
         foreach (Colors c in sequence)
@@ -81,7 +77,7 @@ public class SequenceManager : MonoBehaviour
         for (int i = 0; i < lightbulbs.Length; i++)
         {
             lightbulbs[i].transform.GetChild(1).gameObject.SetActive(lightsOn[i]);
-            
+
             if(daltonicMode && lightsOn[i])
             {
                 GameObject text = lightbulbs[i].transform.GetChild(2).gameObject;
@@ -94,14 +90,14 @@ public class SequenceManager : MonoBehaviour
                 if (tmp != null && ColorShapes.shapes.ContainsKey(color))
                     tmp.text = ColorShapes.shapes[color];
             }
-             else
+            else
             {
                 lightbulbs[i].transform.GetChild(2).gameObject.SetActive(false);
             }
         }
     }
 
-    void Press(int i)
+    public void Press(int i)
     {
         if (inputLocked || puzzleSolved)
             return;
@@ -111,9 +107,7 @@ public class SequenceManager : MonoBehaviour
 
         lightsOn[i] = true;
 
-        playerSequence[sequenceStep] =
-            lightbulbs[i].GetComponent<LightbulbColor>().color;
-
+        playerSequence[sequenceStep] = lightbulbs[i].GetComponent<LightbulbColor>().color;
         sequenceStep++;
 
         if (sequenceStep == sequence.Length)
@@ -146,6 +140,7 @@ public class SequenceManager : MonoBehaviour
         for (int j = 0; j < 2; j++)
         {
             SetAllColors(Colors.GREEN);
+            SetLights(true);
             yield return new WaitForSeconds(0.3f);
 
             SetLights(false);
@@ -166,6 +161,7 @@ public class SequenceManager : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
 
         ResetPuzzle();
+        RestoreOriginalColors();
 
         inputLocked = false;
     }
@@ -176,7 +172,6 @@ public class SequenceManager : MonoBehaviour
         playerSequence = new Colors[5];
         sequenceStep = 0;
 
-        RestoreOriginalColors();
     }
 
     void SetLights(bool state)
@@ -196,4 +191,5 @@ public class SequenceManager : MonoBehaviour
         for (int i = 0; i < lightbulbs.Length; i++)
             lightbulbs[i].GetComponent<LightbulbColor>().color = originalColors[i];
     }
+
 }
