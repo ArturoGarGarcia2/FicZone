@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System.Text.RegularExpressions;
 
 public class UVText : MonoBehaviour
 {
@@ -73,7 +74,12 @@ public class UVText : MonoBehaviour
         if (lookTimer >= 0.5f && !hasSentClue)
         {
             hasSentClue = true;
-            TVClues.tvclues.UpdateClues(text.text);
+            string textoLimpio = text.text
+            .Replace("\n", " ")
+            .Replace("\r", " ")
+            .Replace("\t", " ");
+            textoLimpio = Regex.Replace(text.text, @"\s+", " ").Trim();
+            TVClues.tvclues.UpdateClues(textoLimpio);
         }
         
     }
