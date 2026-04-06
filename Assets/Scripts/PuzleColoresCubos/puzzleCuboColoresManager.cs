@@ -23,13 +23,11 @@ public class puzzleCuboColoresManager : MonoBehaviour
             IXRSelectInteractable objetoCogido = socket[i].GetOldestInteractableSelected();
             if (objetoCogido == null)
             {
-                Debug.Log("no hay cubo en la posicion " + i);
                 return;
             }
             MeshRenderer colorCubo = objetoCogido.transform.GetComponent<MeshRenderer>();
             if(colorCubo.material.color != secuenciaCorrecta[i])
             {
-                Debug.Log("fallo en la posicion "+i + "color cubo: " + colorCubo.material.color + " color correcto: " + secuenciaCorrecta[i]);
                 return;
             }
         }
@@ -38,8 +36,8 @@ public class puzzleCuboColoresManager : MonoBehaviour
     }
     private void PuzzleResuelto()
     {   
-        Debug.Log("puzzle resuelto");
         puzzleCuboColores = true;
+         GameManager.Instance.CompletePuzzle(3);
         for (int i = 0; i < socket.Length; i++)
         {
 
