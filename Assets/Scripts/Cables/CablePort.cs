@@ -6,7 +6,14 @@ public class CablePort : MonoBehaviour
     public bool correct;
     public Colors color;
 
+    public Light bulbLight;
+
     public CableHead currentCable;
+
+    void Start()
+    {
+        bulbLight.enabled = false;
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -15,6 +22,7 @@ public class CablePort : MonoBehaviour
 
         conected = true;
         currentCable = cable;
+
 
         if (cable.color == color)
             correct = true;
@@ -32,4 +40,5 @@ public class CablePort : MonoBehaviour
             currentCable = null;
         }
     }
+
 }

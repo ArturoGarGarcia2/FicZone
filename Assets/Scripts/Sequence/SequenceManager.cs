@@ -63,10 +63,7 @@ public class SequenceManager : MonoBehaviour
         for (int i = 0; i < n; i++)
             playerSequence[i] = default;      
 
-        for (int i = 0; i < n; i++)
-        {
-            Debug.Log(sequence[i]);
-        }
+        
 
         string sequenceShapes = "";
         foreach (Colors c in sequence)
