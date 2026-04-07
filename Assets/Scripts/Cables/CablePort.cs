@@ -7,6 +7,8 @@ public class CablePort : MonoBehaviour
     public Colors color;
     public Light light;
 
+    public Light bulbLight;
+
     public CableHead currentCable;
 
     void Start()
@@ -21,6 +23,7 @@ public class CablePort : MonoBehaviour
 
         conected = true;
         currentCable = cable;
+
 
         if (cable.color == color)
         {
@@ -42,4 +45,5 @@ public class CablePort : MonoBehaviour
             currentCable = null;
         }
     }
+
 }
