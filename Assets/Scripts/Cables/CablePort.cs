@@ -7,8 +7,6 @@ public class CablePort : MonoBehaviour
     public Colors color;
     public Light light;
 
-    public Light bulbLight;
-
     public CableHead currentCable;
 
     void Start()

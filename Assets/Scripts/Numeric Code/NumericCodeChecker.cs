@@ -33,5 +33,6 @@ public class NumericCodeChecker : MonoBehaviour
         }
 
         puzzleSolved = true;
+        GameManager.Instance.CompletePuzzle(0);
     }
 }
