@@ -26,6 +26,7 @@ public class ConnectionManager : MonoBehaviour
 
     void Update()
     {
+
         if (!AllConnected())
         {
             txt.text = "";
@@ -33,12 +34,9 @@ public class ConnectionManager : MonoBehaviour
         }
 
         bool allCorrect = AllCorrect();
-
         string code = GenerateCode(allCorrect);
 
-        txt.text = allCorrect
-            ? "Código: " + code
-            : "Código: " + code;
+        txt.text = "Código: " + code;
     }
 
     bool AllConnected()

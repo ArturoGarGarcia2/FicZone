@@ -113,6 +113,8 @@ public class SimonGameManager : MonoBehaviour
     {
         playerInput.Add(buttonIndex);
 
+        StartCoroutine(FlashLight(buttonIndex));
+
         if (sequence[playerInput.Count - 1] != buttonIndex)
         {
             // Error: el jugador se equivocó
@@ -187,5 +189,21 @@ public class SimonGameManager : MonoBehaviour
         }
 
         yield return new WaitForSeconds(1f);
+    }
+
+
+    IEnumerator FlashLight(int index)
+    {
+        if (lights[index] != null)
+        {
+            lights[index].enabled = true;
+            lights[index].color = GetUnityColor(colors[index]);
+            lights[index].intensity = 5f;
+
+            yield return new WaitForSeconds(0.3f); 
+
+            lights[index].intensity = 0f;
+            lights[index].enabled = false;
+        }
     }
 }
