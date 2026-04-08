@@ -10,6 +10,9 @@ TagManager:
   - KeyMain
   - KeyFather
   - basketball
+  - hojasCubo
+  - hat
+  - linterna
   layers:
   - Default
   - TransparentFX
