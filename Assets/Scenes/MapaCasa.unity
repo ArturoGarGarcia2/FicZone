@@ -7015,6 +7015,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UVText
   flashlight: {fileID: 1904611616}
   text: {fileID: 772517664}
+  pista: {fileID: 89340505}
 --- !u!1 &250343776
 GameObject:
   m_ObjectHideFlags: 0
@@ -10895,6 +10896,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UVText
   flashlight: {fileID: 1904611616}
   text: {fileID: 619792650}
+  pista: {fileID: 89340505}
 --- !u!1001 &382403059
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14063,6 +14065,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UVText
   flashlight: {fileID: 1904611616}
   text: {fileID: 370312853}
+  pista: {fileID: 89340505}
 --- !u!1001 &468994839
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15822,6 +15825,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UVText
   flashlight: {fileID: 1904611616}
   text: {fileID: 2136094407}
+  pista: {fileID: 89340505}
 --- !u!1001 &547021472
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29521,6 +29525,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UVText
   flashlight: {fileID: 1904611616}
   text: {fileID: 1034425091}
+  pista: {fileID: 89340505}
 --- !u!1 &951159936
 GameObject:
   m_ObjectHideFlags: 0
@@ -40538,6 +40543,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UVText
   flashlight: {fileID: 1904611616}
   text: {fileID: 1178247497}
+  pista: {fileID: 89340505}
 --- !u!1001 &1311891456
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -42738,6 +42744,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UVText
   flashlight: {fileID: 1904611616}
   text: {fileID: 267421981}
+  pista: {fileID: 89340505}
 --- !u!1001 &1385565670
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -50037,6 +50044,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UVText
   flashlight: {fileID: 1904611616}
   text: {fileID: 585205241}
+  pista: {fileID: 89340505}
 --- !u!1001 &1603161384
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -61891,6 +61899,7 @@ MonoBehaviour:
   - {fileID: 2063328871}
   - {fileID: 1227570827}
   puzzleCuboColores: 0
+  pista: {fileID: 89340505}
 --- !u!4 &2014614773
 Transform:
   m_ObjectHideFlags: 0
@@ -65585,6 +65594,7 @@ MonoBehaviour:
   - {fileID: 61361339}
   daltonicMode: 1
   lightsOn: 0000000000
+  pista: {fileID: 89340505}
   sequence: 0100000002000000030000000400000005000000
 --- !u!4 &2121615326
 Transform:
