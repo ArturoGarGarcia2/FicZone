@@ -12636,8 +12636,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NumericCodeChecker
   buttons:
   - {fileID: 551977913}
-  - {fileID: 1330630805}
   - {fileID: 331529597}
+  - {fileID: 1330630805}
   - {fileID: 1954670041}
   puzzleSolved: 0
 --- !u!4 &431078394
@@ -12654,8 +12654,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 551977914}
-  - {fileID: 1330630806}
   - {fileID: 331529598}
+  - {fileID: 1330630806}
   - {fileID: 1954670042}
   m_Father: {fileID: 1587142439}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -15898,7 +15898,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7442147707349198533, guid: 2b29a3a863f6ed241a772a218ed4535a, type: 3}
       propertyPath: m_Name
-      value: Numeric Button 2
+      value: Numeric Button 3
       objectReference: {fileID: 0}
     - target: {fileID: 8221453048982102475, guid: 2b29a3a863f6ed241a772a218ed4535a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -49851,7 +49851,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7442147707349198533, guid: 2b29a3a863f6ed241a772a218ed4535a, type: 3}
       propertyPath: m_Name
-      value: Numeric Button 3
+      value: Numeric Button 2
       objectReference: {fileID: 0}
     - target: {fileID: 8221453048982102475, guid: 2b29a3a863f6ed241a772a218ed4535a, type: 3}
       propertyPath: m_LocalPosition.x
