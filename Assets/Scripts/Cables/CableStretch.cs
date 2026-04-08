@@ -6,22 +6,35 @@ public class CableStretch : MonoBehaviour
     public Transform endPoint;
     public Transform cableMesh;
 
+    [Tooltip("La longitud real del modelo 3D original en el eje Y (antes de escalarlo)")]
+    public float meshLength = 1.0f; 
+
+    private Vector3 originalScale;
+
+    void Start()
+    {
+        if (cableMesh != null)
+            originalScale = cableMesh.localScale;
+    }
+
     void Update()
     {
+        if (startPoint == null || endPoint == null || cableMesh == null) return;
+
         Vector3 direction = endPoint.position - startPoint.position;
-
-        // Posicionar en el punto medio
-        cableMesh.position = startPoint.position + direction / 2f;
-
-        // Rotar hacia el extremo
-        cableMesh.up = direction;
-
-        // Escalar en Y según distancia
         float distance = direction.magnitude;
+
+        cableMesh.position = startPoint.position + (direction / 2.0f);
+
+        if (direction != Vector3.zero)
+            cableMesh.up = direction;
+
+        float scaleY = distance / meshLength;
+        
         cableMesh.localScale = new Vector3(
-            cableMesh.localScale.x,
-            distance / 3.5f,
-            cableMesh.localScale.z
+            originalScale.x,
+            scaleY,
+            originalScale.z
         );
     }
 }
