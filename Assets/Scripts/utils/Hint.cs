@@ -8,6 +8,9 @@ public class Hint : MonoBehaviour
 {
     public TextMeshProUGUI textoUI;
     private XRGrabInteractable grabInteractable;
+
+    private int sombrerosAgarrados = 0;
+    private int hojasAgarradas = 0;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -23,20 +26,21 @@ public class Hint : MonoBehaviour
     {
         if( args.interactableObject.transform.tag == "Key")
         {
-            textoUI.text = "¡Objeto agarrado! llave " + args.interactableObject.transform.name;
+            textoUI.text = "Servira para las puertas cerradas";
         }
-        if (args.interactableObject.transform.name == "Llave father")
+        if (args.interactableObject.transform.tag == "hat")
         {
-            textoUI.text = "¡Objeto agarrado! llave dormitorio";
+            sombrerosAgarrados++;
+            textoUI.text = "Se podran poner en los maniquis? " + sombrerosAgarrados + "/4";
         }
-        if (args.interactableObject.transform.name == "Llave main")
+        if (args.interactableObject.transform.tag == "linterna")
         {
-            textoUI.text = "¡Objeto agarrado! llave salida";
+            textoUI.text = "Servira para estos dibujos extraños???? ";
         }
-        if (args.interactableObject.transform.name == "Llave living")
+        if (args.interactableObject.transform.tag == "hojasCubo")
         {
-            textoUI.text = "¡Objeto agarrado!";
+            hojasAgarradas++;
+            textoUI.text = "Sera parte de un codigo " + hojasAgarradas + "/2";
         }
-
     }
 }
