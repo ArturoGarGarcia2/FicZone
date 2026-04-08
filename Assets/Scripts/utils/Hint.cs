@@ -64,12 +64,12 @@ public class Hint : MonoBehaviour
         }
         if (args.interactableObject.transform.tag == "hojasCubo")
         {
-            if (args.interactableObject.transform.name == "papelDer (1)" && !hojaDer)
+            if (args.interactableObject.transform.name == "papelDer" && !hojaDer)
             {
                 hojaDer = true;
                 hojasAgarradas++;
             }
-            if (args.interactableObject.transform.name == "papelIzq (1)" && !hojaIzq)
+            if (args.interactableObject.transform.name == "papelIzq" && !hojaIzq)
             {
                 hojaIzq = true;
                 hojasAgarradas++;
