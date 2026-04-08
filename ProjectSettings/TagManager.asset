@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 3
   tags:
   - Keyhole
+  - Key
+  - basketball
+  - hat
+  - linterna
+  - hojasCubo
   layers:
   - Default
   - TransparentFX
