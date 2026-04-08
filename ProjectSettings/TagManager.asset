@@ -3,23 +3,24 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - Keyhole
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ignore Reflections
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Cable
+  - BulbInside
+  - Hats
+  - Grabbed
+  - Player
+  - Wall1Floor
+  - Wall2Floor
+  - WallText1Floor
+  - WallText2Floor
   - 
   - 
   - 
