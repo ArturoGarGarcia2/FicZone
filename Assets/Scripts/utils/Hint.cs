@@ -10,7 +10,13 @@ public class Hint : MonoBehaviour
     private XRGrabInteractable grabInteractable;
 
     private int sombrerosAgarrados = 0;
+    bool sombreroPadre = false;
+    private bool sombreroMadre = false;
+    private bool sombreroHija = false;
+    bool sombreroHijo = false;
     private int hojasAgarradas = 0;
+    bool hojaDer = false;
+    bool hojaIzq = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -30,7 +36,26 @@ public class Hint : MonoBehaviour
         }
         if (args.interactableObject.transform.tag == "hat")
         {
-            sombrerosAgarrados++;
+            if (args.interactableObject.transform.name == "daughters_hat" && !sombreroHija)
+            {
+                sombreroHija = true;
+                sombrerosAgarrados++;
+            }
+            if (args.interactableObject.transform.name == "sons_hat" && !sombreroHijo)
+            {
+                sombreroHijo = true;
+                sombrerosAgarrados++;
+            }
+            if (args.interactableObject.transform.name == "fathers_hat" && !sombreroPadre)
+            {
+                sombreroPadre = true;
+                sombrerosAgarrados++;
+            }
+            if (args.interactableObject.transform.name == "mothers_hat" && !sombreroMadre)
+            {
+                sombreroMadre = true;
+                sombrerosAgarrados++;
+            }
             textoUI.text = "Se podran poner en los maniquis? " + sombrerosAgarrados + "/4";
         }
         if (args.interactableObject.transform.tag == "linterna")
@@ -39,8 +64,21 @@ public class Hint : MonoBehaviour
         }
         if (args.interactableObject.transform.tag == "hojasCubo")
         {
-            hojasAgarradas++;
+            if (args.interactableObject.transform.name == "papelDer (1)" && !hojaDer)
+            {
+                hojaDer = true;
+                hojasAgarradas++;
+            }
+            if (args.interactableObject.transform.name == "papelIzq (1)" && !hojaIzq)
+            {
+                hojaIzq = true;
+                hojasAgarradas++;
+            }
             textoUI.text = "Sera parte de un codigo " + hojasAgarradas + "/2";
+        }
+        if (args.interactableObject.transform.tag == "pomo")
+        {
+            textoUI.text = "Se necesita una llave";
         }
     }
 }
