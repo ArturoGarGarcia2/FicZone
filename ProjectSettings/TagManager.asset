@@ -14,7 +14,11 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
+<<<<<<< HEAD
   - Ignore Reflections
+=======
+  - Hide Reflections
+>>>>>>> 73a4cc5c9e65cd7a914a4ce28bf76c5f01daaa96
   - Water
   - UI
   - Cable
