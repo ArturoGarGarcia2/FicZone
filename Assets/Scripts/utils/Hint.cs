@@ -44,7 +44,7 @@ public class Hint : MonoBehaviour
         if( args.interactableObject.transform.tag == "Key" && !llave)
         {
             llave = true;
-            textoUI.text = "¿Servira para las puertas cerradas?";
+            textoUI.text = "ï¿½Servira para las puertas cerradas?";
         }
         if (args.interactableObject.transform.tag == "hat")
         {
@@ -52,28 +52,31 @@ public class Hint : MonoBehaviour
             {
                 sombreroHija = true;
                 sombrerosAgarrados++;
+                textoUI.text = "ï¿½Se podran poner en los maniquis? " + sombrerosAgarrados + "/4";
             }
             if (args.interactableObject.transform.name == "sons_hat" && !sombreroHijo)
             {
                 sombreroHijo = true;
                 sombrerosAgarrados++;
+                textoUI.text = "ï¿½Se podran poner en los maniquis? " + sombrerosAgarrados + "/4";
             }
             if (args.interactableObject.transform.name == "fathers_hat" && !sombreroPadre)
             {
                 sombreroPadre = true;
                 sombrerosAgarrados++;
+                textoUI.text = "ï¿½Se podran poner en los maniquis? " + sombrerosAgarrados + "/4";
             }
             if (args.interactableObject.transform.name == "mothers_hat" && !sombreroMadre)
             {
                 sombreroMadre = true;
                 sombrerosAgarrados++;
+                textoUI.text = "ï¿½Se podran poner en los maniquis? " + sombrerosAgarrados + "/4";
             }
-            textoUI.text = "¿Se podran poner en los maniquis? " + sombrerosAgarrados + "/4";
         }
         if (args.interactableObject.transform.tag == "linterna" && !linternaAgarrada)
         {
             linternaAgarrada = true;
-            textoUI.text = "¿Servira para estos dibujos extraños? ";
+            textoUI.text = "ï¿½Servira para estos dibujos extraï¿½os? ";
         }
         if (args.interactableObject.transform.tag == "hojasCubo")
         {
@@ -87,7 +90,7 @@ public class Hint : MonoBehaviour
                 hojaIzq = true;
                 hojasAgarradas++;
             }
-            textoUI.text = "¿Sera parte de un codigo? " + hojasAgarradas + "/2";
+            textoUI.text = "ï¿½Sera parte de un codigo? " + hojasAgarradas + "/2";
         }
         if (args.interactableObject.transform.tag == "pomo")
         {
@@ -96,17 +99,17 @@ public class Hint : MonoBehaviour
                 if (args.interactableObject.transform.parent.parent.parent.name == "LockedDoorMain" && !puertaMain)
                 {
                     puertaMain = true;
-                    textoUI.text = "¿Se necesitara una llave?";
+                    textoUI.text = "ï¿½Se necesitara una llave?";
                 }
                 if (args.interactableObject.transform.parent.parent.parent.name == "LockedDoorParentsRoom" && !puertaParentsRoom)
                 {
                     puertaParentsRoom = true;
-                    textoUI.text = "¿Se necesitara una llave?";
+                    textoUI.text = "ï¿½Se necesitara una llave?";
                 }
                 if (args.interactableObject.transform.parent.parent.parent.name == "LockedDoorSalon" && !puertaSalon)
                 {
                     puertaSalon = true;
-                    textoUI.text = "¿Se necesitara una llave?";
+                    textoUI.text = "ï¿½Se necesitara una llave?";
                 }
             }
         }
@@ -129,7 +132,7 @@ public class Hint : MonoBehaviour
         }
         if (name == "codigo")
         {
-            textoUI.text = "¿Que es lo que hay en la mesa?";
+            textoUI.text = "ï¿½Que es lo que hay en la mesa?";
         }
         if (name == "simon")
         {
