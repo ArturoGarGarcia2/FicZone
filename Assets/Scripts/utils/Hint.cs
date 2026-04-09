@@ -1,28 +1,37 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.XR.Content.Interaction;
 using UnityEngine.XR.Interaction.Toolkit;
-using UnityEngine.XR.Interaction.Toolkit.Interactables;
-using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
 public class Hint : MonoBehaviour
 {
     public TextMeshProUGUI textoUI;
-    private XRGrabInteractable grabInteractable;
-
+    // texto pared
     private int pared = 0;
+    // puzzle maniquis
     private int sombrerosAgarrados = 0;
-    bool sombreroPadre = false;
+    private bool sombreroPadre = false;
     private bool sombreroMadre = false;
     private bool sombreroHija = false;
-    bool sombreroHijo = false;
+    private bool sombreroHijo = false;
+    //puzzle cubos
     private int hojasAgarradas = 0;
-    bool hojaDer = false;
-    bool hojaIzq = false;
+    private bool hojaDer = false;
+    private bool hojaIzq = false;
+    // linterna
+    private bool linternaAgarrada = false;
+    // puertas
+    private bool puertaMain = false;
+    private bool puertaParentsRoom = false;
+    private bool puertaSalon = false;
+    // llave
+    private bool llave = false;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        textoUI.text = "";
     }
 
     // Update is called once per frame
@@ -32,8 +41,9 @@ public class Hint : MonoBehaviour
     }
     public void OnGrab(SelectEnterEventArgs args)
     {
-        if( args.interactableObject.transform.tag == "Key")
+        if( args.interactableObject.transform.tag == "Key" && !llave)
         {
+            llave = true;
             textoUI.text = "¿Servira para las puertas cerradas?";
         }
         if (args.interactableObject.transform.tag == "hat")
@@ -60,8 +70,9 @@ public class Hint : MonoBehaviour
             }
             textoUI.text = "¿Se podran poner en los maniquis? " + sombrerosAgarrados + "/4";
         }
-        if (args.interactableObject.transform.tag == "linterna")
+        if (args.interactableObject.transform.tag == "linterna" && !linternaAgarrada)
         {
+            linternaAgarrada = true;
             textoUI.text = "¿Servira para estos dibujos extraños? ";
         }
         if (args.interactableObject.transform.tag == "hojasCubo")
@@ -80,7 +91,24 @@ public class Hint : MonoBehaviour
         }
         if (args.interactableObject.transform.tag == "pomo")
         {
-            textoUI.text = "¿Se necesitara una llave?";
+            if (!args.interactableObject.transform.GetComponent<XRKnob>().keyhole.hasKeyInside)
+            {
+                if (args.interactableObject.transform.parent.parent.parent.name == "LockedDoorMain" && !puertaMain)
+                {
+                    puertaMain = true;
+                    textoUI.text = "¿Se necesitara una llave?";
+                }
+                if (args.interactableObject.transform.parent.parent.parent.name == "LockedDoorParentsRoom" && !puertaParentsRoom)
+                {
+                    puertaParentsRoom = true;
+                    textoUI.text = "¿Se necesitara una llave?";
+                }
+                if (args.interactableObject.transform.parent.parent.parent.name == "LockedDoorSalon" && !puertaSalon)
+                {
+                    puertaSalon = true;
+                    textoUI.text = "¿Se necesitara una llave?";
+                }
+            }
         }
         StopCoroutine("delay");
         StartCoroutine(delay());
@@ -154,7 +182,7 @@ public class Hint : MonoBehaviour
     }
     IEnumerator delay()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(3);
         textoUI.text = "";
     }
 }

@@ -1811,15 +1811,9 @@ MonoBehaviour:
       m_Calls: []
   m_FirstSelectEntered:
     m_PersistentCalls:
-      m_Calls: []
-  m_LastSelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_SelectEntered:
-    m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 55079216}
-        m_TargetAssemblyTypeName: GrabLayerFix, Assembly-CSharp
+      - m_Target: {fileID: 89340505}
+        m_TargetAssemblyTypeName: Hint, Assembly-CSharp
         m_MethodName: OnGrab
         m_Mode: 0
         m_Arguments:
@@ -1830,8 +1824,14 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 89340505}
-        m_TargetAssemblyTypeName: Hint, Assembly-CSharp
+  m_LastSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectEntered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 55079216}
+        m_TargetAssemblyTypeName: GrabLayerFix, Assembly-CSharp
         m_MethodName: OnGrab
         m_Mode: 0
         m_Arguments:
@@ -3318,7 +3318,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 89340503}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.56}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -8729,6 +8729,7 @@ MonoBehaviour:
   debugText: {fileID: 1737516572}
   rotationSmooth: 5
   pista: {fileID: 89340505}
+  pistaDada: 0
 --- !u!1 &256265008
 GameObject:
   m_ObjectHideFlags: 0
@@ -15194,6 +15195,7 @@ MonoBehaviour:
   - {fileID: 1954670041}
   puzzleSolved: 0
   pista: {fileID: 89340505}
+  pistaDada: 0
 --- !u!4 &431078394
 Transform:
   m_ObjectHideFlags: 0
@@ -24856,7 +24858,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 741330169843196870, guid: 4993333f36c3bcb47b0dade290bab29d, type: 3}
       propertyPath: m_Name
-      value: LockedDoor
+      value: LockedDoorSalon
       objectReference: {fileID: 0}
     - target: {fileID: 741330169843196870, guid: 4993333f36c3bcb47b0dade290bab29d, type: 3}
       propertyPath: m_Layer
@@ -34641,15 +34643,9 @@ MonoBehaviour:
       m_Calls: []
   m_FirstSelectEntered:
     m_PersistentCalls:
-      m_Calls: []
-  m_LastSelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_SelectEntered:
-    m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 937724198}
-        m_TargetAssemblyTypeName: GrabLayerFix, Assembly-CSharp
+      - m_Target: {fileID: 89340505}
+        m_TargetAssemblyTypeName: Hint, Assembly-CSharp
         m_MethodName: OnGrab
         m_Mode: 0
         m_Arguments:
@@ -34660,8 +34656,14 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 89340505}
-        m_TargetAssemblyTypeName: Hint, Assembly-CSharp
+  m_LastSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectEntered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 937724198}
+        m_TargetAssemblyTypeName: GrabLayerFix, Assembly-CSharp
         m_MethodName: OnGrab
         m_Mode: 0
         m_Arguments:
@@ -36445,7 +36447,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 994177510}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 101.5}
+  m_LocalPosition: {x: 0, y: 0, z: 75.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -36453,7 +36455,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 3.8, y: 18.5}
+  m_AnchoredPosition: {x: -11, y: 2.4}
   m_SizeDelta: {x: 150, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &994177512
@@ -36476,7 +36478,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: 0/8
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 58b0792d36a9ee14b8fc1f035eff94d0, type: 2}
   m_sharedMaterial: {fileID: 8625241079363358017, guid: 58b0792d36a9ee14b8fc1f035eff94d0, type: 2}
@@ -36503,10 +36505,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 5
+  m_fontSizeBase: 5
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -36542,7 +36544,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 1.8413315, w: 0}
+  m_margin: {x: 69.98143, y: 12.461731, z: 46.808792, w: 13.100304}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -43745,7 +43747,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 741330169843196870, guid: 4993333f36c3bcb47b0dade290bab29d, type: 3}
       propertyPath: m_Name
-      value: LockedDoor
+      value: LockedDoorMain
       objectReference: {fileID: 0}
     - target: {fileID: 741330169843196870, guid: 4993333f36c3bcb47b0dade290bab29d, type: 3}
       propertyPath: m_Layer
@@ -50916,7 +50918,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UVText
   flashlight: {fileID: 1904611616}
   text: {fileID: 267421981}
-  pista: {fileID: 0}
+  pista: {fileID: 89340505}
 --- !u!1001 &1379973752
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -65864,15 +65866,9 @@ MonoBehaviour:
       m_Calls: []
   m_FirstSelectEntered:
     m_PersistentCalls:
-      m_Calls: []
-  m_LastSelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_SelectEntered:
-    m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1822041643}
-        m_TargetAssemblyTypeName: GrabLayerFix, Assembly-CSharp
+      - m_Target: {fileID: 89340505}
+        m_TargetAssemblyTypeName: Hint, Assembly-CSharp
         m_MethodName: OnGrab
         m_Mode: 0
         m_Arguments:
@@ -65883,8 +65879,14 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 89340505}
-        m_TargetAssemblyTypeName: Hint, Assembly-CSharp
+  m_LastSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectEntered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1822041643}
+        m_TargetAssemblyTypeName: GrabLayerFix, Assembly-CSharp
         m_MethodName: OnGrab
         m_Mode: 0
         m_Arguments:
@@ -70593,6 +70595,7 @@ MonoBehaviour:
   - {fileID: 2071262003}
   - {fileID: 930575481}
   pista: {fileID: 89340505}
+  pistaDada: 0
 --- !u!114 &1954670041 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8336231040902939147, guid: 2b29a3a863f6ed241a772a218ed4535a, type: 3}
@@ -73235,15 +73238,9 @@ MonoBehaviour:
       m_Calls: []
   m_FirstSelectEntered:
     m_PersistentCalls:
-      m_Calls: []
-  m_LastSelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_SelectEntered:
-    m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2012917007}
-        m_TargetAssemblyTypeName: GrabLayerFix, Assembly-CSharp
+      - m_Target: {fileID: 89340505}
+        m_TargetAssemblyTypeName: Hint, Assembly-CSharp
         m_MethodName: OnGrab
         m_Mode: 0
         m_Arguments:
@@ -73254,8 +73251,14 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 89340505}
-        m_TargetAssemblyTypeName: Hint, Assembly-CSharp
+  m_LastSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectEntered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2012917007}
+        m_TargetAssemblyTypeName: GrabLayerFix, Assembly-CSharp
         m_MethodName: OnGrab
         m_Mode: 0
         m_Arguments:

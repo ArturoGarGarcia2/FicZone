@@ -6,6 +6,7 @@ public class NumericCodeChecker : MonoBehaviour
     public bool puzzleSolved = false;
 
     public Hint pista;
+    public bool pistaDada = false;
     void Update()
     {
         CheckCode();
@@ -34,7 +35,11 @@ public class NumericCodeChecker : MonoBehaviour
         }
 
         puzzleSolved = true;
-        pista.PuzzleResuelto("codigo");
+        if (!pistaDada)
+        {
+            pista.PuzzleResuelto("codigo");
+            pistaDada = true;
+        }
         GameManager.Instance.CompletePuzzle(0);
     }
 }

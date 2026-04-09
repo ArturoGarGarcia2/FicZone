@@ -11,6 +11,7 @@ public class ConnectionManager : MonoBehaviour
     public CablePort[] ports;
 
     public Hint pista;
+    public bool pistaDada = false;
     public string correctCode { get; private set; }
 
     void Awake()
@@ -56,7 +57,11 @@ public class ConnectionManager : MonoBehaviour
             if (!cp.correct)
                 return false;
 
-        pista.PuzzleResuelto("cables");
+        if (!pistaDada)
+        {
+            pista.PuzzleResuelto("cables");
+            pistaDada = true;
+        }
         return true;
     }
 
