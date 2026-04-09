@@ -1,5 +1,12 @@
 fileFormatVersion: 2
 guid: a9fee95f2b39c19488c14f5fef863f1e
+AssetOrigin:
+  serializedVersion: 1
+  productId: 35346
+  packageName: House Pack
+  packageVersion: 1.0
+  assetPath: Assets/HousePack/Models/House4/House4.FBX
+  uploadId: 60630
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable:
@@ -70,7 +77,7 @@ ModelImporter:
     nodeNameCollisionStrategy: 0
     fileIdsGeneration: 1
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1
@@ -132,10 +139,3 @@ ModelImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 35346
-  packageName: House Pack
-  packageVersion: 1.0
-  assetPath: Assets/HousePack/Models/House4/House4.FBX
-  uploadId: 60630
