@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 
 public class SimonGameManager : MonoBehaviour
@@ -21,6 +22,7 @@ public class SimonGameManager : MonoBehaviour
 
     public bool gameStart = false;
 
+    public Hint pista;
     public void Awake()
     {
         if (Instance == null)
@@ -132,6 +134,7 @@ public class SimonGameManager : MonoBehaviour
             {
                 resultText.text = "¡Ganaste!";
                 StartCoroutine(Ganar());
+                pista.PuzzleResuelto("simon");
                 GameManager.Instance.CompletePuzzle(1);
                 return;
             }

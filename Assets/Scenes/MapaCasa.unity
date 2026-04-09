@@ -4506,6 +4506,7 @@ MonoBehaviour:
   lightDuration: 1
   resultText: {fileID: 597016084}
   gameStart: 0
+  pista: {fileID: 89340505}
 --- !u!1001 &159824829
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7077,6 +7078,7 @@ MonoBehaviour:
   - {fileID: 1178247497}
   debugText: {fileID: 1737516572}
   rotationSmooth: 5
+  pista: {fileID: 89340505}
 --- !u!1 &256265008
 GameObject:
   m_ObjectHideFlags: 0
@@ -12826,6 +12828,7 @@ MonoBehaviour:
   - {fileID: 1330630805}
   - {fileID: 1954670041}
   puzzleSolved: 0
+  pista: {fileID: 89340505}
 --- !u!4 &431078394
 Transform:
   m_ObjectHideFlags: 0
@@ -59528,6 +59531,7 @@ MonoBehaviour:
   - {fileID: 1320319962}
   - {fileID: 2071262003}
   - {fileID: 930575481}
+  pista: {fileID: 89340505}
 --- !u!114 &1954670041 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8336231040902939147, guid: 2b29a3a863f6ed241a772a218ed4535a, type: 3}
