@@ -18,6 +18,8 @@ public class MannequinManager : MonoBehaviour
 
     public float rotationSmooth = 5f;
 
+    public Hint pista;
+    public bool pistaDada = false;
     void Awake()
     {
         Instance = this;
@@ -185,5 +187,10 @@ public class MannequinManager : MonoBehaviour
 
         debugText.text = "Está perfe";
         GameManager.Instance.CompletePuzzle(4);
+        if (!pistaDada)
+        {
+            pista.PuzzleResuelto("maniqui");
+            pistaDada = true;
+        }
     }
 }

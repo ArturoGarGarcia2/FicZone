@@ -5,6 +5,8 @@ public class NumericCodeChecker : MonoBehaviour
     public NumericCodeButton[] buttons; // 4 botones
     public bool puzzleSolved = false;
 
+    public Hint pista;
+    public bool pistaDada = false;
     void Update()
     {
         CheckCode();
@@ -33,6 +35,11 @@ public class NumericCodeChecker : MonoBehaviour
         }
 
         puzzleSolved = true;
+        if (!pistaDada)
+        {
+            pista.PuzzleResuelto("codigo");
+            pistaDada = true;
+        }
         GameManager.Instance.CompletePuzzle(0);
     }
 }

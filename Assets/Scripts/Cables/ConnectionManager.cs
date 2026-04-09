@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using System.Text;
+using UnityEditor;
 
 public class ConnectionManager : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class ConnectionManager : MonoBehaviour
     public TMP_Text txt;
     public CablePort[] ports;
 
+    public Hint pista;
+    public bool pistaDada = false;
     public string correctCode { get; private set; }
 
     void Awake()
@@ -54,6 +57,11 @@ public class ConnectionManager : MonoBehaviour
             if (!cp.correct)
                 return false;
 
+        if (!pistaDada)
+        {
+            pista.PuzzleResuelto("cables");
+            pistaDada = true;
+        }
         return true;
     }
 
