@@ -5,6 +5,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2106236228796205863, guid: 7e6c402f1d24ca64bb819a99ec8a22b6, type: 3}
@@ -12,7 +13,7 @@ PrefabInstance:
       value: Big Tree 1 Variant
       objectReference: {fileID: 0}
     - target: {fileID: 2297400458105123921, guid: 7e6c402f1d24ca64bb819a99ec8a22b6, type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: ef4c0b9754f1c404c9e1e0ad9409a677, type: 2}
     - target: {fileID: 7344718971860940507, guid: 7e6c402f1d24ca64bb819a99ec8a22b6, type: 3}
@@ -60,4 +61,7 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e6c402f1d24ca64bb819a99ec8a22b6, type: 3}
