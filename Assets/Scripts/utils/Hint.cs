@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
@@ -8,6 +9,16 @@ public class Hint : MonoBehaviour
 {
     public TextMeshProUGUI textoUI;
     private XRGrabInteractable grabInteractable;
+
+    private int pared = 0;
+    private int sombrerosAgarrados = 0;
+    bool sombreroPadre = false;
+    private bool sombreroMadre = false;
+    private bool sombreroHija = false;
+    bool sombreroHijo = false;
+    private int hojasAgarradas = 0;
+    bool hojaDer = false;
+    bool hojaIzq = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -23,20 +34,127 @@ public class Hint : MonoBehaviour
     {
         if( args.interactableObject.transform.tag == "Key")
         {
-            textoUI.text = "¡Objeto agarrado! llave " + args.interactableObject.transform.name;
+            textoUI.text = "¿Servira para las puertas cerradas?";
         }
-        if (args.interactableObject.transform.name == "Llave father")
+        if (args.interactableObject.transform.tag == "hat")
         {
-            textoUI.text = "¡Objeto agarrado! llave dormitorio";
+            if (args.interactableObject.transform.name == "daughters_hat" && !sombreroHija)
+            {
+                sombreroHija = true;
+                sombrerosAgarrados++;
+            }
+            if (args.interactableObject.transform.name == "sons_hat" && !sombreroHijo)
+            {
+                sombreroHijo = true;
+                sombrerosAgarrados++;
+            }
+            if (args.interactableObject.transform.name == "fathers_hat" && !sombreroPadre)
+            {
+                sombreroPadre = true;
+                sombrerosAgarrados++;
+            }
+            if (args.interactableObject.transform.name == "mothers_hat" && !sombreroMadre)
+            {
+                sombreroMadre = true;
+                sombrerosAgarrados++;
+            }
+            textoUI.text = "¿Se podran poner en los maniquis? " + sombrerosAgarrados + "/4";
         }
-        if (args.interactableObject.transform.name == "Llave main")
+        if (args.interactableObject.transform.tag == "linterna")
         {
-            textoUI.text = "¡Objeto agarrado! llave salida";
+            textoUI.text = "¿Servira para estos dibujos extraños? ";
         }
-        if (args.interactableObject.transform.name == "Llave living")
+        if (args.interactableObject.transform.tag == "hojasCubo")
         {
-            textoUI.text = "¡Objeto agarrado!";
+            if (args.interactableObject.transform.name == "papelDer" && !hojaDer)
+            {
+                hojaDer = true;
+                hojasAgarradas++;
+            }
+            if (args.interactableObject.transform.name == "papelIzq" && !hojaIzq)
+            {
+                hojaIzq = true;
+                hojasAgarradas++;
+            }
+            textoUI.text = "¿Sera parte de un codigo? " + hojasAgarradas + "/2";
         }
-
+        if (args.interactableObject.transform.tag == "pomo")
+        {
+            textoUI.text = "¿Se necesitara una llave?";
+        }
+        StopCoroutine("delay");
+        StartCoroutine(delay());
+    }
+    public void PuzzleResuelto(string name)
+    {
+        if (name == "maniqui")
+        {
+            textoUI.text = "Parece que hay algo en la mesa";
+        }
+        if (name == "cubos")
+        {
+            textoUI.text = "Al lado de la cama ha aparecido algo";
+        }
+        if (name == "cables")
+        {
+            textoUI.text = "ve a la cocina";
+        }
+        if (name == "codigo")
+        {
+            textoUI.text = "¿Que es lo que hay en la mesa?";
+        }
+        if (name == "simon")
+        {
+            textoUI.text = "Parece haber algo al lado de la puerta";
+        }
+        if (name == "secuencia")
+        {
+            textoUI.text = "Que es ese ser inerte colocado especificamente a un costado del lugar de reposo de la unidades parentales";
+        }
+        StopCoroutine("delay");
+        StartCoroutine(delay());
+    }
+    public void IluminarPared(string pistaPared)
+    {
+        if (pistaPared == "Contenedor texto0")
+        {
+            pared++;
+        }
+        if (pistaPared == "Contenedor texto1")
+        {
+            pared++;
+        }
+        if (pistaPared == "Contenedor texto2")
+        {
+            pared++;
+        }
+        if (pistaPared == "Contenedor texto3")
+        {
+            pared++;
+        }
+        if (pistaPared == "Contenedor texto4")
+        {
+            pared++;
+        }
+        if (pistaPared == "Contenedor texto5")
+        {
+            pared++;
+        }
+        if (pistaPared == "Contenedor texto6")
+        {
+            pared++;
+        }
+        if (pistaPared == "Contenedor texto7")
+        {
+            pared++;
+        }
+        textoUI.text = "" + pared + "/8";
+        StopCoroutine("delay");
+        StartCoroutine(delay());
+    }
+    IEnumerator delay()
+    {
+        yield return new WaitForSeconds(2);
+        textoUI.text = "";
     }
 }

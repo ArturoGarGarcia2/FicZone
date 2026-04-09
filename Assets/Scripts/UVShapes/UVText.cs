@@ -15,6 +15,7 @@ public class UVText : MonoBehaviour
     bool hasSentClue = false;
     bool isLooking = false;
 
+    public Hint pista;
     void Awake()
     {
         Instance = this;
@@ -74,6 +75,7 @@ public class UVText : MonoBehaviour
         if (lookTimer >= 0.5f && !hasSentClue)
         {
             hasSentClue = true;
+            pista.IluminarPared(gameObject.transform.name);
             string textoLimpio = text.text
             .Replace("\n", " ")
             .Replace("\r", " ")

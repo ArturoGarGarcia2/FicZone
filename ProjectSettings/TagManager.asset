@@ -6,10 +6,11 @@ TagManager:
   tags:
   - Keyhole
   - Key
-  - Cinturon
-  - KeyMain
-  - KeyFather
   - basketball
+  - hat
+  - linterna
+  - hojasCubo
+  - pomo
   layers:
   - Default
   - TransparentFX
@@ -24,8 +25,8 @@ TagManager:
   - Player
   - Wall1Floor
   - Wall2Floor
-  - 
-  - 
+  - WallText1Floor
+  - WallText2Floor
   - 
   - 
   - 
