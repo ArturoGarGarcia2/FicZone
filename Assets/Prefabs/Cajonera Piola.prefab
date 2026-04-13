@@ -312,7 +312,7 @@ ConfigurableJoint:
   m_LinearLimit:
     limit: 0.35
     bounciness: 0
-    contactDistance: 0
+    contactDistance: 0.02
   m_AngularXLimitSpring:
     spring: 0
     damper: 0
@@ -1039,7 +1039,7 @@ ConfigurableJoint:
   m_LinearLimit:
     limit: 0.35
     bounciness: 0
-    contactDistance: 0
+    contactDistance: 0.02
   m_AngularXLimitSpring:
     spring: 0
     damper: 0
