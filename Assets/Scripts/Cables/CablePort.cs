@@ -5,13 +5,13 @@ public class CablePort : MonoBehaviour
     public bool conected;
     public bool correct;
     public Colors color;
-    public Light light;
+    public Renderer light;
 
     public CableHead currentCable;
 
     void Start()
     {
-        light.enabled = false;
+        TurnOffEmission();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -26,7 +26,7 @@ public class CablePort : MonoBehaviour
         if (cable.color == color)
         {
             correct = true;
-            light.enabled = true;
+            SetEmission(Color.green, 3f);
         }
         else
             correct = false;
@@ -37,11 +37,32 @@ public class CablePort : MonoBehaviour
         CableHead cable = other.GetComponent<CableHead>();
         if (cable != null)
         {
-            light.enabled = false;
+            TurnOffEmission();
             conected = false;
             correct = false;
             currentCable = null;
         }
+    }
+
+    void SetEmission(Color color, float intensity) // La intensidad debe estar a 3 o casi no se ve. Se podría subir bastante más pero entonces el brillo es blanco y queda feo.
+    {
+        Renderer rend = light;
+        if (rend == null) return;
+
+        Material mat = rend.material;
+
+        mat.EnableKeyword("_EMISSION");
+        mat.SetColor("_EmissionColor", color * intensity);
+    }
+
+    void TurnOffEmission()
+    {
+        Renderer rend = light;
+        if (rend == null) return;
+
+        Material mat = rend.material;
+
+        mat.SetColor("_EmissionColor", Color.black);
     }
 
 }
