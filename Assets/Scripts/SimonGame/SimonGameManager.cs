@@ -1,19 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using UnityEditor;
 using UnityEngine;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 public class SimonGameManager : MonoBehaviour
 {
     public static SimonGameManager Instance;
 
-
-    public Light[] lights;
+    public Renderer[] bulbs; // Aquí va el objeto con el material que tiene el cristal. El objeto está en root/GLTF_SceneRootNode/lightbulb_01_0/Object_4
     public Colors[] colors;
 
     public List<int> sequence = new List<int>();
-
     public List<int> playerInput = new List<int>();
 
     public float lightDuration = 1f;
@@ -23,7 +23,43 @@ public class SimonGameManager : MonoBehaviour
     public bool gameStart = false;
 
     public Hint pista;
-    public void Awake()
+
+    [Header("DEBUG")]
+    public bool debugTurnOnAll;
+    public bool debugTurnOffAll;
+
+    void OnValidate()
+    {
+        if (debugTurnOnAll)
+        {
+            debugTurnOnAll = false;
+            TurnOnAllDebug();
+        }
+
+        if (debugTurnOffAll)
+        {
+            debugTurnOffAll = false;
+            TurnOffAllDebug();
+        }
+    }
+
+    void TurnOnAllDebug()
+    {
+        for (int i = 0; i < bulbs.Length; i++)
+        {
+            SetEmission(i, GetUnityColor(colors[i]), 10f);
+        }
+    }
+
+    void TurnOffAllDebug()
+    {
+        for (int i = 0; i < bulbs.Length; i++)
+        {
+            TurnOffEmission(i);
+        }
+    }
+
+    private void Awake()
     {
         if (Instance == null)
         {
@@ -31,38 +67,38 @@ public class SimonGameManager : MonoBehaviour
         }
     }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         resultText.text = "";
-    }
 
+        // Apagar todas las bombillas al inicio
+        for (int i = 0; i < bulbs.Length; i++)
+        {
+            TurnOffEmission(i);
+        }
+    }
 
     public void StartGame()
     {
-        if(gameStart)
+        if (gameStart) return;
+
+        for (int i = 0; i < bulbs.Length; i++)
         {
-            return;
+            TurnOffEmission(i);
         }
-        foreach (Light light in lights)
-        {
-            if (light != null)
-            {
-                light.intensity = 0f;
-                light.enabled = false;
-            }
-        }
+
         gameStart = true;
         sequence.Clear();
         playerInput.Clear();
         resultText.text = "";
+
         NewRound();
     }
 
     void NewRound()
     {
         playerInput.Clear();
-        int randomIndex = Random.Range(0, lights.Length);
+        int randomIndex = Random.Range(0, bulbs.Length);
         sequence.Add(randomIndex);
 
         StartCoroutine(PlaySequence());
@@ -76,25 +112,17 @@ public class SimonGameManager : MonoBehaviour
 
         foreach (int index in sequence)
         {
-            lights[index].intensity = 0f;   
-            lights[index].enabled = false; 
-            if(lights[index] != null)
-            {
-                lights[index].enabled = true;   
-                lights[index].color = GetUnityColor(colors[index]);
-                lights[index].intensity = 5f;   
-                yield return new WaitForSeconds(lightDuration);
+            SetEmission(index, GetUnityColor(colors[index]), 3f);
 
-                lights[index].intensity = 0f;   
-                lights[index].enabled = false;  
-            }
+            yield return new WaitForSeconds(lightDuration);
+
+            TurnOffEmission(index);
+
             yield return new WaitForSeconds(0.5f);
         }
-
     }
 
-
-    Color GetUnityColor(Colors colorEnum)
+    Color GetUnityColor(Colors colorEnum) // Con esto vamos a poder cambiar el color emisivo de forma dinámica
     {
         switch (colorEnum)
         {
@@ -107,7 +135,7 @@ public class SimonGameManager : MonoBehaviour
             case Colors.YELLOW:
                 return Color.yellow;
             default:
-                return Color.white; 
+                return Color.white;
         }
     }
 
@@ -115,22 +143,19 @@ public class SimonGameManager : MonoBehaviour
     {
         playerInput.Add(buttonIndex);
 
-        StartCoroutine(FlashLight(buttonIndex));
+        StartCoroutine(FlashBulb(buttonIndex));
 
         if (sequence[playerInput.Count - 1] != buttonIndex)
         {
-            // Error: el jugador se equivocó
             resultText.text = "¡Incorrecto!";
             StartCoroutine(Equivocarse());
             playerInput.Clear();
-            //GameOver();
-            //return;
+            return;
         }
 
         if (playerInput.Count == sequence.Count)
         {
-            // Completó la ronda correctamente
-            if(sequence.Count >= 5)
+            if (sequence.Count >= 5)
             {
                 resultText.text = "¡Ganaste!";
                 StartCoroutine(Ganar());
@@ -138,6 +163,7 @@ public class SimonGameManager : MonoBehaviour
                 GameManager.Instance.CompletePuzzle(1);
                 return;
             }
+
             resultText.text = "¡Correcto!";
             NewRound();
         }
@@ -147,27 +173,16 @@ public class SimonGameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
 
-        
-        foreach (Light light in lights)
+        for (int i = 0; i < bulbs.Length; i++)
         {
-            if (light != null)
-            {
-                light.color = Color.red;
-                light.enabled = true;
-                light.intensity = 5f;
-            }
+            SetEmission(i, Color.red, 3f);
         }
 
         yield return new WaitForSeconds(1f);
 
-        
-        foreach (Light light in lights)
+        for (int i = 0; i < bulbs.Length; i++)
         {
-            if (light != null)
-            {
-                light.intensity = 0f;
-                light.enabled = false;
-            }
+            TurnOffEmission(i);
         }
 
         yield return new WaitForSeconds(1f);
@@ -178,35 +193,44 @@ public class SimonGameManager : MonoBehaviour
     IEnumerator Ganar()
     {
         gameStart = false;
+
         yield return new WaitForSeconds(0.5f);
 
-        
-        foreach (Light light in lights)
+        for (int i = 0; i < bulbs.Length; i++)
         {
-            if (light != null)
-            {
-                light.color = Color.green;
-                light.enabled = true;
-                light.intensity = 5f;
-            }
+            SetEmission(i, Color.green, 3f);
         }
 
         yield return new WaitForSeconds(1f);
     }
 
-
-    IEnumerator FlashLight(int index)
+    IEnumerator FlashBulb(int index)
     {
-        if (lights[index] != null)
-        {
-            lights[index].enabled = true;
-            lights[index].color = GetUnityColor(colors[index]);
-            lights[index].intensity = 5f;
+        SetEmission(index, GetUnityColor(colors[index]), 3f);
 
-            yield return new WaitForSeconds(0.3f); 
+        yield return new WaitForSeconds(0.3f);
 
-            lights[index].intensity = 0f;
-            lights[index].enabled = false;
-        }
+        TurnOffEmission(index);
+    }
+
+    void SetEmission(int index, Color color, float intensity) // La intensidad debe estar a 3 o casi no se ve. Se podría subir bastante más pero entonces el brillo es blanco y queda feo.
+    {
+        Renderer rend = bulbs[index];
+        if (rend == null) return;
+
+        Material mat = rend.material;
+
+        mat.EnableKeyword("_EMISSION");
+        mat.SetColor("_EmissionColor", color * intensity);
+    }
+
+    void TurnOffEmission(int index)
+    {
+        Renderer rend = bulbs[index];
+        if (rend == null) return;
+
+        Material mat = rend.material;
+
+        mat.SetColor("_EmissionColor", Color.black);
     }
 }
