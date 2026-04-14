@@ -7,7 +7,9 @@ public class SequenceManager : MonoBehaviour
 {
     public static SequenceManager Instance;
 
-    public GameObject[] lightbulbs; 
+    public Renderer[] lightbulbs;
+
+    public GameObject[] lightbulbParents; 
     public GameObject[] buttons;    
 
     public bool daltonicMode = false;
@@ -43,8 +45,6 @@ public class SequenceManager : MonoBehaviour
     void Awake()
     {
         F.ShuffleArray(sequence);
-        foreach (var text in lightbulbs)
-            text.transform.GetChild(2).gameObject.SetActive(false);
         Instance = this;
     }
 
@@ -57,7 +57,7 @@ public class SequenceManager : MonoBehaviour
 
         for (int i = 0; i < n; i++)
         {
-            lightbulbs[i].GetComponent<LightbulbColor>().color = shuffledColors[i];
+            lightbulbs[i].GetComponentInParent<LightbulbColor>().color = shuffledColors[i];
             originalColors[i] = shuffledColors[i];
         }     
 
@@ -79,23 +79,32 @@ public class SequenceManager : MonoBehaviour
     {
         for (int i = 0; i < lightbulbs.Length; i++)
         {
-            lightbulbs[i].transform.GetChild(1).gameObject.SetActive(lightsOn[i]);
-
-            if(daltonicMode && lightsOn[i])
+            if (lightsOn[i])
             {
-                GameObject text = lightbulbs[i].transform.GetChild(2).gameObject;
+                Colors c = lightbulbs[i].GetComponentInParent<LightbulbColor>().color;
+                SetEmission(i, lightbulbs[i].GetComponentInParent<LightbulbColor>().GetUnityColor());
+            }
+            else
+            {
+                TurnOffEmission(i);
+            }
 
+            // Daltonic mode
+            if (daltonicMode && lightsOn[i])
+            {
+                GameObject text = lightbulbParents[i].transform.GetChild(1).gameObject;
                 text.SetActive(true);
 
-                Colors color = lightbulbs[i].GetComponent<LightbulbColor>().color;
-
+                Colors color = lightbulbs[i].GetComponentInParent<LightbulbColor>().color;
                 var tmp = text.GetComponent<TextMeshPro>();
+
                 if (tmp != null && ColorShapes.shapes.ContainsKey(color))
                     tmp.text = ColorShapes.shapes[color];
             }
             else
             {
-                lightbulbs[i].transform.GetChild(2).gameObject.SetActive(false);
+                if (lightbulbs[i].transform.childCount > 2)
+                    lightbulbs[i].transform.GetChild(2).gameObject.SetActive(false);
             }
         }
     }
@@ -110,7 +119,7 @@ public class SequenceManager : MonoBehaviour
 
         lightsOn[i] = true;
 
-        playerSequence[sequenceStep] = lightbulbs[i].GetComponent<LightbulbColor>().color;
+        playerSequence[sequenceStep] = lightbulbs[i].GetComponentInParent<LightbulbColor>().color;
         sequenceStep++;
 
         if (sequenceStep == sequence.Length)
@@ -174,6 +183,10 @@ public class SequenceManager : MonoBehaviour
         lightsOn = new bool[5];
         playerSequence = new Colors[5];
         sequenceStep = 0;
+        for(int i = 0; i < lightbulbParents.Length; i++)
+        {
+            lightbulbParents[i].transform.GetChild(1).gameObject.SetActive(false);
+        }
 
     }
 
@@ -185,14 +198,34 @@ public class SequenceManager : MonoBehaviour
 
     void SetAllColors(Colors color)
     {
-        foreach (GameObject b in lightbulbs)
-            b.GetComponent<LightbulbColor>().color = color;
+        foreach (Renderer b in lightbulbs)
+            b.GetComponentInParent<LightbulbColor>().color = color;
+
     }
 
     void RestoreOriginalColors()
     {
         for (int i = 0; i < lightbulbs.Length; i++)
-            lightbulbs[i].GetComponent<LightbulbColor>().color = originalColors[i];
+            lightbulbs[i].GetComponentInParent<LightbulbColor>().color = originalColors[i];
+    }
+
+    void SetEmission(int index, Color color, float intensity = 3f)
+    {
+        Renderer rend = lightbulbs[index];
+        if (rend == null) return;
+
+        Material mat = rend.material;
+        mat.EnableKeyword("_EMISSION");
+        mat.SetColor("_EmissionColor", color * intensity);
+    }
+
+    void TurnOffEmission(int index)
+    {
+        Renderer rend = lightbulbs[index];
+        if (rend == null) return;
+
+        Material mat = rend.material;
+        mat.SetColor("_EmissionColor", Color.black);
     }
 
 }

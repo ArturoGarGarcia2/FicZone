@@ -3,8 +3,7 @@ using UnityEngine.XR.Content.Interaction;
 
 public class ButtonController : MonoBehaviour
 {
-    public GameObject lightInFront;
-
+    public Renderer lightInFront;
     private XRPushButton pushButton;
 
     void Awake()
@@ -18,6 +17,13 @@ public class ButtonController : MonoBehaviour
         if (lightInFront != null)
         {
             int index = System.Array.IndexOf(SequenceManager.Instance.lightbulbs, lightInFront);
+
+            if (index == -1)
+            {
+                Debug.LogError("No se encontró la bombilla en el array");
+                return;
+            }
+
             if (!SequenceManager.Instance.lightsOn[index])
             {
                 SequenceManager.Instance.Press(index);
