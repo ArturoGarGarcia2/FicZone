@@ -3,18 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void StartGame() =>
         TransitionManager.Instance.LoadSceneWithFade("MapaCasa");
+    public void EndRun() =>
+        TransitionManager.Instance.LoadSceneWithFade("MenuScene");
 }
