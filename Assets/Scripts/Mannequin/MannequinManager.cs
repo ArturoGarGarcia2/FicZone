@@ -128,10 +128,10 @@ public class MannequinManager : MonoBehaviour
     {
         switch (loc)
         {
-            case Mannequin.Location.Cocina: return " la cocina";
-            case Mannequin.Location.Baño: return "l baño";
-            case Mannequin.Location.Pasillo: return "l pasillo";
-            case Mannequin.Location.Sofa: return "l sofá";
+            case Mannequin.Location.Cocina: return "de la cocina";
+            case Mannequin.Location.Baño: return "del baño";
+            case Mannequin.Location.Pasillo: return "del pasillo";
+            case Mannequin.Location.Sofa: return "del sofá";
         }
 
         return "";
@@ -171,7 +171,7 @@ public class MannequinManager : MonoBehaviour
             string to = LocationToString(pair.Value);
 
             clueTexts[i].text =
-                "El maniquí del " + from + " mira\n al de" + to + ".";
+                "El maniquí " + from + " mira\n al " + to + ".";
 
             i++;
         }
