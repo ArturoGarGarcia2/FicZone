@@ -44,7 +44,7 @@ public class Hint : MonoBehaviour
         if( args.interactableObject.transform.tag == "Key" && !llave)
         {
             llave = true;
-            textoUI.text = "�Servira para las puertas cerradas?";
+            textoUI.text = "¿Servira para las puertas cerradas?";
         }
         if (args.interactableObject.transform.tag == "hat")
         {
@@ -52,31 +52,31 @@ public class Hint : MonoBehaviour
             {
                 sombreroHija = true;
                 sombrerosAgarrados++;
-                textoUI.text = "�Se podran poner en los maniquis? " + sombrerosAgarrados + "/4";
+                textoUI.text = "¿Se podrá poner en los maniquís? " + sombrerosAgarrados + "/4";
             }
             if (args.interactableObject.transform.name == "sons_hat" && !sombreroHijo)
             {
                 sombreroHijo = true;
                 sombrerosAgarrados++;
-                textoUI.text = "�Se podran poner en los maniquis? " + sombrerosAgarrados + "/4";
+                textoUI.text = "¿Se podrá poner en los maniquís? " + sombrerosAgarrados + "/4";
             }
             if (args.interactableObject.transform.name == "fathers_hat" && !sombreroPadre)
             {
                 sombreroPadre = true;
                 sombrerosAgarrados++;
-                textoUI.text = "�Se podran poner en los maniquis? " + sombrerosAgarrados + "/4";
+                textoUI.text = "¿Se podrá poner en los maniquís? " + sombrerosAgarrados + "/4";
             }
             if (args.interactableObject.transform.name == "mothers_hat" && !sombreroMadre)
             {
                 sombreroMadre = true;
                 sombrerosAgarrados++;
-                textoUI.text = "�Se podran poner en los maniquis? " + sombrerosAgarrados + "/4";
+                textoUI.text = "¿Se podrá poner en los maniquís? " + sombrerosAgarrados + "/4";
             }
         }
         if (args.interactableObject.transform.tag == "linterna" && !linternaAgarrada)
         {
             linternaAgarrada = true;
-            textoUI.text = "�Servira para estos dibujos extra�os? ";
+            textoUI.text = "¿Servirá para los dibujos de las paredes? ";
         }
         if (args.interactableObject.transform.tag == "hojasCubo")
         {
@@ -90,7 +90,7 @@ public class Hint : MonoBehaviour
                 hojaIzq = true;
                 hojasAgarradas++;
             }
-            textoUI.text = "�Sera parte de un codigo? " + hojasAgarradas + "/2";
+            textoUI.text = "¿Será parte de un código? " + hojasAgarradas + "/2";
         }
         if (args.interactableObject.transform.tag == "pomo")
         {
@@ -99,17 +99,17 @@ public class Hint : MonoBehaviour
                 if (args.interactableObject.transform.parent.parent.parent.name == "LockedDoorMain" && !puertaMain)
                 {
                     puertaMain = true;
-                    textoUI.text = "�Se necesitara una llave?";
+                    textoUI.text = "¿Se necesitará una llave?";
                 }
                 if (args.interactableObject.transform.parent.parent.parent.name == "LockedDoorParentsRoom" && !puertaParentsRoom)
                 {
                     puertaParentsRoom = true;
-                    textoUI.text = "�Se necesitara una llave?";
+                    textoUI.text = "¿Se necesitará una llave?";
                 }
                 if (args.interactableObject.transform.parent.parent.parent.name == "LockedDoorSalon" && !puertaSalon)
                 {
                     puertaSalon = true;
-                    textoUI.text = "�Se necesitara una llave?";
+                    textoUI.text = "¿Se necesitará una llave?";
                 }
             }
         }
@@ -119,69 +119,62 @@ public class Hint : MonoBehaviour
     public void PuzzleResuelto(string name)
     {
         if (name == "maniqui")
-        {
             textoUI.text = "Parece que hay algo en la mesa";
-        }
+            
         if (name == "cubos")
-        {
             textoUI.text = "Al lado de la cama ha aparecido algo";
-        }
+            
         if (name == "cables")
-        {
-            textoUI.text = "ve a la cocina";
-        }
+            textoUI.text = "Ve a la cocina";
+            
         if (name == "codigo")
-        {
-            textoUI.text = "�Que es lo que hay en la mesa?";
-        }
+            textoUI.text = "¿Qué es lo que hay en la mesa?";
+            
         if (name == "simon")
-        {
-            textoUI.text = "Parece haber algo al lado de la puerta";
-        }
+            textoUI.text = "Parece que hay algo sobre el escritorio.";
+            
         if (name == "secuencia")
-        {
-            textoUI.text = "Que es ese ser inerte colocado especificamente a un costado del lugar de reposo de la unidades parentales";
-        }
+            textoUI.text = "Parece que hay algo a los pies de la cama.";
+            
         StopCoroutine("delay");
         StartCoroutine(delay());
     }
     public void IluminarPared(string pistaPared)
     {
         if (pistaPared == "Contenedor texto0")
-        {
             pared++;
-        }
+            
         if (pistaPared == "Contenedor texto1")
-        {
             pared++;
-        }
+            
         if (pistaPared == "Contenedor texto2")
-        {
             pared++;
-        }
+            
         if (pistaPared == "Contenedor texto3")
-        {
             pared++;
-        }
+            
         if (pistaPared == "Contenedor texto4")
-        {
             pared++;
-        }
+            
         if (pistaPared == "Contenedor texto5")
-        {
             pared++;
-        }
+            
         if (pistaPared == "Contenedor texto6")
-        {
             pared++;
-        }
+            
         if (pistaPared == "Contenedor texto7")
-        {
             pared++;
-        }
+            
         textoUI.text = "" + pared + "/8";
         StopCoroutine("delay");
         StartCoroutine(delay());
+
+        if(pared == 8)
+        {
+            textoUI.text = "En la tele parece que están las pistas.";
+            StopCoroutine("delay");
+            StartCoroutine(delay());
+        }
     }
     IEnumerator delay()
     {
