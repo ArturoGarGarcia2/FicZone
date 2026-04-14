@@ -44,7 +44,7 @@ public class Hint : MonoBehaviour
         if( args.interactableObject.transform.tag == "Key" && !llave)
         {
             llave = true;
-            textoUI.text = "¿Servira para las puertas cerradas?";
+            textoUI.text = "Servira para las puertas cerradas?";
         }
         if (args.interactableObject.transform.tag == "hat")
         {
@@ -52,31 +52,31 @@ public class Hint : MonoBehaviour
             {
                 sombreroHija = true;
                 sombrerosAgarrados++;
-                textoUI.text = "¿Se podrá poner en los maniquís? " + sombrerosAgarrados + "/4";
+                textoUI.text = "Se podra poner en los maniquis? " + sombrerosAgarrados + "/4";
             }
             if (args.interactableObject.transform.name == "sons_hat" && !sombreroHijo)
             {
                 sombreroHijo = true;
                 sombrerosAgarrados++;
-                textoUI.text = "¿Se podrá poner en los maniquís? " + sombrerosAgarrados + "/4";
+                textoUI.text = "Se podra poner en los maniquis? " + sombrerosAgarrados + "/4";
             }
             if (args.interactableObject.transform.name == "fathers_hat" && !sombreroPadre)
             {
                 sombreroPadre = true;
                 sombrerosAgarrados++;
-                textoUI.text = "¿Se podrá poner en los maniquís? " + sombrerosAgarrados + "/4";
+                textoUI.text = "Se podra poner en los maniquis? " + sombrerosAgarrados + "/4";
             }
             if (args.interactableObject.transform.name == "mothers_hat" && !sombreroMadre)
             {
                 sombreroMadre = true;
                 sombrerosAgarrados++;
-                textoUI.text = "¿Se podrá poner en los maniquís? " + sombrerosAgarrados + "/4";
+                textoUI.text = "Se podra poner en los maniquis? " + sombrerosAgarrados + "/4";
             }
         }
         if (args.interactableObject.transform.tag == "linterna" && !linternaAgarrada)
         {
             linternaAgarrada = true;
-            textoUI.text = "¿Servirá para los dibujos de las paredes? ";
+            textoUI.text = "Servira para los dibujos de las paredes? ";
         }
         if (args.interactableObject.transform.tag == "hojasCubo")
         {
@@ -90,7 +90,7 @@ public class Hint : MonoBehaviour
                 hojaIzq = true;
                 hojasAgarradas++;
             }
-            textoUI.text = "¿Será parte de un código? " + hojasAgarradas + "/2";
+            textoUI.text = "Será parte de un codigo? " + hojasAgarradas + "/2";
         }
         if (args.interactableObject.transform.tag == "pomo")
         {
@@ -99,17 +99,17 @@ public class Hint : MonoBehaviour
                 if (args.interactableObject.transform.parent.parent.parent.name == "LockedDoorMain" && !puertaMain)
                 {
                     puertaMain = true;
-                    textoUI.text = "¿Se necesitará una llave?";
+                    textoUI.text = "Se necesitara una llave?";
                 }
                 if (args.interactableObject.transform.parent.parent.parent.name == "LockedDoorParentsRoom" && !puertaParentsRoom)
                 {
                     puertaParentsRoom = true;
-                    textoUI.text = "¿Se necesitará una llave?";
+                    textoUI.text = "Se necesitara una llave?";
                 }
                 if (args.interactableObject.transform.parent.parent.parent.name == "LockedDoorSalon" && !puertaSalon)
                 {
                     puertaSalon = true;
-                    textoUI.text = "¿Se necesitará una llave?";
+                    textoUI.text = "Se necesitara una llave?";
                 }
             }
         }
@@ -128,7 +128,7 @@ public class Hint : MonoBehaviour
             textoUI.text = "Ve a la cocina";
             
         if (name == "codigo")
-            textoUI.text = "¿Qué es lo que hay en la mesa?";
+            textoUI.text = "Qué es lo que hay en la mesa?";
             
         if (name == "simon")
             textoUI.text = "Parece que hay algo sobre el escritorio.";
@@ -171,7 +171,7 @@ public class Hint : MonoBehaviour
 
         if(pared == 8)
         {
-            textoUI.text = "En la tele parece que están las pistas.";
+            textoUI.text = "En la tele parece que estan las pistas.";
             StopCoroutine("delay");
             StartCoroutine(delay());
         }
