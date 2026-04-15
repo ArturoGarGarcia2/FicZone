@@ -26,6 +26,9 @@ namespace UnityEngine.XR.Content.Interaction
         [Tooltip("The object that is visually pressed down")]
         Transform m_Button = null;
 
+        public AudioSource sonidoBoton = null;
+
+
         [SerializeField]
         [Tooltip("The distance the button can be pressed")]
         float m_PressDistance = 0.1f;
@@ -235,6 +238,9 @@ namespace UnityEngine.XR.Content.Interaction
                             m_OnPress.Invoke();
                         else
                             m_OnRelease.Invoke();
+
+                        if (sonidoBoton != null)
+                            sonidoBoton.Play();    
                     }
                 }
             }

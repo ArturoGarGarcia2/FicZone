@@ -22,6 +22,8 @@ public class SimonGameManager : MonoBehaviour
 
     public bool gameStart = false;
 
+    public AudioSource sonidoGanar;
+
     public Hint pista;
 
     [Header("DEBUG")]
@@ -159,6 +161,8 @@ public class SimonGameManager : MonoBehaviour
             {
                 resultText.text = "¡Ganaste!";
                 StartCoroutine(Ganar());
+                if (sonidoGanar != null)
+                    sonidoGanar.Play();
                 pista.PuzzleResuelto("simon");
                 GameManager.Instance.CompletePuzzle(1);
                 return;

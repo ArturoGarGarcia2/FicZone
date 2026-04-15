@@ -11,6 +11,8 @@ public class RegularDoors : MonoBehaviour
     public XRGrabInteractable grab;
     bool isAlreadyOpen;
 
+    public AudioSource sonidoPuerta;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -34,6 +36,8 @@ public class RegularDoors : MonoBehaviour
         }
         else
         {
+            if (sonidoPuerta != null)
+                sonidoPuerta.Play();
             doorAnimator.SetTrigger("OpenDoor");
         }
     }

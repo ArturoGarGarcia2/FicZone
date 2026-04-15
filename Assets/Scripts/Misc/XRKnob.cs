@@ -98,6 +98,8 @@ namespace UnityEngine.XR.Content.Interaction
         bool IsDoorOpen;
         public bool isDoorOutside;
 
+        public AudioSource sonidoPuertaLocked;
+
         [SerializeField]
         [Tooltip("Whether this knob's rotation should be clamped by the angle limits")]
         bool m_ClampedMotion = true;
@@ -371,11 +373,15 @@ namespace UnityEngine.XR.Content.Interaction
             {
                 m_HasReachedZero = true;
                 if (isDoorOutside)
-                {
+                {   
+                    if (sonidoPuertaLocked != null)
+                        sonidoPuertaLocked.Play();
                     doorAnimator.SetTrigger("OpenDoor");    
                 }
                 else
                 {
+                    if (sonidoPuertaLocked != null)
+                        sonidoPuertaLocked.Play();
                     doorAnimator.SetTrigger("OpenDoorParents");
                 }
                 

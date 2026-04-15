@@ -4,6 +4,8 @@ public class EndRunManager : MonoBehaviour
 {
     [SerializeField] MenuManager menu;
 
+    public AudioSource sonidoGanarJuego;
+
     private void OnTriggerEnter(Collider other)
     {
         foreach(bool puzzle in GameManager.Instance.puzzlesCompleted)
@@ -11,6 +13,8 @@ public class EndRunManager : MonoBehaviour
         
         if (other.CompareTag("Player"))
         {
+            if (sonidoGanarJuego != null)
+                sonidoGanarJuego.Play();
             menu.EndRun();
         }
     }

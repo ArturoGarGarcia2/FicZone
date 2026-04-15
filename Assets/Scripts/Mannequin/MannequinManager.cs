@@ -8,7 +8,6 @@ public class MannequinManager : MonoBehaviour
     public Mannequin[] mannequins;
 
     public TMP_Text[] clueTexts;
-    public TMP_Text debugText;
 
     private Dictionary<Mannequin.Location, Hat.Family> hatSolution =
         new Dictionary<Mannequin.Location, Hat.Family>();
@@ -17,6 +16,8 @@ public class MannequinManager : MonoBehaviour
         new Dictionary<Mannequin.Location, Mannequin.Location>();
 
     public float rotationSmooth = 5f;
+
+    public AudioSource sonidoGanar;
 
     public Hint pista;
     public bool pistaDada = false;
@@ -181,11 +182,10 @@ public class MannequinManager : MonoBehaviour
     {
         foreach (var m in mannequins)
             if(!m.CorrectMannequin()){
-                debugText.text = "Está mal";
                 return;
             }
-
-        debugText.text = "Está perfe";
+        if (sonidoGanar != null)
+            sonidoGanar.Play();
         GameManager.Instance.CompletePuzzle(4);
         if (!pistaDada)
         {
