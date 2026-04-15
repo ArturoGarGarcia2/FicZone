@@ -249,7 +249,11 @@ namespace UnityEngine.XR.Content.Interaction
                 if (pressed)
                 {
                     if (!m_Pressed)
+                    {
                         m_OnPress.Invoke();
+                        if (sonidoBoton != null)
+                            sonidoBoton.Play(); 
+                    }
                 }
                 else
                 {
