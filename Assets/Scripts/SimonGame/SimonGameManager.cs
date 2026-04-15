@@ -12,6 +12,8 @@ public class SimonGameManager : MonoBehaviour
 
     public Renderer[] bulbs; // Aquí va el objeto con el material que tiene el cristal. El objeto está en root/GLTF_SceneRootNode/lightbulb_01_0/Object_4
     public Colors[] colors;
+    public AudioSource[] audiosBombillas;
+
 
     public List<int> sequence = new List<int>();
     public List<int> playerInput = new List<int>();
@@ -115,6 +117,8 @@ public class SimonGameManager : MonoBehaviour
         foreach (int index in sequence)
         {
             SetEmission(index, GetUnityColor(colors[index]), 3f);
+            if (audiosBombillas != null && index < audiosBombillas.Length && audiosBombillas[index] != null)
+                audiosBombillas[index].Play();
 
             yield return new WaitForSeconds(lightDuration);
 

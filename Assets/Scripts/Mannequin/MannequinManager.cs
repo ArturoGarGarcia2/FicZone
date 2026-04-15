@@ -181,14 +181,14 @@ public class MannequinManager : MonoBehaviour
     public void CheckPuzzle()
     {
         foreach (var m in mannequins)
-            if(!m.CorrectMannequin()){
+            if(!m.CorrectMannequin())
                 return;
-            }
-        if (sonidoGanar != null)
-            sonidoGanar.Play();
+            
         GameManager.Instance.CompletePuzzle(4);
         if (!pistaDada)
         {
+            if (sonidoGanar != null)
+                sonidoGanar.Play();
             pista.PuzzleResuelto("maniqui");
             pistaDada = true;
         }

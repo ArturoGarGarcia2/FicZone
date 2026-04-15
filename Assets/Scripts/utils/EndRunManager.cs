@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class EndRunManager : MonoBehaviour
 {
@@ -15,7 +16,13 @@ public class EndRunManager : MonoBehaviour
         {
             if (sonidoGanarJuego != null)
                 sonidoGanarJuego.Play();
-            menu.EndRun();
+            StartCoroutine(EndRunCoroutine());
         }
+    }
+
+    IEnumerator EndRunCoroutine()
+    {
+        yield return new WaitForSeconds(4f);
+        menu.EndRun();
     }
 }

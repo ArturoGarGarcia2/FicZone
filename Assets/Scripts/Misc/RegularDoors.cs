@@ -30,14 +30,15 @@ public class RegularDoors : MonoBehaviour
         isAlreadyOpen = true;
         grab.enabled = false; 
         
+        if (sonidoPuerta != null)
+                sonidoPuerta.Play();
+
         if (isSideways)
         {
             doorAnimator.SetTrigger("OpenDoorSideways");
         }
         else
         {
-            if (sonidoPuerta != null)
-                sonidoPuerta.Play();
             doorAnimator.SetTrigger("OpenDoor");
         }
     }
