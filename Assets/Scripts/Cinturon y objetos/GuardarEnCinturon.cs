@@ -15,6 +15,8 @@ public class GuardarEnCinturon : MonoBehaviour
 
     public GameObject bolsillo;
 
+    public GameObject positionOffsetObject, positionOffsetInstance;
+
     public Vector3 positionOffset;
 
     public bool adjustOffset;
@@ -42,6 +44,8 @@ public class GuardarEnCinturon : MonoBehaviour
         if (!guardado)
         {
             this.gameObject.GetComponent<Rigidbody>().useGravity = true;
+
+            this.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
 
         }
 
@@ -72,13 +76,17 @@ public class GuardarEnCinturon : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("Cinturon") && other.gameObject.GetComponent<Bolsillos>().espaciosDisponibles > 0)
+        if (other.gameObject.CompareTag("Cinturon"))
         {
             bolsillo = other.gameObject;
 
             guardado = false; 
 
             bolsillo.GetComponent<Bolsillos>().espaciosDisponibles++;
+
+            this.gameObject.transform.parent = null;
+
+            Destroy(positionOffsetInstance);
 
             if (this.gameObject.name == "Linterna")
             {
@@ -87,10 +95,7 @@ public class GuardarEnCinturon : MonoBehaviour
 
             }
 
-
-
             //this.gameObject.transform.localScale = originalScale;
-
             
         }
     }
@@ -99,25 +104,37 @@ public class GuardarEnCinturon : MonoBehaviour
     {
         if (guardado)
         {
+            this.gameObject.transform.parent = bolsillo.gameObject.transform.parent.GetChild(2).transform;
+
+            GameObject parentBolsillo = bolsillo.gameObject.transform.parent.GetChild(2).gameObject;
 
             if (adjustOffset)
-            this.gameObject.transform.position = bolsillo.gameObject.transform.position + positionOffset;
-
-            else
-            this.gameObject.transform.position = bolsillo.gameObject.transform.position;
+            parentBolsillo.transform.position = positionOffset + bolsillo.gameObject.transform.parent.GetChild(0).gameObject.transform.position;
 
             if(adjustRotation)
-            this.gameObject.transform.rotation = quaternion.Euler(rotationAdjust.x, rotationAdjust.y, rotationAdjust.z);
+            parentBolsillo.transform.localRotation = quaternion.Euler(VicGenLib.Calc.Angles.NormalToEulerAnglesf3(rotationAdjust.x, rotationAdjust.y, rotationAdjust.z));
 
             if(adjustScale)
-            this.gameObject.transform.localScale = scaleAdjust;
+            this.gameObject.transform.localScale = scaleAdjust + originalScale;
+
+            this.gameObject.transform.localRotation = quaternion.Euler(0,0,0);
+
+            this.gameObject.transform.localPosition = new Vector3(0,0,0);
+
+            this.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
+
+            this.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
 
             this.gameObject.GetComponent<Rigidbody>().useGravity = false;
         }
 
         else
         {
+            this.gameObject.transform.parent = null;
+
             this.gameObject.transform.localScale = originalScale;
+
+            Destroy(positionOffsetInstance);
         }
 
     }
