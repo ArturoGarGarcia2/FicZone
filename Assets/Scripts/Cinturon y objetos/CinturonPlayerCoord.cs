@@ -16,18 +16,19 @@ public class CinturonPlayerCoord : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        configManager = GameObject.Find("ConfigManager");
+        configManager = GameObject.FindWithTag("Config");
 
         jugador = GameObject.FindGameObjectWithTag("Player");
 
         controles = jugador.GetComponent<ControlesExternos>();
+
+        this.gameObject.transform.position = jugador.transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        Debug.Log($"rotacion jugador {jugador.transform.rotation.eulerAngles.y}");
 
         desfasePosicion = configManager.GetComponent<ConfigManager>().alturaCinturon;
 
@@ -63,7 +64,7 @@ public class CinturonPlayerCoord : MonoBehaviour
             rectificarGiro = 1;
         }
         
-        this.gameObject.transform.SetLocalPositionAndRotation(jugador.transform.position + controles.posicionCabeza + new Vector3(0, -desfasePosicion -1.3f, 0), quaternion.Euler(jugador.transform.rotation.x, jugador.transform.rotation.y + jugador.transform.GetChild(0).GetChild(0).transform.rotation.y + controles.rotacionCabeza.y * rectificarGiro * (float)Math.PI  - desfaseRotacion, jugador.transform.rotation.z));
+        this.gameObject.transform.SetLocalPositionAndRotation(jugador.transform.position + controles.posicionCabeza + new Vector3(0, -desfasePosicion -1.3f, 0), quaternion.Euler(jugador.transform.rotation.x, jugador.transform.rotation.y + controles.rotacionCabeza.y * rectificarGiro * (float)Math.PI  - desfaseRotacion, jugador.transform.rotation.z));
 
         tamaño = configManager.GetComponent<ConfigManager>().tamañoCinturón;
 

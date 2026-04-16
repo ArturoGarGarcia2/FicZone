@@ -52,6 +52,9 @@ public class SequenceManager : MonoBehaviour
 
     void Start()
     {
+
+        daltonicMode = ConfigManager.instance.modoDaltonico;
+
         int n = Mathf.Min(lightbulbs.Length, buttons.Length, colors.Length);
 
         Colors[] shuffledColors = (Colors[])colors.Clone();

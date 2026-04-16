@@ -69,11 +69,7 @@ public class ControlesExternos : MonoBehaviour
 
         TurnDelay -= Time.deltaTime;
 
-        if (head.isValid)
-        Debug.Log("es valido");
-
-        else 
-        Debug.Log("No es valido");
+        
 
         Vector3 posicionTemp;
 
@@ -82,7 +78,6 @@ public class ControlesExternos : MonoBehaviour
             posicionCabeza = posicionTemp;
         }
 
-        Debug.Log(posicionCabeza);
 
         Quaternion rotacionTemp;
 
@@ -96,7 +91,6 @@ public class ControlesExternos : MonoBehaviour
         if (TurnDelay <= 0)
         if(rightHand.TryGetFeatureValue(CommonUsages.primary2DAxis, out GiroVectTemp))
         {
-            Debug.Log("hay palanca");
 
             GiroVect = GiroVectTemp;
 
@@ -122,13 +116,8 @@ public class ControlesExternos : MonoBehaviour
                 GirarIzq = false;
             }
         }
-        else
-        {
-            Debug.Log("No hay palanca");
-        }
 
 
 
-        Debug.Log(rotacionCabeza);
     }
 }

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ShowMenu : MonoBehaviour
 {
@@ -26,8 +27,18 @@ public class ShowMenu : MonoBehaviour
         }
     }
 
+    public void Volver()
+    {
+        SceneManager.LoadScene("MenuScene");
+    }
+
     public void ActivarMenu()
     {
         activo = !activo;
+    }
+
+    public void ModoDaltonico()
+    {
+        ConfigManager.instance.modoDaltonico = !ConfigManager.instance.modoDaltonico;
     }
 }

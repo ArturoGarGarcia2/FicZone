@@ -51,9 +51,7 @@ public class GuardarEnCinturon : MonoBehaviour
 
         Guardar();
 
-        if (this.gameObject.name == "CuboPrueba")
-
-        Debug.Log(originalScale);
+        
     }
 
     void OnTriggerEnter(Collider other)
@@ -104,37 +102,62 @@ public class GuardarEnCinturon : MonoBehaviour
     {
         if (guardado)
         {
-            this.gameObject.transform.parent = bolsillo.gameObject.transform.parent.GetChild(2).transform;
 
+            //this.gameObject.layer = 15;
+
+            
             GameObject parentBolsillo = bolsillo.gameObject.transform.parent.GetChild(2).gameObject;
 
-            if (adjustOffset)
-            parentBolsillo.transform.position = positionOffset + bolsillo.gameObject.transform.parent.GetChild(0).gameObject.transform.position;
+            if (parentBolsillo.transform.childCount != 0)
+            {
+                
+            }
+            else
+            {
 
-            if(adjustRotation)
-            parentBolsillo.transform.localRotation = quaternion.Euler(VicGenLib.Calc.Angles.NormalToEulerAnglesf3(rotationAdjust.x, rotationAdjust.y, rotationAdjust.z));
+                this.gameObject.transform.parent = bolsillo.gameObject.transform.parent.GetChild(2).transform;
 
-            if(adjustScale)
-            this.gameObject.transform.localScale = scaleAdjust + originalScale;
+                if (adjustOffset)
+                parentBolsillo.transform.position = positionOffset + bolsillo.gameObject.transform.parent.GetChild(0).gameObject.transform.position;
 
-            this.gameObject.transform.localRotation = quaternion.Euler(0,0,0);
+                if (adjustRotation)
+                {
+                    if (bolsillo.transform.parent.gameObject.name == "Bolsillo1")
+                    {
+                        parentBolsillo.transform.localRotation = quaternion.Euler(VicGenLib.Calc.Angles.NormalToEulerAnglesf3(rotationAdjust.x, rotationAdjust.y, rotationAdjust.z));
+                    }
 
-            this.gameObject.transform.localPosition = new Vector3(0,0,0);
+                    if (bolsillo.transform.parent.gameObject.name == "Bolsillo2")
+                    {
+                        parentBolsillo.transform.localRotation = quaternion.Euler(VicGenLib.Calc.Angles.NormalToEulerAnglesf3(rotationAdjust.x, rotationAdjust.y + 180f, rotationAdjust.z));
+                    }
 
-            this.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
+                }
+                
 
-            this.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
+                if(adjustScale)
+                this.gameObject.transform.localScale = scaleAdjust + originalScale;
 
-            this.gameObject.GetComponent<Rigidbody>().useGravity = false;
+                this.gameObject.transform.localRotation = quaternion.Euler(0,0,0);
+
+                this.gameObject.transform.localPosition = new Vector3(0,0,0);
+
+                this.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+
+                this.gameObject.GetComponent<Rigidbody>().useGravity = false;
+            }
+            
         }
 
         else
         {
+            //this.gameObject.layer = 0;
+
             this.gameObject.transform.parent = null;
 
             this.gameObject.transform.localScale = originalScale;
 
-            Destroy(positionOffsetInstance);
+            //Destroy(positionOffsetInstance);
         }
 
     }

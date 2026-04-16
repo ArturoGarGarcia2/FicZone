@@ -45,7 +45,10 @@ public class ConfigManager : MonoBehaviour
     {
             player = GameObject.FindWithTag("Player");
 
-            panelConfig = player.GetComponent<PlayerConfig>().Menu;
+            if(panelConfig == null)
+            {
+                panelConfig = player.GetComponent<PlayerConfig>().Menu;
+            }
 
             sliderAlturaPlayer = panelConfig.transform.GetChild(0).GetChild(3).GetChild(2).GetComponent<Slider>();
             
