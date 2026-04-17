@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.XR;
+using UnityEngine.XR.Interaction.Toolkit.Locomotion.Turning;
 
 public class ControlesExternos : MonoBehaviour
 {
@@ -13,6 +14,12 @@ public class ControlesExternos : MonoBehaviour
     public Vector3 posicionCabeza;
 
     public Quaternion rotacionCabeza;
+
+    public bool GirarDer, GirarIzq;
+    
+    public Vector2 GiroVect;
+
+    public float TurnDelay;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     void Awake()
@@ -37,6 +44,11 @@ public class ControlesExternos : MonoBehaviour
         {
             head = device;
         }
+
+        if (device.characteristics.HasFlag(InputDeviceCharacteristics.Right))
+        {
+            rightHand = device;
+        }
     }
     void Start()
     {
@@ -46,12 +58,18 @@ public class ControlesExternos : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GirarDer == true)
+        {
+            GirarDer = false;
+        }
+        if (GirarIzq == true)
+        {
+            GirarIzq = false;
+        }
 
-        if (head.isValid)
-        Debug.Log("es valido");
+        TurnDelay -= Time.deltaTime;
 
-        else 
-        Debug.Log("No es valido");
+        
 
         Vector3 posicionTemp;
 
@@ -60,7 +78,6 @@ public class ControlesExternos : MonoBehaviour
             posicionCabeza = posicionTemp;
         }
 
-        Debug.Log(posicionCabeza);
 
         Quaternion rotacionTemp;
 
@@ -69,6 +86,38 @@ public class ControlesExternos : MonoBehaviour
             rotacionCabeza = rotacionTemp;
         }
 
-        Debug.Log(rotacionCabeza);
+        Vector2 GiroVectTemp;
+
+        if (TurnDelay <= 0)
+        if(rightHand.TryGetFeatureValue(CommonUsages.primary2DAxis, out GiroVectTemp))
+        {
+
+            GiroVect = GiroVectTemp;
+
+            if (GiroVectTemp.x > 0.5f)
+            {
+                GirarDer = true; 
+
+                TurnDelay = this.gameObject.transform.GetChild(1).GetChild(0).GetComponent<SnapTurnProvider>().debounceTime;
+            }
+            else
+            {
+                GirarDer = false;
+            }
+
+            if (GiroVectTemp.x < -0.5f)
+            {
+                GirarIzq = true;
+
+                TurnDelay = this.gameObject.transform.GetChild(1).GetChild(0).GetComponent<SnapTurnProvider>().debounceTime;
+            }
+            else
+            {
+                GirarIzq = false;
+            }
+        }
+
+
+
     }
 }

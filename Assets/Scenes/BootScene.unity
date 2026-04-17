@@ -650,6 +650,67 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!1 &1284467679
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1284467681}
+  - component: {fileID: 1284467680}
+  m_Layer: 0
+  m_Name: ConfigManager
+  m_TagString: Config
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1284467680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1284467679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cb872325622cd5489ba13a8d7ff28ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ConfigManager
+  player: {fileID: 0}
+  panelConfig: {fileID: 0}
+  sliderAlturaPlayer: {fileID: 0}
+  sliderAlturaCinturon: {fileID: 0}
+  sliderRotacionCinturon: {fileID: 0}
+  sliderVelGir: {fileID: 0}
+  "sliderTama\xF1oCinturon": {fileID: 0}
+  tipoRotacion: {fileID: 0}
+  modoDaltonico: 0
+  rotacionASaltos: 0
+  rectificarGiro: 0
+  controlRotacion: {fileID: 0}
+  alturaPlayer: 0
+  alturaCinturon: 0
+  rotacionCinturon: 0
+  velGiro: 0
+  "tama\xF1oCintur\xF3n": 0
+--- !u!4 &1284467681
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1284467679}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.04506, y: 1.19406, z: -0.0661}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1327571038
 GameObject:
   m_ObjectHideFlags: 0
@@ -842,6 +903,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2626757739553014894, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6232745470614056090, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_Radius
       value: 0.1
@@ -931,3 +996,4 @@ SceneRoots:
   - {fileID: 1457522290}
   - {fileID: 877306044}
   - {fileID: 122730430}
+  - {fileID: 1284467681}

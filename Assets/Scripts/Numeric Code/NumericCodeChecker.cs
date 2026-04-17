@@ -7,6 +7,8 @@ public class NumericCodeChecker : MonoBehaviour
 
     public Hint pista;
     public bool pistaDada = false;
+
+    public AudioSource sonidoGanar;
     void Update()
     {
         CheckCode();
@@ -37,6 +39,8 @@ public class NumericCodeChecker : MonoBehaviour
         puzzleSolved = true;
         if (!pistaDada)
         {
+            if (sonidoGanar != null)
+                sonidoGanar.Play();
             pista.PuzzleResuelto("codigo");
             pistaDada = true;
         }

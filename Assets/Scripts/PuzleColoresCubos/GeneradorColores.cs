@@ -11,14 +11,22 @@ public class GeneradorColores : MonoBehaviour
     //public Symbol[] simbolos = { cuadrado, hexagono, triangulo, circulo, pentagono};
     private List<Color> cubosPuzzle = new List<Color>();
 
+
+    public bool daltonismo = false;
+    private GameObject configManager;
+
     [Range(0, 1)] public float probabilidadDeCubo = 0.5f;
 
     private void Start()
     {
+        configManager = GameObject.FindWithTag("Config");
+        daltonismo = configManager.GetComponent<ConfigManager>().modoDaltonico;
         GenerarPuzzle();
     }
-    public void GenerarPuzzle()
-    {
+    public async void GenerarPuzzle()
+    {        
+        WaitForSeconds espera = new WaitForSeconds(5.5f);
+        daltonismo = configManager.GetComponent<ConfigManager>().modoDaltonico;
         for (int i = 0; i < 9; i++)
         {
             Color colorAleatorio = colores[Random.Range(0, colores.Length)];
@@ -42,7 +50,7 @@ public class GeneradorColores : MonoBehaviour
         if (activo)
         {
             //cubo.GetComponent<MeshRenderer>().material.color = Col;
-            cubo.GetComponent<ColorConTexto>().SetColor(Col);
+            cubo.GetComponent<ColorConTexto>().SetColor(Col, daltonismo);
         }
     }
 

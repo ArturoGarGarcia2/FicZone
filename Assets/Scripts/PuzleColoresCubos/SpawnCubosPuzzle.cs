@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Dynamic;
 using TMPro;
 using UnityEngine;
 
@@ -20,13 +21,21 @@ public class SpawnCubosPuzzle : MonoBehaviour
 
     private Dictionary<GameObject, int> contadorColores;
 
+    void Awake()
+    {
+        daltonismo = ConfigManager.instance.modoDaltonico;
+    }
+
     private void Start()
     {
+        //daltonismo = ConfigManager.instance.modoDaltonico;
         //GenerarTriangulo();
         GenerarContruccion();
     }
-    void GenerarContruccion()
+    public async void GenerarContruccion()
     {
+        WaitForSeconds espera = new WaitForSeconds(5.5f);
+
         GameObject[] prefabs = { cuboRojo, cuboVerde, cuboAzul, cuboAmarillo, cuboMorado };
         if (!daltonismo)
         {
@@ -42,10 +51,12 @@ public class SpawnCubosPuzzle : MonoBehaviour
         GenerarPiramide(prefabs);
         GenerarTriangulo(prefabs);
     }
+
+
     void GenerarPiramide(GameObject[] prefabs)
     {
-        // Filas de la pirámide: base 3x3, medio 2x2, cima 1
-        int[] filas = { 3, 2, 1 }; // número de cubos por lado de cada fila
+        // Filas de la pirï¿½mide: base 3x3, medio 2x2, cima 1
+        int[] filas = { 3, 2, 1 }; // nï¿½mero de cubos por lado de cada fila
         float altura = 0f;
 
         for (int f = 0; f < filas.Length; f++)
@@ -101,7 +112,7 @@ public class SpawnCubosPuzzle : MonoBehaviour
     }
     GameObject colorValido(GameObject[] prefabs)
     {
-        // Elegir color aleatorio respetando el límite de 5
+        // Elegir color aleatorio respetando el lï¿½mite de 5
         GameObject prefab = null;
         bool colorValido = false;
 

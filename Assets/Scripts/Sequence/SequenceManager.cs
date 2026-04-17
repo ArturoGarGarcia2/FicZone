@@ -16,6 +16,8 @@ public class SequenceManager : MonoBehaviour
 
     public bool[] lightsOn = new bool[5];
 
+    public AudioSource sonidoGanar;
+
     public Hint pista;
     Colors[] originalColors = new Colors[5];
     private Colors[] colors =
@@ -50,6 +52,9 @@ public class SequenceManager : MonoBehaviour
 
     void Start()
     {
+
+        daltonicMode = ConfigManager.instance.modoDaltonico;
+
         int n = Mathf.Min(lightbulbs.Length, buttons.Length, colors.Length);
 
         Colors[] shuffledColors = (Colors[])colors.Clone();
@@ -147,6 +152,8 @@ public class SequenceManager : MonoBehaviour
         inputLocked = true;
         puzzleSolved = true;
         pista.PuzzleResuelto("secuencia");
+        if (sonidoGanar != null)
+            sonidoGanar.Play();
         GameManager.Instance.CompletePuzzle(2);
 
         for (int j = 0; j < 2; j++)

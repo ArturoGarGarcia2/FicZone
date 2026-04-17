@@ -1,8 +1,11 @@
 using UnityEngine;
+using System.Collections;
 
 public class EndRunManager : MonoBehaviour
 {
     [SerializeField] MenuManager menu;
+
+    public AudioSource sonidoGanarJuego;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -11,7 +14,15 @@ public class EndRunManager : MonoBehaviour
         
         if (other.CompareTag("Player"))
         {
-            menu.EndRun();
+            if (sonidoGanarJuego != null)
+                sonidoGanarJuego.Play();
+            StartCoroutine(EndRunCoroutine());
         }
+    }
+
+    IEnumerator EndRunCoroutine()
+    {
+        yield return new WaitForSeconds(4f);
+        menu.EndRun();
     }
 }

@@ -11,6 +11,8 @@ TagManager:
   - linterna
   - hojasCubo
   - pomo
+  - Cinturon
+  - Config
   layers:
   - Default
   - TransparentFX
@@ -27,7 +29,7 @@ TagManager:
   - Wall2Floor
   - WallText1Floor
   - WallText2Floor
-  - 
+  - EnCinturon
   - 
   - 
   - 
