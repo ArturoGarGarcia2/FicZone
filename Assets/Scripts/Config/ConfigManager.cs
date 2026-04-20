@@ -80,6 +80,9 @@ public class ConfigManager : MonoBehaviour
 
             tamañoCinturón = sliderTamañoCinturon.value;
 
+            GameObject botonPanico = panelConfig.transform.GetChild(0).GetChild(3).GetChild(12).gameObject;
+            botonPanico.GetComponent<Button>().onClick.AddListener (() => BotonPanico(this.gameObject));
+
             CambiarRotacion();
     }
 
@@ -93,6 +96,11 @@ public class ConfigManager : MonoBehaviour
         Debug.Log("Button clicked! Target object: " + obj.name);
 
         rectificarGiro = !rectificarGiro;
+    }
+
+    private void BotonPanico(GameObject obj)
+    {
+        PanicoManager.Instance.Panicked();
     }
 
     private void BotonTipoGiro(GameObject obj)
