@@ -88979,6 +88979,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 674102884761757539, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2014471729}
+    - targetCorrespondingSourceObject: {fileID: 674102884761757539, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2014471730}
     - targetCorrespondingSourceObject: {fileID: 1128780908407919334, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2014471727}
@@ -89075,6 +89078,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70db982eede546f4f9254a9ed4573d3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerFall
+--- !u!114 &2014471730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2014471726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09be712443e2678489d9d2c01381510d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CamPosFix
+  controles: {fileID: 0}
 --- !u!1 &2014614771
 GameObject:
   m_ObjectHideFlags: 0
