@@ -8,7 +8,6 @@ public class MannequinManager : MonoBehaviour
     public Mannequin[] mannequins;
 
     public TMP_Text[] clueTexts;
-    public TMP_Text debugText;
 
     private Dictionary<Mannequin.Location, Hat.Family> hatSolution =
         new Dictionary<Mannequin.Location, Hat.Family>();
@@ -17,6 +16,8 @@ public class MannequinManager : MonoBehaviour
         new Dictionary<Mannequin.Location, Mannequin.Location>();
 
     public float rotationSmooth = 5f;
+
+    public AudioSource sonidoGanar;
 
     public Hint pista;
     public bool pistaDada = false;
@@ -128,10 +129,10 @@ public class MannequinManager : MonoBehaviour
     {
         switch (loc)
         {
-            case Mannequin.Location.Cocina: return " la cocina";
-            case Mannequin.Location.Baño: return "l baño";
-            case Mannequin.Location.Pasillo: return "l pasillo";
-            case Mannequin.Location.Sofa: return "l sofá";
+            case Mannequin.Location.Cocina: return "de la cocina";
+            case Mannequin.Location.Baño: return "del baño";
+            case Mannequin.Location.Pasillo: return "del pasillo";
+            case Mannequin.Location.Sofa: return "del sofá";
         }
 
         return "";
@@ -171,7 +172,7 @@ public class MannequinManager : MonoBehaviour
             string to = LocationToString(pair.Value);
 
             clueTexts[i].text =
-                "El maniquí del " + from + " mira\n al de" + to + ".";
+                "El maniquí " + from + " mira\n al " + to + ".";
 
             i++;
         }
@@ -180,15 +181,14 @@ public class MannequinManager : MonoBehaviour
     public void CheckPuzzle()
     {
         foreach (var m in mannequins)
-            if(!m.CorrectMannequin()){
-                debugText.text = "Está mal";
+            if(!m.CorrectMannequin())
                 return;
-            }
-
-        debugText.text = "Está perfe";
+            
         GameManager.Instance.CompletePuzzle(4);
         if (!pistaDada)
         {
+            if (sonidoGanar != null)
+                sonidoGanar.Play();
             pista.PuzzleResuelto("maniqui");
             pistaDada = true;
         }

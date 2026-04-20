@@ -5,6 +5,7 @@ public class NumericCodeButton : MonoBehaviour
 {
     public int currentValue = 0;
     public TMP_Text displayText;
+    public AudioSource sonidoBoton;
 
     void Start()
     {
@@ -14,6 +15,9 @@ public class NumericCodeButton : MonoBehaviour
     // Esto lo llamas desde el evento del XR Push Button
     public void OnPressed()
     {
+        if (sonidoBoton != null)
+            sonidoBoton.Play();
+            
         currentValue++;
         if (currentValue > 9)
             currentValue = 0;

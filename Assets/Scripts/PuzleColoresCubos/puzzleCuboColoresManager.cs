@@ -11,6 +11,8 @@ public class puzzleCuboColoresManager : MonoBehaviour
     private List<Color> secuenciaCorrecta;
     public XRSocketInteractor[] socket;
     public bool puzzleCuboColores = false;
+
+    public AudioSource sonidoGanar;
     public Hint pista;
 
     private void Start()
@@ -39,6 +41,8 @@ public class puzzleCuboColoresManager : MonoBehaviour
     {   
         puzzleCuboColores = true;
         pista.PuzzleResuelto("cubos");
+        if (sonidoGanar != null)
+            sonidoGanar.Play();
         GameManager.Instance.CompletePuzzle(3);
         for (int i = 0; i < socket.Length; i++)
         {
