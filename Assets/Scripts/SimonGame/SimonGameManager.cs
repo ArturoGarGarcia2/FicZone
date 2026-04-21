@@ -2,9 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-#if UNITY_EDITOR
 using UnityEditor;
-#endif
 
 public class SimonGameManager : MonoBehaviour
 {
@@ -13,6 +11,9 @@ public class SimonGameManager : MonoBehaviour
     public Renderer[] bulbs; // Aquí va el objeto con el material que tiene el cristal. El objeto está en root/GLTF_SceneRootNode/lightbulb_01_0/Object_4
     public Colors[] colors;
     public AudioSource[] audiosBombillas;
+
+    public Material lightBulb;
+    public Material[] colorMaterial;
 
 
     public List<int> sequence = new List<int>();
@@ -221,12 +222,19 @@ public class SimonGameManager : MonoBehaviour
         TurnOffEmission(index);
     }
 
-    void SetEmission(int index, Color color, float intensity) // La intensidad debe estar a 3 o casi no se ve. Se podría subir bastante más pero entonces el brillo es blanco y queda feo.
+    void SetEmission(int index, Color color, float intensity)
     {
         Renderer rend = bulbs[index];
         if (rend == null) return;
 
         Material mat = rend.material;
+
+        // 👉 Cambiar material según color
+        if (colorMaterial != null && index < colorMaterial.Length)
+        {
+            rend.material = colorMaterial[index];
+            mat = rend.material;
+        }
 
         mat.EnableKeyword("_EMISSION");
         mat.SetColor("_EmissionColor", color * intensity);
@@ -237,8 +245,13 @@ public class SimonGameManager : MonoBehaviour
         Renderer rend = bulbs[index];
         if (rend == null) return;
 
-        Material mat = rend.material;
+        // 👉 Volver al material apagado
+        if (lightBulb != null)
+        {
+            rend.material = lightBulb;
+        }
 
+        Material mat = rend.material;
         mat.SetColor("_EmissionColor", Color.black);
     }
 }

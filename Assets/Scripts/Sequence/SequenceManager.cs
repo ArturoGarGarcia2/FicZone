@@ -10,7 +10,10 @@ public class SequenceManager : MonoBehaviour
     public Renderer[] lightbulbs;
 
     public GameObject[] lightbulbParents; 
-    public GameObject[] buttons;    
+    public GameObject[] buttons;
+
+    public Material lightBulb;
+    public Material[] colorMaterial;
 
     public bool daltonicMode = false;
 
@@ -221,6 +224,15 @@ public class SequenceManager : MonoBehaviour
         Renderer rend = lightbulbs[index];
         if (rend == null) return;
 
+        Colors bulbColor = rend.GetComponentInParent<LightbulbColor>().color;
+
+        // 👉 Cambiar material según color
+        if (colorMaterial != null && (int)bulbColor < colorMaterial.Length)
+        {
+            rend.material = colorMaterial[(int)bulbColor];
+        }
+
+        // 👉 (Opcional) mantener emisión
         Material mat = rend.material;
         mat.EnableKeyword("_EMISSION");
         mat.SetColor("_EmissionColor", color * intensity);
@@ -231,8 +243,14 @@ public class SequenceManager : MonoBehaviour
         Renderer rend = lightbulbs[index];
         if (rend == null) return;
 
+        // 👉 Material apagado
+        if (lightBulb != null)
+        {
+            rend.material = lightBulb;
+        }
+
+        // 👉 Quitar emisión
         Material mat = rend.material;
         mat.SetColor("_EmissionColor", Color.black);
     }
-
 }
