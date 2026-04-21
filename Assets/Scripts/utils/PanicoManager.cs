@@ -29,6 +29,7 @@ public class PanicoManager : MonoBehaviour
     {
         for (int i = 0; i < objects.Length; i++)
         {
+            if(objects[i] == null) continue;
             objects[i].transform.position = objectsPosition[i];
             objects[i].transform.rotation = objectsRotation[i];
         }
