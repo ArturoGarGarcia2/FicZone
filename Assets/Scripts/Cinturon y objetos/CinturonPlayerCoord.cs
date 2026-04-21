@@ -63,11 +63,18 @@ public class CinturonPlayerCoord : MonoBehaviour
         {
             rectificarGiro = 1;
         }
-        
-        this.gameObject.transform.SetLocalPositionAndRotation(jugador.transform.position + controles.posicionCabeza + new Vector3(0, -desfasePosicion -1.3f, 0), quaternion.Euler(jugador.transform.rotation.x, jugador.transform.rotation.y + controles.rotacionCabeza.y * rectificarGiro * (float)Math.PI  - desfaseRotacion, jugador.transform.rotation.z));
 
-        tamaño = configManager.GetComponent<ConfigManager>().tamañoCinturón;
+        if (!controles.gafasPuestas)
+        {
+            this.gameObject.transform.SetLocalPositionAndRotation(jugador.transform.position, jugador.transform.rotation);
+        }
+        else
+        {
+            this.gameObject.transform.SetLocalPositionAndRotation(jugador.transform.GetChild(0).GetChild(0).gameObject.transform.position + new UnityEngine.Vector3 (0, -1.5f, 0f) + controles.posicionCabeza + new Vector3(0, -desfasePosicion -1.3f, 0), quaternion.Euler(jugador.transform.rotation.x, jugador.transform.rotation.y + controles.rotacionCabeza.y * rectificarGiro * MathF.PI  - desfaseRotacion, jugador.transform.rotation.z));
 
+            tamaño = configManager.GetComponent<ConfigManager>().tamañoCinturón;
+        }
+    
         this.gameObject.transform.localScale = new Vector3(1 * tamaño, 1 * tamaño, 1 * tamaño);
     }
 }
