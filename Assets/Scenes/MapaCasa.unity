@@ -42688,8 +42688,8 @@ MonoBehaviour:
   correct: 0
   color: 4
   light: {fileID: 1940003647}
-  lightBulb: {fileID: 0}
-  colorMaterial: {fileID: 0}
+  lightBulb: {fileID: 2100000, guid: ac9499536d5542745b7e51e3cff21df4, type: 2}
+  correctMaterial: {fileID: 2100000, guid: 79d71416ce5ac64479c0229b9c10a742, type: 2}
   currentCable: {fileID: 0}
 --- !u!136 &930575482
 CapsuleCollider:
@@ -48053,8 +48053,8 @@ MonoBehaviour:
   correct: 0
   color: 1
   light: {fileID: 2013426476}
-  lightBulb: {fileID: 0}
-  colorMaterial: {fileID: 0}
+  lightBulb: {fileID: 2100000, guid: ac9499536d5542745b7e51e3cff21df4, type: 2}
+  correctMaterial: {fileID: 2100000, guid: 79d71416ce5ac64479c0229b9c10a742, type: 2}
   currentCable: {fileID: 0}
 --- !u!136 &1039845491
 CapsuleCollider:
@@ -60478,8 +60478,8 @@ MonoBehaviour:
   correct: 0
   color: 3
   light: {fileID: 975022533}
-  lightBulb: {fileID: 0}
-  colorMaterial: {fileID: 0}
+  lightBulb: {fileID: 2100000, guid: ac9499536d5542745b7e51e3cff21df4, type: 2}
+  correctMaterial: {fileID: 2100000, guid: 79d71416ce5ac64479c0229b9c10a742, type: 2}
   currentCable: {fileID: 0}
 --- !u!136 &1320319963
 CapsuleCollider:
@@ -97962,8 +97962,8 @@ MonoBehaviour:
   correct: 0
   color: 2
   light: {fileID: 1264718276}
-  lightBulb: {fileID: 0}
-  colorMaterial: {fileID: 0}
+  lightBulb: {fileID: 2100000, guid: ac9499536d5542745b7e51e3cff21df4, type: 2}
+  correctMaterial: {fileID: 2100000, guid: 79d71416ce5ac64479c0229b9c10a742, type: 2}
   currentCable: {fileID: 0}
 --- !u!136 &2071262004
 CapsuleCollider:
@@ -100345,6 +100345,8 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 860f135247beedd4b9a8a247eb0bb297, type: 2}
   - {fileID: 2100000, guid: 027cee341f9fd95428e681f03f876f59, type: 2}
   - {fileID: 2100000, guid: 44c791397c984b74aaae4ef34a4c09d6, type: 2}
+  winMaterial: {fileID: 2100000, guid: 79d71416ce5ac64479c0229b9c10a742, type: 2}
+  loseMaterial: {fileID: 2100000, guid: be4904135d2e87d458fe96e49ac3fa0f, type: 2}
   daltonicMode: 0
   lightsOn: 0000000000
   sonidoGanar: {fileID: 2121615327}

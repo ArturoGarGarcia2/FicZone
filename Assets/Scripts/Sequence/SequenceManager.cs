@@ -1,6 +1,5 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.XR.Content.Interaction;
 using System.Collections;
 
 public class SequenceManager : MonoBehaviour
@@ -8,21 +7,25 @@ public class SequenceManager : MonoBehaviour
     public static SequenceManager Instance;
 
     public Renderer[] lightbulbs;
-
-    public GameObject[] lightbulbParents; 
+    public GameObject[] lightbulbParents;
     public GameObject[] buttons;
 
     public Material lightBulb;
     public Material[] colorMaterial;
 
-    public bool daltonicMode = false;
+    public Material winMaterial;
+    public Material loseMaterial;
 
+    public bool daltonicMode = false;
     public bool[] lightsOn = new bool[5];
 
-    public AudioSource sonidoGanar;
+    bool overrideMaterial = false;
 
+    public AudioSource sonidoGanar;
     public Hint pista;
+
     Colors[] originalColors = new Colors[5];
+
     private Colors[] colors =
     {
         Colors.RED,
@@ -55,7 +58,6 @@ public class SequenceManager : MonoBehaviour
 
     void Start()
     {
-
         daltonicMode = ConfigManager.instance.modoDaltonico;
 
         int n = Mathf.Min(lightbulbs.Length, buttons.Length, colors.Length);
@@ -65,31 +67,34 @@ public class SequenceManager : MonoBehaviour
 
         for (int i = 0; i < n; i++)
         {
-            lightbulbs[i].GetComponentInParent<LightbulbColor>().color = shuffledColors[i];
+            var bulbColor = lightbulbs[i].GetComponentInParent<LightbulbColor>();
+            bulbColor.color = shuffledColors[i];
             originalColors[i] = shuffledColors[i];
-        }     
+
+            // 👉 IMPORTANTE: sincronizar material al inicio
+            lightbulbs[i].material = GetMaterialFromColor(shuffledColors[i]);
+        }
 
         for (int i = 0; i < n; i++)
-            playerSequence[i] = default;      
-
-        
+            playerSequence[i] = default;
 
         string sequenceShapes = "";
         foreach (Colors c in sequence)
         {
             sequenceShapes += ColorShapes.shapes[c] + " ";
         }
+
         UVPattern3D.Instance.SetSequence(sequenceShapes);
-        
     }
 
     void Update()
     {
+        if (overrideMaterial) return;
+
         for (int i = 0; i < lightbulbs.Length; i++)
         {
             if (lightsOn[i])
             {
-                Colors c = lightbulbs[i].GetComponentInParent<LightbulbColor>().color;
                 SetEmission(i, lightbulbs[i].GetComponentInParent<LightbulbColor>().GetUnityColor());
             }
             else
@@ -119,15 +124,14 @@ public class SequenceManager : MonoBehaviour
 
     public void Press(int i)
     {
-        if (inputLocked || puzzleSolved)
-            return;
-
-        if (lightsOn[i])
-            return;
+        if (inputLocked || puzzleSolved) return;
+        if (lightsOn[i]) return;
 
         lightsOn[i] = true;
 
-        playerSequence[sequenceStep] = lightbulbs[i].GetComponentInParent<LightbulbColor>().color;
+        playerSequence[sequenceStep] =
+            lightbulbs[i].GetComponentInParent<LightbulbColor>().color;
+
         sequenceStep++;
 
         if (sequenceStep == sequence.Length)
@@ -154,38 +158,50 @@ public class SequenceManager : MonoBehaviour
     {
         inputLocked = true;
         puzzleSolved = true;
+
         pista.PuzzleResuelto("secuencia");
+
         if (sonidoGanar != null)
             sonidoGanar.Play();
+
         GameManager.Instance.CompletePuzzle(2);
+
+        overrideMaterial = true;
 
         for (int j = 0; j < 2; j++)
         {
-            SetAllColors(Colors.GREEN);
-            SetLights(true);
+            SetAllBulbsMaterial(winMaterial);
             yield return new WaitForSeconds(0.3f);
 
-            SetLights(false);
+            SetAllBulbsMaterial(lightBulb);
             yield return new WaitForSeconds(0.3f);
         }
 
-        SetAllColors(Colors.GREEN);
-        SetLights(true);
+        SetAllBulbsMaterial(winMaterial);
     }
 
     IEnumerator FailRoutine()
     {
         inputLocked = true;
+        overrideMaterial = true;
 
-        SetAllColors(Colors.RED);
-        SetLights(true);
+        SetAllBulbsMaterial(loseMaterial);
 
         yield return new WaitForSeconds(1.5f);
 
         ResetPuzzle();
-        RestoreOriginalColors();
+        RestoreOriginalMaterials();
 
         inputLocked = false;
+    }
+
+    void SetAllBulbsMaterial(Material mat)
+    {
+        for (int i = 0; i < lightbulbs.Length; i++)
+        {
+            if (lightbulbs[i] != null)
+                lightbulbs[i].material = mat;
+        }
     }
 
     public void ResetPuzzle()
@@ -193,30 +209,11 @@ public class SequenceManager : MonoBehaviour
         lightsOn = new bool[5];
         playerSequence = new Colors[5];
         sequenceStep = 0;
-        for(int i = 0; i < lightbulbParents.Length; i++)
+
+        for (int i = 0; i < lightbulbParents.Length; i++)
         {
             lightbulbParents[i].transform.GetChild(1).gameObject.SetActive(false);
         }
-
-    }
-
-    void SetLights(bool state)
-    {
-        for (int i = 0; i < lightsOn.Length; i++)
-            lightsOn[i] = state;
-    }
-
-    void SetAllColors(Colors color)
-    {
-        foreach (Renderer b in lightbulbs)
-            b.GetComponentInParent<LightbulbColor>().color = color;
-
-    }
-
-    void RestoreOriginalColors()
-    {
-        for (int i = 0; i < lightbulbs.Length; i++)
-            lightbulbs[i].GetComponentInParent<LightbulbColor>().color = originalColors[i];
     }
 
     void SetEmission(int index, Color color, float intensity = 3f)
@@ -226,15 +223,9 @@ public class SequenceManager : MonoBehaviour
 
         Colors bulbColor = rend.GetComponentInParent<LightbulbColor>().color;
 
-        // 👉 Cambiar material según color
-        if (colorMaterial != null && (int)bulbColor < colorMaterial.Length)
-        {
-            rend.material = colorMaterial[(int)bulbColor];
-        }
+        rend.material = GetMaterialFromColor(bulbColor);
 
-        // 👉 (Opcional) mantener emisión
         Material mat = rend.material;
-        // mat.EnableKeyword("_EMISSION");
         mat.SetColor("_EmissionColor", color * intensity);
     }
 
@@ -243,14 +234,34 @@ public class SequenceManager : MonoBehaviour
         Renderer rend = lightbulbs[index];
         if (rend == null) return;
 
-        // 👉 Material apagado
-        if (lightBulb != null)
-        {
-            rend.material = lightBulb;
-        }
+        rend.material = lightBulb;
 
-        // 👉 Quitar emisión
         Material mat = rend.material;
         mat.SetColor("_EmissionColor", Color.black);
+    }
+
+    void RestoreOriginalMaterials()
+    {
+        overrideMaterial = false;
+
+        for (int i = 0; i < lightbulbs.Length; i++)
+        {
+            Colors c = originalColors[i];
+            lightbulbs[i].material = GetMaterialFromColor(c);
+        }
+    }
+
+    
+    Material GetMaterialFromColor(Colors color)
+    {
+        switch (color)
+        {
+            case Colors.RED: return colorMaterial[0];
+            case Colors.GREEN: return colorMaterial[1];
+            case Colors.BLUE: return colorMaterial[2];
+            case Colors.YELLOW: return colorMaterial[3];
+            case Colors.PURPLE: return colorMaterial[4];
+            default: return lightBulb;
+        }
     }
 }
