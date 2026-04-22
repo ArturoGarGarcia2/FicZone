@@ -7,11 +7,14 @@ public class CablePort : MonoBehaviour
     public Colors color;
     public Renderer light;
 
+    public Material lightBulb;
+    public Material colorMaterial;
+
     public CableHead currentCable;
 
     void Start()
     {
-        TurnOffEmission();
+        TurnOffVisual();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -22,14 +25,16 @@ public class CablePort : MonoBehaviour
         conected = true;
         currentCable = cable;
 
-
         if (cable.color == color)
         {
             correct = true;
-            SetEmission(Color.green, 3f);
+            TurnOnVisual(Color.green);
         }
         else
+        {
             correct = false;
+            TurnOnVisual(Color.red); // 👈 feedback visual
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -37,7 +42,7 @@ public class CablePort : MonoBehaviour
         CableHead cable = other.GetComponent<CableHead>();
         if (cable != null)
         {
-            TurnOffEmission();
+            TurnOffVisual();
             conected = false;
             correct = false;
             currentCable = null;
@@ -55,14 +60,34 @@ public class CablePort : MonoBehaviour
         mat.SetColor("_EmissionColor", color * intensity);
     }
 
-    void TurnOffEmission()
+    void TurnOnVisual(Color emissionColor)
     {
-        Renderer rend = light;
-        if (rend == null) return;
+        if (light == null) return;
 
-        Material mat = rend.material;
+        // 👉 Material encendido (uno solo)
+        if (colorMaterial != null)
+        {
+            light.material = colorMaterial;
+        }
 
-        mat.SetColor("_EmissionColor", Color.black);
+        // 👉 Emisión opcional
+        Material mat = light.material;
+        mat.EnableKeyword("_EMISSION");
+        mat.SetColor("_EmissionColor", emissionColor * 3f);
     }
 
+    void TurnOffVisual()
+    {
+        if (light == null) return;
+
+        // 👉 Material base
+        if (lightBulb != null)
+        {
+            light.material = lightBulb;
+        }
+
+        // 👉 Quitar emisión
+        Material mat = light.material;
+        mat.SetColor("_EmissionColor", Color.black);
+    }
 }

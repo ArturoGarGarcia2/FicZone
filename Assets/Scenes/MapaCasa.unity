@@ -7108,6 +7108,12 @@ MonoBehaviour:
   - {fileID: 1958336340}
   - {fileID: 2143869766}
   - {fileID: 1787023276}
+  lightBulb: {fileID: 2100000, guid: ac9499536d5542745b7e51e3cff21df4, type: 2}
+  colorMaterial:
+  - {fileID: 2100000, guid: be4904135d2e87d458fe96e49ac3fa0f, type: 2}
+  - {fileID: 2100000, guid: 79d71416ce5ac64479c0229b9c10a742, type: 2}
+  - {fileID: 2100000, guid: 860f135247beedd4b9a8a247eb0bb297, type: 2}
+  - {fileID: 2100000, guid: 027cee341f9fd95428e681f03f876f59, type: 2}
   sequence: 
   playerInput: 
   lightDuration: 1
@@ -13416,6 +13422,7 @@ Transform:
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 1
   m_Children:
+  - {fileID: 1953560960}
   - {fileID: 86305579}
   - {fileID: 226465605}
   - {fileID: 1039845493}
@@ -13431,7 +13438,6 @@ Transform:
   - {fileID: 610819418}
   - {fileID: 2119994714}
   - {fileID: 824360709}
-  - {fileID: 1953560960}
   m_Father: {fileID: 1587142439}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1001 &304071251
@@ -27998,6 +28004,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6000343639705940584, guid: ebbf49ac27462b24894d8de4f644e462, type: 3}
   m_PrefabInstance: {fileID: 616940079}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &617190466 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5880168492367052118, guid: ab98e19e77dc68243a9506b49fc33edd, type: 3}
+  m_PrefabInstance: {fileID: 2002053075}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &617558674
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31368,7 +31379,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8302937088191865143, guid: 62cb1421dd6b95449915fd2d97f5fd03, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.41241264
+      value: -0.716
       objectReference: {fileID: 0}
     - target: {fileID: 8302937088191865143, guid: 62cb1421dd6b95449915fd2d97f5fd03, type: 3}
       propertyPath: m_LocalRotation.w
@@ -42675,6 +42686,8 @@ MonoBehaviour:
   correct: 0
   color: 4
   light: {fileID: 1940003647}
+  lightBulb: {fileID: 0}
+  colorMaterial: {fileID: 0}
   currentCable: {fileID: 0}
 --- !u!136 &930575482
 CapsuleCollider:
@@ -48038,6 +48051,8 @@ MonoBehaviour:
   correct: 0
   color: 1
   light: {fileID: 2013426476}
+  lightBulb: {fileID: 0}
+  colorMaterial: {fileID: 0}
   currentCable: {fileID: 0}
 --- !u!136 &1039845491
 CapsuleCollider:
@@ -50557,11 +50572,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4651206932664407072, guid: 96080e32de51543459193b388cae7ee4, type: 3}
   m_PrefabInstance: {fileID: 1087367237}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1087442110 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5880168492367052118, guid: ab98e19e77dc68243a9506b49fc33edd, type: 3}
-  m_PrefabInstance: {fileID: 2002053075}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1087936995
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -50808,11 +50818,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 158466511}
   - {fileID: 1629633007}
   - {fileID: 763942673}
   - {fileID: 981895847}
   - {fileID: 201854419}
-  - {fileID: 158466511}
   m_Father: {fileID: 1587142439}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1001 &1092052214
@@ -56307,6 +56317,201 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1225925371 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7765850167803512011, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
+  m_PrefabInstance: {fileID: 2014471718}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1225925372 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1274065472193470612, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
+  m_PrefabInstance: {fileID: 2014471718}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1225925373 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4060179751472984462, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
+  m_PrefabInstance: {fileID: 2014471718}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1225925374 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7479942688483873616, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
+  m_PrefabInstance: {fileID: 2014471718}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1225925375 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6806275285152939489, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
+  m_PrefabInstance: {fileID: 2014471718}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1225925376 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 49681011085489242, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
+  m_PrefabInstance: {fileID: 2014471718}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1225925377 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5072945151925617363, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
+  m_PrefabInstance: {fileID: 2014471718}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1225925378 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2125989879111463233, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
+  m_PrefabInstance: {fileID: 2014471718}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1225925379 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6729284416056693189, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
+  m_PrefabInstance: {fileID: 2014471718}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1225925380 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7668979705419119993, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
+  m_PrefabInstance: {fileID: 2014471718}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1225925381 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6007638791231325746, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
+  m_PrefabInstance: {fileID: 2014471718}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1225925382 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 448059854302470658, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
+  m_PrefabInstance: {fileID: 2014471718}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1225925383 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3744608149160882425, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
+  m_PrefabInstance: {fileID: 2014471718}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1225925384 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3764488030055975293, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
+  m_PrefabInstance: {fileID: 2014471718}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1225925385 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5986047592855412579, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
+  m_PrefabInstance: {fileID: 2014471718}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1225925386 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2549852795527664844, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
+  m_PrefabInstance: {fileID: 2014471718}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1225925387 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1896984899998522259, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
+  m_PrefabInstance: {fileID: 2014471718}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1225925388 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7843088036046249280, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
+  m_PrefabInstance: {fileID: 2014471718}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1225925389 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8392884398759885241, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
+  m_PrefabInstance: {fileID: 2014471718}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1225925390 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5504175431979988263, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
+  m_PrefabInstance: {fileID: 2014471718}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1225925391 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6499544228280051517, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
+  m_PrefabInstance: {fileID: 2014471718}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1225925392 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3687882517670049787, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
+  m_PrefabInstance: {fileID: 2014471718}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1225925393 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2213327009077629666, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
+  m_PrefabInstance: {fileID: 2014471718}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1225925394 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3247306163589682660, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
+  m_PrefabInstance: {fileID: 2014471718}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1225925395 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 998297515602502964, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
+  m_PrefabInstance: {fileID: 2014471718}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1225925396 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5039970165592201446, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
+  m_PrefabInstance: {fileID: 2014471718}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1225925397 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5719479937204299986, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
+  m_PrefabInstance: {fileID: 2014471718}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1225925398 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4571971632455210579, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
+  m_PrefabInstance: {fileID: 2014471718}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1225925399 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7486505500252105379, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
+  m_PrefabInstance: {fileID: 2014471718}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1225925400 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1400217124441242246, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
+  m_PrefabInstance: {fileID: 2014471718}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1225925401 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 513035353708888767, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
+  m_PrefabInstance: {fileID: 2014471718}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1225925402 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2015765953170616061, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
+  m_PrefabInstance: {fileID: 2014471718}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1225925403 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7051804144104368537, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
+  m_PrefabInstance: {fileID: 2014471718}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1225925404 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2201560458843566666, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
+  m_PrefabInstance: {fileID: 2014471718}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1225925405 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 501562774428316732, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
+  m_PrefabInstance: {fileID: 2014471718}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1225925406 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2883773409530142200, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
+  m_PrefabInstance: {fileID: 2014471718}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1225925407 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2801747512757872294, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
+  m_PrefabInstance: {fileID: 2014471718}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1225925408 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4181051427608775396, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
+  m_PrefabInstance: {fileID: 2014471718}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1225925409 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5544019037672374346, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
+  m_PrefabInstance: {fileID: 2014471718}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1227570825
 GameObject:
   m_ObjectHideFlags: 0
@@ -57942,11 +58147,6 @@ Transform:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1889621226166455509, guid: dfaa52422572dea44abb4fa7b5449965, type: 3}
   m_PrefabInstance: {fileID: 1256223084}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1256377885 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5880168492367052118, guid: ab98e19e77dc68243a9506b49fc33edd, type: 3}
-  m_PrefabInstance: {fileID: 1670922031}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1257196336
 GameObject:
@@ -60471,6 +60671,8 @@ MonoBehaviour:
   correct: 0
   color: 3
   light: {fileID: 975022533}
+  lightBulb: {fileID: 0}
+  colorMaterial: {fileID: 0}
   currentCable: {fileID: 0}
 --- !u!136 &1320319963
 CapsuleCollider:
@@ -60863,6 +61065,1463 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8221453048982102475, guid: 2b29a3a863f6ed241a772a218ed4535a, type: 3}
   m_PrefabInstance: {fileID: 548331181}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1331220715
+GameObject:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1331220717}
+  - component: {fileID: 1331220716}
+  m_Layer: 0
+  m_Name: Prefab Indexer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1331220716
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1331220715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05a7c62fccbafd342991629222351294, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityPlayModeSaver::Framework.Utils.UnityPlayModeSaverSceneUtils
+  _scenePrefabInstances:
+  - _gameObject: {fileID: 2014471726}
+    _prefab: Assets/cosas/Victor/XR Origin Hands (XR Rig) (player).prefab
+  - _gameObject: {fileID: 1225925409}
+    _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Starter Assets/Prefabs/Interactors/Gaze
+      Interactor.prefab
+  - _gameObject: {fileID: 1225925408}
+    _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Starter Assets/Prefabs/Interactors/Poke
+      Interactor.prefab
+  - _gameObject: {fileID: 1225925407}
+    _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Starter Assets/Models/Pinch_Pointer_LOD0.fbx
+  - _gameObject: {fileID: 1225925406}
+    _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Starter Assets/Prefabs/Affordances/PokePointerAffordance.prefab
+  - _gameObject: {fileID: 1225925405}
+    _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Starter Assets/Prefabs/Interactors/Left_NearFarInteractor.prefab
+  - _gameObject: {fileID: 1225925404}
+    _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Starter Assets/Prefabs/Interactors/Teleport
+      Interactor.prefab
+  - _gameObject: {fileID: 1225925403}
+    _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Starter Assets/Prefabs/Controllers/XR
+      Controller Left.prefab
+  - _gameObject: {fileID: 1225925402}
+    _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Starter Assets/Prefabs/Interactors/Poke
+      Interactor.prefab
+  - _gameObject: {fileID: 1225925401}
+    _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Starter Assets/Models/Pinch_Pointer_LOD0.fbx
+  - _gameObject: {fileID: 1225925400}
+    _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Starter Assets/Prefabs/Affordances/PokePointerAffordance.prefab
+  - _gameObject: {fileID: 1225925399}
+    _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Starter Assets/Prefabs/Interactors/Right_NearFarInteractor.prefab
+  - _gameObject: {fileID: 1225925398}
+    _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Starter Assets/Prefabs/Interactors/Teleport
+      Interactor.prefab
+  - _gameObject: {fileID: 1225925397}
+    _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Starter Assets/Prefabs/Controllers/XR
+      Controller Right.prefab
+  - _gameObject: {fileID: 1225925396}
+    _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Starter Assets/Prefabs/Interactors/Left_NearFarInteractor.prefab
+  - _gameObject: {fileID: 2014471726}
+    _prefab: Assets/cosas/Victor/XR Origin Hands (XR Rig) (player).prefab
+  - _gameObject: {fileID: 2014471726}
+    _prefab: Assets/cosas/Victor/XR Origin Hands (XR Rig) (player).prefab
+  - _gameObject: {fileID: 1225925395}
+    _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Hands Interaction Demo/Prefabs/PinchPointStabilized.prefab
+  - _gameObject: {fileID: 1225925394}
+    _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Hands Interaction Demo/Prefabs/LeftHandQuestVisual.prefab
+  - _gameObject: {fileID: 1225925393}
+    _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Hands Interaction Demo/Prefabs/HandPokeInteractorAffordances.prefab
+  - _gameObject: {fileID: 1225925392}
+    _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Hands Interaction Demo/Prefabs/HandInteractorAffordances.prefab
+  - _gameObject: {fileID: 1225925391}
+    _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Hands Interaction Demo/Prefabs/LeftHandAndroidXRVisual.prefab
+  - _gameObject: {fileID: 1225925390}
+    _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Hands Interaction Demo/Prefabs/HandPokeInteractorAffordances.prefab
+  - _gameObject: {fileID: 1225925389}
+    _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Hands Interaction Demo/Prefabs/HandInteractorAffordances.prefab
+  - _gameObject: {fileID: 1225925388}
+    _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Starter Assets/Prefabs/Interactors/Right_NearFarInteractor.prefab
+  - _gameObject: {fileID: 2014471726}
+    _prefab: Assets/cosas/Victor/XR Origin Hands (XR Rig) (player).prefab
+  - _gameObject: {fileID: 2014471726}
+    _prefab: Assets/cosas/Victor/XR Origin Hands (XR Rig) (player).prefab
+  - _gameObject: {fileID: 1225925387}
+    _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Hands Interaction Demo/Prefabs/PinchPointStabilized.prefab
+  - _gameObject: {fileID: 1225925386}
+    _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Hands Interaction Demo/Prefabs/RightHandQuestVisual.prefab
+  - _gameObject: {fileID: 1225925385}
+    _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Hands Interaction Demo/Prefabs/HandPokeInteractorAffordances.prefab
+  - _gameObject: {fileID: 1225925384}
+    _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Hands Interaction Demo/Prefabs/HandInteractorAffordances.prefab
+  - _gameObject: {fileID: 1225925383}
+    _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Hands Interaction Demo/Prefabs/RightHandAndroidXRVisual.prefab
+  - _gameObject: {fileID: 1225925382}
+    _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Hands Interaction Demo/Prefabs/HandPokeInteractorAffordances.prefab
+  - _gameObject: {fileID: 1225925381}
+    _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Hands Interaction Demo/Prefabs/HandInteractorAffordances.prefab
+  - _gameObject: {fileID: 2014471723}
+    _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Hands Interaction Demo/HandsDemoSceneAssets/Prefabs/UI/ButtonHandMenu.prefab
+  - _gameObject: {fileID: 736546535}
+    _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Starter Assets/DemoSceneAssets/Prefabs/UI/MinMaxSlider.prefab
+  - _gameObject: {fileID: 1697682759}
+    _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Starter Assets/DemoSceneAssets/Prefabs/UI/TextButton.prefab
+  - _gameObject: {fileID: 312463171}
+    _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Starter Assets/DemoSceneAssets/Prefabs/UI/Icon
+      Button.prefab
+  - _gameObject: {fileID: 1110586023}
+    _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Starter Assets/DemoSceneAssets/Prefabs/UI/Dropdown.prefab
+  - _gameObject: {fileID: 2116425691}
+    _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Starter Assets/DemoSceneAssets/Prefabs/UI/MinMaxSlider.prefab
+  - _gameObject: {fileID: 580565081}
+    _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Starter Assets/DemoSceneAssets/Prefabs/UI/MinMaxSlider.prefab
+  - _gameObject: {fileID: 842811452}
+    _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Starter Assets/DemoSceneAssets/Prefabs/UI/TextButton.prefab
+  - _gameObject: {fileID: 1983468092}
+    _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Starter Assets/DemoSceneAssets/Prefabs/UI/MinMaxSlider.prefab
+  - _gameObject: {fileID: 993852312}
+    _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Starter Assets/DemoSceneAssets/Prefabs/UI/MinMaxSlider.prefab
+  - _gameObject: {fileID: 943001708}
+    _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Starter Assets/DemoSceneAssets/Prefabs/UI/TextButton.prefab
+  - _gameObject: {fileID: 23975918}
+    _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Starter Assets/DemoSceneAssets/Prefabs/UI/TextButton.prefab
+  - _gameObject: {fileID: 1225925380}
+    _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Hands Interaction Demo/HandsDemoSceneAssets/Prefabs/UI/ScrollView.prefab
+  - _gameObject: {fileID: 1225925379}
+    _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Hands Interaction Demo/HandsDemoSceneAssets/Prefabs/UI/ScrollViewItem.prefab
+  - _gameObject: {fileID: 1225925378}
+    _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Hands Interaction Demo/HandsDemoSceneAssets/Prefabs/UI/ScrollViewItem.prefab
+  - _gameObject: {fileID: 1225925377}
+    _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Hands Interaction Demo/HandsDemoSceneAssets/Prefabs/UI/ScrollViewItem.prefab
+  - _gameObject: {fileID: 1225925376}
+    _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Hands Interaction Demo/HandsDemoSceneAssets/Prefabs/UI/ScrollViewItem.prefab
+  - _gameObject: {fileID: 1225925375}
+    _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Hands Interaction Demo/HandsDemoSceneAssets/Prefabs/UI/ScrollViewItem.prefab
+  - _gameObject: {fileID: 1225925374}
+    _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Hands Interaction Demo/HandsDemoSceneAssets/Prefabs/UI/ScrollViewItem.prefab
+  - _gameObject: {fileID: 1225925373}
+    _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Hands Interaction Demo/HandsDemoSceneAssets/Prefabs/UI/ScrollViewItem.prefab
+  - _gameObject: {fileID: 1225925372}
+    _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Hands Interaction Demo/HandsDemoSceneAssets/Prefabs/UI/ScrollViewItem.prefab
+  - _gameObject: {fileID: 1225925371}
+    _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Hands Interaction Demo/HandsDemoSceneAssets/Prefabs/UI/ScrollViewItem.prefab
+  - _gameObject: {fileID: 1888076752}
+    _prefab: Assets/VNB - Home Set/HousePack/Perfabs/House5.prefab
+  - _gameObject: {fileID: 1115813339}
+    _prefab: Assets/VNB - Home Set/HousePack/Perfabs/House4.prefab
+  - _gameObject: {fileID: 2138904405}
+    _prefab: Assets/VNB - Home Set/Models/Tunnel.fbx
+  - _gameObject: {fileID: 1076420318}
+    _prefab: Assets/VNB - Home Set/Prefabs/Decoration/Flower Wall Pot 2.prefab
+  - _gameObject: {fileID: 796648050}
+    _prefab: Assets/VNB - Home Set/Models/BunchOfRoses.fbx
+  - _gameObject: {fileID: 590023764}
+    _prefab: Assets/VNB - Home Set/Models/BunchOfRoses.fbx
+  - _gameObject: {fileID: 28869437}
+    _prefab: Assets/VNB - Home Set/Models/BunchOfRoses.fbx
+  - _gameObject: {fileID: 226424601}
+    _prefab: Assets/VNB - Home Set/Prefabs/Gaming Room/Table (Modern).prefab
+  - _gameObject: {fileID: 1509149691}
+    _prefab: Assets/VNB - Home Set/Prefabs/Gaming Room/TV 1.prefab
+  - _gameObject: {fileID: 5930640294747054125}
+    _prefab: Assets/VNB - Home Set/Prefabs/Decoration/fireplace.prefab
+  - _gameObject: {fileID: 639457856}
+    _prefab: Assets/VNB - Home Set/Prefabs/Livingroom/Modern Shelves.prefab
+  - _gameObject: {fileID: 775861036}
+    _prefab: Assets/VNB - Home Set/Prefabs/Decoration/Books II.prefab
+  - _gameObject: {fileID: 2126146424}
+    _prefab: Assets/VNB - Home Set/Prefabs/Decoration/Books II.prefab
+  - _gameObject: {fileID: 852251418}
+    _prefab: Assets/VNB - Home Set/Prefabs/Decoration/Books II.prefab
+  - _gameObject: {fileID: 737238633}
+    _prefab: Assets/VNB - Home Set/Prefabs/Decoration/Books II.prefab
+  - _gameObject: {fileID: 1751806217}
+    _prefab: Assets/VNB - Home Set/Prefabs/Decoration/Book (Open).prefab
+  - _gameObject: {fileID: 1042198290}
+    _prefab: Assets/VNB - Home Set/Prefabs/Decoration/Books II.prefab
+  - _gameObject: {fileID: 2068904605}
+    _prefab: Assets/VNB - Home Set/Prefabs/Decoration/Painting Small Alt.prefab
+  - _gameObject: {fileID: 1963633049}
+    _prefab: Assets/VNB - Home Set/Prefabs/Livingroom/Modern Shelves.prefab
+  - _gameObject: {fileID: 1489135445}
+    _prefab: Assets/VNB - Home Set/Prefabs/Decoration/Books II.prefab
+  - _gameObject: {fileID: 2036403328}
+    _prefab: Assets/VNB - Home Set/Prefabs/Decoration/Books II.prefab
+  - _gameObject: {fileID: 152430966}
+    _prefab: Assets/VNB - Home Set/Prefabs/Decoration/Books II.prefab
+  - _gameObject: {fileID: 1339392473}
+    _prefab: Assets/VNB - Home Set/Prefabs/Decoration/Small Box.prefab
+  - _gameObject: {fileID: 1366559861}
+    _prefab: Assets/VNB - Home Set/Prefabs/Decoration/Small Box.prefab
+  - _gameObject: {fileID: 398306998}
+    _prefab: Assets/VNB - Home Set/Prefabs/Other/Wifi.prefab
+  - _gameObject: {fileID: 1039681062}
+    _prefab: Assets/VNB - Home Set/Prefabs/Gaming Room/Laptop Variant.prefab
+  - _gameObject: {fileID: 1701953147}
+    _prefab: Assets/VNB - Home Set/Prefabs/Gaming Room/Radio.prefab
+  - _gameObject: {fileID: 1180918364}
+    _prefab: Assets/VNB - Home Set/Prefabs/Decoration/Ceiling Lamp 3.prefab
+  - _gameObject: {fileID: 491863101}
+    _prefab: Assets/VNB - Home Set/Prefabs/Decoration/Painting 1.prefab
+  - _gameObject: {fileID: 1545456114}
+    _prefab: Assets/VNB - Home Set/Prefabs/Decoration/Painting (Small A).prefab
+  - _gameObject: {fileID: 662855367}
+    _prefab: Assets/VNB - Home Set/Prefabs/Decoration/Vase 1.prefab
+  - _gameObject: {fileID: 1064365498}
+    _prefab: Assets/VNB - Home Set/Models/RedFlower.fbx
+  - _gameObject: {fileID: 2108186636}
+    _prefab: Assets/VNB - Home Set/Prefabs/Decoration/Plant Deco 1.prefab
+  - _gameObject: {fileID: 1403739779}
+    _prefab: Assets/VNB - Home Set/Models/BunchOfRoses.fbx
+  - _gameObject: {fileID: 1971420055}
+    _prefab: Assets/VNB - Home Set/Models/NiceRug.fbx
+  - _gameObject: {fileID: 787640315}
+    _prefab: Assets/VNB - Home Set/Prefabs/Decoration/Lamp 1.prefab
+  - _gameObject: {fileID: 1830447518}
+    _prefab: Assets/VNB - Home Set/Prefabs/Decoration/Painting 2.prefab
+  - _gameObject: {fileID: 1560714565}
+    _prefab: Assets/VNB - Home Set/Prefabs/Rugs/Vintage Rugs_005.prefab
+  - _gameObject: {fileID: 11135542}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Wall Standard Border.prefab
+  - _gameObject: {fileID: 2109568953}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Curtains (Open Side).prefab
+  - _gameObject: {fileID: 779102652}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Curtains (Open Side).prefab
+  - _gameObject: {fileID: 548882142}
+    _prefab: Assets/VNB - Home Set/Prefabs/Livingroom/LoungeChair.prefab
+  - _gameObject: {fileID: 493987606}
+    _prefab: Assets/VNB - Home Set/Prefabs/Livingroom/Sofa.prefab
+  - _gameObject: {fileID: 614695880}
+    _prefab: Assets/VNB - Home Set/Prefabs/Livingroom/Coffee Table.prefab
+  - _gameObject: {fileID: 330802653}
+    _prefab: Assets/VNB - Home Set/Prefabs/Livingroom/Air Conditioner.prefab
+  - _gameObject: {fileID: 739220356}
+    _prefab: Assets/VNB - Home Set/Prefabs/Livingroom/Controller (AC).prefab
+  - _gameObject: {fileID: 136197401}
+    _prefab: Assets/Prefabs/Cajonera Piola.prefab
+  - _gameObject: {fileID: 698879333}
+    _prefab: Assets/VNB - Home Set/Prefabs/Bathroom/Toilet.prefab
+  - _gameObject: {fileID: 472208900}
+    _prefab: Assets/VNB - Home Set/Prefabs/Bathroom/Bathtub-Shower.prefab
+  - _gameObject: {fileID: 1365864715}
+    _prefab: Assets/VNB - Home Set/Prefabs/Bathroom/Sink.prefab
+  - _gameObject: {fileID: 1755084330}
+    _prefab: Assets/VNB - Home Set/Prefabs/Bathroom/Mirror 2.prefab
+  - _gameObject: {fileID: 493077389}
+    _prefab: Assets/VNB - Home Set/Prefabs/Bathroom/Soap Dispenser.prefab
+  - _gameObject: {fileID: 1816255195}
+    _prefab: Assets/VNB - Home Set/Prefabs/Bedroom/Drawer 2.prefab
+  - _gameObject: {fileID: 512102559}
+    _prefab: Assets/VNB - Home Set/Prefabs/Bathroom/Towel (Wall - Alt) Variant.prefab
+  - _gameObject: {fileID: 1018848352}
+    _prefab: Assets/VNB - Home Set/Prefabs/Bathroom/Towel Pile.prefab
+  - _gameObject: {fileID: 613026543}
+    _prefab: Assets/VNB - Home Set/Prefabs/Bathroom/Towel Pile.prefab
+  - _gameObject: {fileID: 1232069505}
+    _prefab: Assets/VNB - Home Set/Prefabs/Bathroom/Toilet Paper.prefab
+  - _gameObject: {fileID: 616940080}
+    _prefab: Assets/VNB - Home Set/Prefabs/Bathroom/Toothbrush.prefab
+  - _gameObject: {fileID: 1087311989}
+    _prefab: Assets/VNB - Home Set/Prefabs/Bathroom/Soap.prefab
+  - _gameObject: {fileID: 1029669504}
+    _prefab: Assets/VNB - Home Set/Prefabs/Decoration/Ceiling Lamp 4.prefab
+  - _gameObject: {fileID: 182222969}
+    _prefab: Assets/VNB - Home Set/Prefabs/Rugs/Vintage Rugs_016.prefab
+  - _gameObject: {fileID: 2037103515}
+    _prefab: Assets/VNB - Home Set/Prefabs/Kitchen/Microwave.prefab
+  - _gameObject: {fileID: 989173996}
+    _prefab: Assets/VNB - Home Set/Prefabs/Garage/Washing Machine.prefab
+  - _gameObject: {fileID: 1791757593}
+    _prefab: Assets/VNB - Home Set/Prefabs/Garage/Dryer Machine.prefab
+  - _gameObject: {fileID: 1830769604}
+    _prefab: Assets/VNB - Home Set/Prefabs/Kitchen/Simple Coffee.prefab
+  - _gameObject: {fileID: 662602631}
+    _prefab: Assets/VNB - Home Set/Prefabs/Kitchen/Coffee Machine.prefab
+  - _gameObject: {fileID: 1413549648}
+    _prefab: Assets/VNB - Home Set/Prefabs/Kitchen/Simple Milk.prefab
+  - _gameObject: {fileID: 1985272866}
+    _prefab: Assets/VNB - Home Set/Prefabs/Kitchen/Simple Pan.prefab
+  - _gameObject: {fileID: 1979249389}
+    _prefab: Assets/VNB - Home Set/Prefabs/Kitchen/Plate (Big).prefab
+  - _gameObject: {fileID: 1506328890}
+    _prefab: Assets/VNB - Home Set/Prefabs/Kitchen/Plate (Big).prefab
+  - _gameObject: {fileID: 1856603105}
+    _prefab: Assets/VNB - Home Set/Prefabs/Kitchen/Plate (Big).prefab
+  - _gameObject: {fileID: 630511485}
+    _prefab: Assets/VNB - Home Set/Prefabs/Kitchen/Plate (Big).prefab
+  - _gameObject: {fileID: 2126140624}
+    _prefab: Assets/VNB - Home Set/Prefabs/Kitchen/Knife (Big).prefab
+  - _gameObject: {fileID: 1834701245}
+    _prefab: Assets/VNB - Home Set/Prefabs/Kitchen/Fork (Simple).prefab
+  - _gameObject: {fileID: 1388521138}
+    _prefab: Assets/VNB - Home Set/Prefabs/Kitchen/Fork (Simple).prefab
+  - _gameObject: {fileID: 847065357}
+    _prefab: Assets/VNB - Home Set/Prefabs/Kitchen/Knife (Simple).prefab
+  - _gameObject: {fileID: 698833574}
+    _prefab: Assets/VNB - Home Set/Prefabs/Kitchen/Fork (Simple).prefab
+  - _gameObject: {fileID: 53969435}
+    _prefab: Assets/VNB - Home Set/Prefabs/Kitchen/Knife (Med).prefab
+  - _gameObject: {fileID: 2095290301}
+    _prefab: Assets/VNB - Home Set/Prefabs/Kitchen/Knife (Big).prefab
+  - _gameObject: {fileID: 2075926438}
+    _prefab: Assets/VNB - Home Set/Prefabs/Kitchen/Fork (Simple).prefab
+  - _gameObject: {fileID: 1936403003}
+    _prefab: Assets/VNB - Home Set/Prefabs/Kitchen/Simple Spatula.prefab
+  - _gameObject: {fileID: 1642322209}
+    _prefab: Assets/VNB - Home Set/Prefabs/Kitchen/Stray 3.prefab
+  - _gameObject: {fileID: 149022521}
+    _prefab: Assets/VNB - Home Set/Prefabs/Kitchen/Simple Hot Cake Tower.prefab
+  - _gameObject: {fileID: 1392202886}
+    _prefab: Assets/VNB - Home Set/Prefabs/Kitchen/Simple Hot Cake Tower.prefab
+  - _gameObject: {fileID: 452005233}
+    _prefab: Assets/VNB - Home Set/Prefabs/Kitchen/Simple Hot Cake Tower.prefab
+  - _gameObject: {fileID: 793298034}
+    _prefab: Assets/VNB - Home Set/Prefabs/Kitchen/Simple Hot Cake Tower.prefab
+  - _gameObject: {fileID: 1011667351}
+    _prefab: Assets/VNB - Home Set/Prefabs/Kitchen/Glass (Filled) Alt.prefab
+  - _gameObject: {fileID: 1405313087}
+    _prefab: Assets/VNB - Home Set/Prefabs/Kitchen/Glass (Filled) Alt.prefab
+  - _gameObject: {fileID: 2065638376}
+    _prefab: Assets/VNB - Home Set/Prefabs/Kitchen/Trash Bin.prefab
+  - _gameObject: {fileID: 576923745}
+    _prefab: Assets/VNB - Home Set/Prefabs/Kitchen/Trash Bin.prefab
+  - _gameObject: {fileID: 1047485813}
+    _prefab: Assets/VNB - Home Set/Prefabs/Kitchen/Cup (Filled).prefab
+  - _gameObject: {fileID: 1440961780}
+    _prefab: Assets/VNB - Home Set/Prefabs/Kitchen/Cup (Filled).prefab
+  - _gameObject: {fileID: 466710274}
+    _prefab: Assets/VNB - Home Set/Prefabs/Garage/Plastic Basket.prefab
+  - _gameObject: {fileID: 1406775417}
+    _prefab: Assets/VNB - Home Set/Prefabs/Garage/Washing Product.prefab
+  - _gameObject: {fileID: 1590501381}
+    _prefab: Assets/VNB - Home Set/Prefabs/Garage/Tape.prefab
+  - _gameObject: {fileID: 357372355}
+    _prefab: Assets/VNB - Home Set/Prefabs/Garage/Screwdriver 1.prefab
+  - _gameObject: {fileID: 178801931}
+    _prefab: Assets/VNB - Home Set/Prefabs/Garage/Hammer.prefab
+  - _gameObject: {fileID: 1313368641}
+    _prefab: Assets/VNB - Home Set/Prefabs/Garage/Toolbox.prefab
+  - _gameObject: {fileID: 1621668625}
+    _prefab: Assets/VNB - Home Set/Prefabs/Decoration/Ceiling Lamp 3.prefab
+  - _gameObject: {fileID: 414274034}
+    _prefab: Assets/VNB - Home Set/Prefabs/Decoration/Ceiling Lamp 3.prefab
+  - _gameObject: {fileID: 231023894}
+    _prefab: Assets/VNB - Home Set/Prefabs/Decoration/Ceiling Lamp 3.prefab
+  - _gameObject: {fileID: 1430010763}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Wall Standard Border.prefab
+  - _gameObject: {fileID: 1363815845}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Curtains (Open Side).prefab
+  - _gameObject: {fileID: 374812368}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Curtains (Open Side).prefab
+  - _gameObject: {fileID: 617848500}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Wall Standard Border.prefab
+  - _gameObject: {fileID: 767710892}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Curtains (Open Side).prefab
+  - _gameObject: {fileID: 2146129963}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Curtains (Open Side).prefab
+  - _gameObject: {fileID: 471351624}
+    _prefab: Assets/VNB - Home Set/Prefabs/Kitchen/Fridge.prefab
+  - _gameObject: {fileID: 329132026}
+    _prefab: Assets/VNB - Home Set/Prefabs/Livingroom/Dining Table.prefab
+  - _gameObject: {fileID: 1192006848}
+    _prefab: Assets/VNB - Home Set/Prefabs/Livingroom/Chair.prefab
+  - _gameObject: {fileID: 1544883371}
+    _prefab: Assets/VNB - Home Set/Prefabs/Livingroom/Chair.prefab
+  - _gameObject: {fileID: 148958498}
+    _prefab: Assets/VNB - Home Set/Prefabs/Livingroom/Chair.prefab
+  - _gameObject: {fileID: 296267228}
+    _prefab: Assets/VNB - Home Set/Prefabs/Livingroom/Chair.prefab
+  - _gameObject: {fileID: 1317712134}
+    _prefab: Assets/VNB - Home Set/Prefabs/Kitchen/Counter (Connected) 2.prefab
+  - _gameObject: {fileID: 732946902}
+    _prefab: Assets/VNB - Home Set/Prefabs/Kitchen/Counter (Connected).prefab
+  - _gameObject: {fileID: 1724904414}
+    _prefab: Assets/VNB - Home Set/Prefabs/Kitchen/Counter (Connected).prefab
+  - _gameObject: {fileID: 771641449}
+    _prefab: Assets/VNB - Home Set/Prefabs/Kitchen/Counter (Connected - Sink).prefab
+  - _gameObject: {fileID: 166565298}
+    _prefab: Assets/VNB - Home Set/Prefabs/Kitchen/Oven.prefab
+  - _gameObject: {fileID: 1546789860}
+    _prefab: Assets/VNB - Home Set/Prefabs/Kitchen/Counter (Connected - Alt) Variant.prefab
+  - _gameObject: {fileID: 194513994}
+    _prefab: Assets/VNB - Home Set/Prefabs/Kitchen/Counter (Connected - Alt) Variant.prefab
+  - _gameObject: {fileID: 1558609259}
+    _prefab: Assets/VNB - Home Set/Models/WineRack.fbx
+  - _gameObject: {fileID: 1332866033}
+    _prefab: Assets/VNB - Home Set/Prefabs/Livingroom/Air Conditioner.prefab
+  - _gameObject: {fileID: 1221064703}
+    _prefab: Assets/VNB - Home Set/Prefabs/Livingroom/Controller (AC).prefab
+  - _gameObject: {fileID: 96274810}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Wall Standard (Door).prefab
+  - _gameObject: {fileID: 994286699}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Wall Standard (Corner).prefab
+  - _gameObject: {fileID: 455145544}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Wall Standard (Corner).prefab
+  - _gameObject: {fileID: 1181808947}
+    _prefab: Assets/Prefabs/Doors/LockedDoor.prefab
+  - _gameObject: {fileID: 676581616}
+    _prefab: Assets/Prefabs/Doors/LockedDoor.prefab
+  - _gameObject: {fileID: 1495218511}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Interior variants/Wall Standard
+      Interior.prefab
+  - _gameObject: {fileID: 618943575}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Interior variants/Wall Standard
+      Interior.prefab
+  - _gameObject: {fileID: 657658313}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Interior variants/Wall Standard
+      Interior.prefab
+  - _gameObject: {fileID: 1311891458}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Interior variants/Wall Standard
+      Interior.prefab
+  - _gameObject: {fileID: 2135581609}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Interior variants/Wall Standard
+      Interior.prefab
+  - _gameObject: {fileID: 300010876}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Interior variants/Wall Standard
+      Interior.prefab
+  - _gameObject: {fileID: 1092052216}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Interior variants/Wall Standard
+      Interior.prefab
+  - _gameObject: {fileID: 1597420654}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Interior variants/Wall Standard
+      Interior.prefab
+  - _gameObject: {fileID: 2134871411}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Interior variants/Wall Standard
+      Interior.prefab
+  - _gameObject: {fileID: 1171584055}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Interior variants/Wall Standard
+      Interior.prefab
+  - _gameObject: {fileID: 202699677}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Interior variants/Wall Standard
+      Interior.prefab
+  - _gameObject: {fileID: 339207482}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Interior variants/Wall Standard
+      Interior.prefab
+  - _gameObject: {fileID: 1769599689}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Interior variants/Wall Standard
+      Interior.prefab
+  - _gameObject: {fileID: 1018031345}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Interior variants/Wall Standard
+      Interior.prefab
+  - _gameObject: {fileID: 865287725}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Interior variants/Wall Standard
+      Interior.prefab
+  - _gameObject: {fileID: 1940531095}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Interior variants/Wall Standard
+      Interior.prefab
+  - _gameObject: {fileID: 1735755871}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Interior variants/Wall Standard
+      Interior.prefab
+  - _gameObject: {fileID: 853243849}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Interior variants/Wall Standard
+      Interior.prefab
+  - _gameObject: {fileID: 311966590}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Wall Standard.prefab
+  - _gameObject: {fileID: 917276352}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Wall Standard.prefab
+  - _gameObject: {fileID: 1900492654}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Wall Standard.prefab
+  - _gameObject: {fileID: 786506222}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Wall Standard.prefab
+  - _gameObject: {fileID: 1944012733}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Wall Standard.prefab
+  - _gameObject: {fileID: 1586724815}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Wall Standard.prefab
+  - _gameObject: {fileID: 56510929}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Wall Standard.prefab
+  - _gameObject: {fileID: 1077079702}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Wall Standard.prefab
+  - _gameObject: {fileID: 1053854313}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Wall Standard.prefab
+  - _gameObject: {fileID: 805980807}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Wall Standard.prefab
+  - _gameObject: {fileID: 1992787958}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Wall Standard.prefab
+  - _gameObject: {fileID: 690422497}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Wall Standard.prefab
+  - _gameObject: {fileID: 989951410}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Wall Standard.prefab
+  - _gameObject: {fileID: 1636883145}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Wall Standard.prefab
+  - _gameObject: {fileID: 1202756694}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Wall Standard.prefab
+  - _gameObject: {fileID: 559007452}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Wall Standard.prefab
+  - _gameObject: {fileID: 922320601}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Wall Standard.prefab
+  - _gameObject: {fileID: 1264284374}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Wall Standard.prefab
+  - _gameObject: {fileID: 692101929}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Wall Standard.prefab
+  - _gameObject: {fileID: 410810922}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Wall Standard.prefab
+  - _gameObject: {fileID: 2136393235}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Wall Standard.prefab
+  - _gameObject: {fileID: 1385565672}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Wall Standard.prefab
+  - _gameObject: {fileID: 1309874808}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Wall Standard.prefab
+  - _gameObject: {fileID: 91142606}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Interior variants/Wall Standard
+      (Door) Interior.prefab
+  - _gameObject: {fileID: 1028409542}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Interior variants/Wall Standard
+      (Door) Interior.prefab
+  - _gameObject: {fileID: 126695706}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Interior variants/Wall Standard
+      (Door) Interior.prefab
+  - _gameObject: {fileID: 2054618149}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Wall Standard (Window 3).prefab
+  - _gameObject: {fileID: 2008179449}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Windows/Window 3 Variant.prefab
+  - _gameObject: {fileID: 1840049210}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Wall Standard (Window 3).prefab
+  - _gameObject: {fileID: 792409840}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Windows/Window 3 Variant.prefab
+  - _gameObject: {fileID: 969964397}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Wall Standard (Window 3).prefab
+  - _gameObject: {fileID: 968513155}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Windows/Window 3 Variant.prefab
+  - _gameObject: {fileID: 130163073}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Wall Standard (Window 3).prefab
+  - _gameObject: {fileID: 1154864134}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Windows/Window 3 Variant.prefab
+  - _gameObject: {fileID: 1167149522}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Door 2.prefab
+  - _gameObject: {fileID: 419761831}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 567466318}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 289229424}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 594503686}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 179030980}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 2095683277}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1466067}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 806567886}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1828939492}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 379409365}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 702753503}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1959076121}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1500795442}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1433228705}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 151686718}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1971002623}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 651515916}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 2138339813}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1330018673}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1586605442}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 260759123}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1537041409}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1821354294}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 34236426}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 627979690}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 909124282}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 578392665}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 441954953}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1604951196}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 769077595}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1191169329}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 80227960}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 7232591}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 369084320}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 2068260440}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 195162232}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1303057907}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 2031286426}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 668662151}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 55091332}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 309649206}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 331987959}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1938483075}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1907097658}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 2070895220}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 36458998}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1409996243}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1281934397}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1949413732}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1132641868}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1319819799}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 628339271}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1700420573}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 400775364}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1967382050}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 38294571}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 64893617}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1888635394}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 491607592}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1503334798}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1416952166}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 886779188}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1730438857}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 2032068131}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Wall Standard Border.prefab
+  - _gameObject: {fileID: 1379973754}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Curtains (Open Side).prefab
+  - _gameObject: {fileID: 1335343686}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Curtains (Open Side).prefab
+  - _gameObject: {fileID: 1469993772}
+    _prefab: Assets/VNB - Home Set/Prefabs/Decoration/Ceiling Lamp 3.prefab
+  - _gameObject: {fileID: 954326284}
+    _prefab: Assets/VNB - Home Set/Prefabs/Decoration/Ceiling Lamp 3.prefab
+  - _gameObject: {fileID: 1407489608}
+    _prefab: Assets/VNB - Home Set/Models/Hanger.fbx
+  - _gameObject: {fileID: 1641835170}
+    _prefab: Assets/VNB - Home Set/Prefabs/Rugs/Vintage Rugs_012.prefab
+  - _gameObject: {fileID: 731774164}
+    _prefab: Assets/VNB - Home Set/Prefabs/Decoration/Painting (Small A).prefab
+  - _gameObject: {fileID: 2123203006}
+    _prefab: Assets/VNB - Home Set/Prefabs/Decoration/Painting 1.prefab
+  - _gameObject: {fileID: 832370042}
+    _prefab: Assets/VNB - Home Set/Prefabs/Decoration/Painting 2.prefab
+  - _gameObject: {fileID: 684862804}
+    _prefab: Assets/Prefabs/Cajonera Piola.prefab
+  - _gameObject: {fileID: 3420725136897525514}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/OtherStairs.prefab
+  - _gameObject: {fileID: 1543915565}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1809645471}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 676424162}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 2055734312}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1062279052}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1596165548}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1917061616}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 383412448}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1943871897}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 558377817}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1288450270}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1748080996}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 749957828}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1484174315}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1047741783}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1451382944}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 149920720}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1718620770}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 564737543}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 708739502}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1154831510}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 703454848}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1584053970}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1581647996}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1623302815}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 699128698}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 946280805}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 180785138}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 882882465}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 2120085537}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1039268945}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1307468087}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 718014621}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 449524876}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1622281134}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 487545184}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 946936018}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1191686274}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 701141332}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1047754015}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1409642891}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 756578174}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 843361614}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 721957528}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 312311587}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 2130458617}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1856962406}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 468994841}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 304071253}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1354239811}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 212803591}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1168738688}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1185979049}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1247991078}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 448425634}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 278032656}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1306013897}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 223062117}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1528444693}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 137017263}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1455413767}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Wall Standard (Corner).prefab
+  - _gameObject: {fileID: 874441034}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Wall Standard (Corner).prefab
+  - _gameObject: {fileID: 1109304366}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Interior variants/Wall Standard
+      Interior.prefab
+  - _gameObject: {fileID: 607137525}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Interior variants/Wall Standard
+      Interior.prefab
+  - _gameObject: {fileID: 1400252074}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Interior variants/Wall Standard
+      Interior.prefab
+  - _gameObject: {fileID: 107873030}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Interior variants/Wall Standard
+      Interior.prefab
+  - _gameObject: {fileID: 54308497}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Interior variants/Wall Standard
+      Interior.prefab
+  - _gameObject: {fileID: 464356232}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Interior variants/Wall Standard
+      Interior.prefab
+  - _gameObject: {fileID: 1011687435}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Interior variants/Wall Standard
+      Interior.prefab
+  - _gameObject: {fileID: 520313480}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Interior variants/Wall Standard
+      Interior.prefab
+  - _gameObject: {fileID: 670560205}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Interior variants/Wall Standard
+      Interior.prefab
+  - _gameObject: {fileID: 1629015015}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Interior variants/Wall Standard
+      Interior.prefab
+  - _gameObject: {fileID: 1963646189}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Interior variants/Wall Standard
+      Interior.prefab
+  - _gameObject: {fileID: 740466144}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Interior variants/Wall Standard
+      Interior.prefab
+  - _gameObject: {fileID: 1294033166}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Interior variants/Wall Standard
+      Interior.prefab
+  - _gameObject: {fileID: 1761578786}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Interior variants/Wall Standard
+      Interior.prefab
+  - _gameObject: {fileID: 358192390}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Interior variants/Wall Standard
+      Interior.prefab
+  - _gameObject: {fileID: 765038451}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Interior variants/Wall Standard
+      Interior.prefab
+  - _gameObject: {fileID: 1400815789}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Interior variants/Wall Standard
+      Interior.prefab
+  - _gameObject: {fileID: 1891738446}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Interior variants/Wall Standard
+      Interior.prefab
+  - _gameObject: {fileID: 931262243}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Interior variants/Wall Standard
+      Interior.prefab
+  - _gameObject: {fileID: 708482155}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Interior variants/Wall Standard
+      Interior.prefab
+  - _gameObject: {fileID: 127172880}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Wall Standard.prefab
+  - _gameObject: {fileID: 157928914}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Wall Standard.prefab
+  - _gameObject: {fileID: 1050964041}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Wall Standard.prefab
+  - _gameObject: {fileID: 896736789}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Wall Standard.prefab
+  - _gameObject: {fileID: 616912591}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Wall Standard.prefab
+  - _gameObject: {fileID: 1161709717}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Wall Standard.prefab
+  - _gameObject: {fileID: 2038322272}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Wall Standard.prefab
+  - _gameObject: {fileID: 205366519}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Wall Standard.prefab
+  - _gameObject: {fileID: 474224415}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Wall Standard.prefab
+  - _gameObject: {fileID: 547560425}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Wall Standard.prefab
+  - _gameObject: {fileID: 854582453}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Wall Standard.prefab
+  - _gameObject: {fileID: 283115819}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Wall Standard.prefab
+  - _gameObject: {fileID: 159824831}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Wall Standard.prefab
+  - _gameObject: {fileID: 753387328}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Wall Standard.prefab
+  - _gameObject: {fileID: 2078037106}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Wall Standard.prefab
+  - _gameObject: {fileID: 1219345716}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Wall Standard.prefab
+  - _gameObject: {fileID: 1847798166}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Wall Standard.prefab
+  - _gameObject: {fileID: 1066502775}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Wall Standard.prefab
+  - _gameObject: {fileID: 870492501}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Wall Standard.prefab
+  - _gameObject: {fileID: 514347173}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Wall Standard.prefab
+  - _gameObject: {fileID: 331596221}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Wall Standard.prefab
+  - _gameObject: {fileID: 1991203330}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Wall Standard.prefab
+  - _gameObject: {fileID: 1603161386}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Wall Standard.prefab
+  - _gameObject: {fileID: 837454964}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Wall Standard.prefab
+  - _gameObject: {fileID: 2062183519}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Wall Standard (Window 3).prefab
+  - _gameObject: {fileID: 1369092937}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Windows/Window 3 Variant.prefab
+  - _gameObject: {fileID: 1339823634}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Wall Standard (Window 3).prefab
+  - _gameObject: {fileID: 1248533595}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Windows/Window 3 Variant.prefab
+  - _gameObject: {fileID: 2032522950}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Wall Standard (Window 3).prefab
+  - _gameObject: {fileID: 1135032917}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Windows/Window 3 Variant.prefab
+  - _gameObject: {fileID: 2145876730}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Wall Standard (Window 3).prefab
+  - _gameObject: {fileID: 1160960092}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Windows/Window 3 Variant.prefab
+  - _gameObject: {fileID: 1562830233}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Interior variants/Wall Standard
+      (Door) Interior.prefab
+  - _gameObject: {fileID: 661488840}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Interior variants/Wall Standard
+      (Door) Interior.prefab
+  - _gameObject: {fileID: 2053781033}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Interior variants/Wall Standard
+      (Door) Interior.prefab
+  - _gameObject: {fileID: 413086995}
+    _prefab: Assets/Prefabs/Doors/LockedDoor.prefab
+  - _gameObject: {fileID: 617190466}
+    _prefab: Assets/Prefabs/Doors/InsideDoor.prefab
+  - _gameObject: {fileID: 2002053080}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Door 1.prefab
+  - _gameObject: {fileID: 1974959499}
+    _prefab: Assets/Prefabs/Doors/InsideDoor.prefab
+  - _gameObject: {fileID: 1670922036}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Door 1.prefab
+  - _gameObject: {fileID: 333669557}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Wall Standard Border.prefab
+  - _gameObject: {fileID: 466681527}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Curtains (Open Side).prefab
+  - _gameObject: {fileID: 1146539270}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Curtains (Open Side).prefab
+  - _gameObject: {fileID: 1039385610}
+    _prefab: Assets/VNB - Home Set/Prefabs/Kid Room/Fan.prefab
+  - _gameObject: {fileID: 41492292}
+    _prefab: Assets/VNB - Home Set/Prefabs/Bedroom/1P Bed.prefab
+  - _gameObject: {fileID: 374335050}
+    _prefab: Assets/VNB - Home Set/Models/Desk.fbx
+  - _gameObject: {fileID: 1669303243}
+    _prefab: Assets/VNB - Home Set/Prefabs/Decoration/Books I.prefab
+  - _gameObject: {fileID: 945273746}
+    _prefab: Assets/VNB - Home Set/Prefabs/Decoration/Books I.prefab
+  - _gameObject: {fileID: 1081476730}
+    _prefab: Assets/VNB - Home Set/Prefabs/Decoration/Books I.prefab
+  - _gameObject: {fileID: 1781744590}
+    _prefab: Assets/VNB - Home Set/Prefabs/Decoration/Book (Open).prefab
+  - _gameObject: {fileID: 1612151961}
+    _prefab: Assets/VNB - Home Set/Prefabs/Decoration/Small Lamp 1.prefab
+  - _gameObject: {fileID: 750411217}
+    _prefab: Assets/VNB - Home Set/Prefabs/Bedroom/Wardrobe.prefab
+  - _gameObject: {fileID: 745458648}
+    _prefab: Assets/VNB - Home Set/Prefabs/Bedroom/Bed Table.prefab
+  - _gameObject: {fileID: 1205039904}
+    _prefab: Assets/VNB - Home Set/Prefabs/Decoration/Smartphone 2.prefab
+  - _gameObject: {fileID: 224337880}
+    _prefab: Assets/VNB - Home Set/Prefabs/Decoration/Small Lamp 2.prefab
+  - _gameObject: {fileID: 565615172}
+    _prefab: Assets/VNB - Home Set/Prefabs/Livingroom/Chair 2.prefab
+  - _gameObject: {fileID: 152599514}
+    _prefab: Assets/VNB - Home Set/Prefabs/Kid Room/Pen.prefab
+  - _gameObject: {fileID: 179098304}
+    _prefab: Assets/VNB - Home Set/Prefabs/Kid Room/Pen.prefab
+  - _gameObject: {fileID: 24099980}
+    _prefab: Assets/VNB - Home Set/Prefabs/Livingroom/Modern Shelves.prefab
+  - _gameObject: {fileID: 940069957}
+    _prefab: Assets/VNB - Home Set/Prefabs/Decoration/Books II.prefab
+  - _gameObject: {fileID: 1066801948}
+    _prefab: Assets/VNB - Home Set/Prefabs/Decoration/Books II.prefab
+  - _gameObject: {fileID: 164826877}
+    _prefab: Assets/VNB - Home Set/Prefabs/Decoration/Books II.prefab
+  - _gameObject: {fileID: 311785851}
+    _prefab: Assets/VNB - Home Set/Prefabs/Decoration/Books II.prefab
+  - _gameObject: {fileID: 932581868}
+    _prefab: Assets/VNB - Home Set/Prefabs/Decoration/Book (Open).prefab
+  - _gameObject: {fileID: 1724516158}
+    _prefab: Assets/VNB - Home Set/Prefabs/Decoration/Books II.prefab
+  - _gameObject: {fileID: 1813969002}
+    _prefab: Assets/VNB - Home Set/Prefabs/Decoration/Painting Small Alt.prefab
+  - _gameObject: {fileID: 1761711151}
+    _prefab: Assets/VNB - Home Set/Prefabs/Bedroom/Simple Shelf.prefab
+  - _gameObject: {fileID: 1837212364}
+    _prefab: Assets/VNB - Home Set/Prefabs/Kid Room/Toy House.prefab
+  - _gameObject: {fileID: 734687089}
+    _prefab: Assets/VNB - Home Set/Prefabs/Kid Room/Toy Figure 4.prefab
+  - _gameObject: {fileID: 1997089168}
+    _prefab: Assets/VNB - Home Set/Prefabs/Kid Room/Toy Figure 3.prefab
+  - _gameObject: {fileID: 632518625}
+    _prefab: Assets/VNB - Home Set/Prefabs/Kid Room/Toy Figure 1.prefab
+  - _gameObject: {fileID: 1793432843}
+    _prefab: Assets/VNB - Home Set/Prefabs/Kid Room/Toy Car 2.prefab
+  - _gameObject: {fileID: 1398931401}
+    _prefab: Assets/VNB - Home Set/Prefabs/Kid Room/Toy Car 1.prefab
+  - _gameObject: {fileID: 2067538878}
+    _prefab: Assets/VNB - Home Set/Prefabs/Livingroom/Air Conditioner.prefab
+  - _gameObject: {fileID: 1102804059}
+    _prefab: Assets/VNB - Home Set/Prefabs/Livingroom/Controller (AC).prefab
+  - _gameObject: {fileID: 1552416650}
+    _prefab: Assets/VNB - Home Set/Models/Desk.fbx
+  - _gameObject: {fileID: 1242671863}
+    _prefab: Assets/VNB - Home Set/Prefabs/Bedroom/Bed Table.prefab
+  - _gameObject: {fileID: 1009543253}
+    _prefab: Assets/VNB - Home Set/Prefabs/Gaming Room/TV 1.prefab
+  - _gameObject: {fileID: 1716647506}
+    _prefab: Assets/VNB - Home Set/Prefabs/Gaming Room/Gamer Chair.prefab
+  - _gameObject: {fileID: 2058171035}
+    _prefab: Assets/VNB - Home Set/Prefabs/Gaming Room/Smartphone 1.prefab
+  - _gameObject: {fileID: 1657580069}
+    _prefab: Assets/VNB - Home Set/Models/GamingComputer.fbx
+  - _gameObject: {fileID: 866035115}
+    _prefab: Assets/VNB - Home Set/Prefabs/Gaming Room/Poster 2.prefab
+  - _gameObject: {fileID: 418954698}
+    _prefab: Assets/VNB - Home Set/Prefabs/Gaming Room/Puff.prefab
+  - _gameObject: {fileID: 841800923}
+    _prefab: Assets/VNB - Home Set/Prefabs/Kid Room/Toy Car 1.prefab
+  - _gameObject: {fileID: 1088304259}
+    _prefab: Assets/VNB - Home Set/Prefabs/Kid Room/Toy Plane.prefab
+  - _gameObject: {fileID: 1180453696}
+    _prefab: Assets/VNB - Home Set/Models/Keyboard.obj
+  - _gameObject: {fileID: 81861496}
+    _prefab: Assets/VNB - Home Set/Models/ComputerMouse.obj
+  - _gameObject: {fileID: 436750078}
+    _prefab: Assets/VNB - Home Set/Prefabs/Bedroom/Wardrobe.prefab
+  - _gameObject: {fileID: 80243126}
+    _prefab: Assets/VNB - Home Set/Prefabs/Bedroom/Drawer A Variant.prefab
+  - _gameObject: {fileID: 317416804}
+    _prefab: Assets/VNB - Home Set/Prefabs/Bedroom/Simple Shelf.prefab
+  - _gameObject: {fileID: 567566411}
+    _prefab: Assets/VNB - Home Set/Prefabs/Kid Room/Toy Car 2.prefab
+  - _gameObject: {fileID: 129970511}
+    _prefab: Assets/VNB - Home Set/Prefabs/Kid Room/Toy House.prefab
+  - _gameObject: {fileID: 1636114324}
+    _prefab: Assets/VNB - Home Set/Prefabs/Kid Room/Fan.prefab
+  - _gameObject: {fileID: 1087367239}
+    _prefab: Assets/VNB - Home Set/Prefabs/Decoration/Lamp 2.prefab
+  - _gameObject: {fileID: 423674539}
+    _prefab: Assets/VNB - Home Set/Prefabs/Rugs/Vintage Rugs_006.prefab
+  - _gameObject: {fileID: 2067165403}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Wall Standard Border.prefab
+  - _gameObject: {fileID: 1830859271}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Curtains (Open Side).prefab
+  - _gameObject: {fileID: 1118989842}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Curtains (Open Side).prefab
+  - _gameObject: {fileID: 1687765859}
+    _prefab: Assets/VNB - Home Set/Prefabs/Bedroom/1P Bed 2.prefab
+  - _gameObject: {fileID: 1215544918}
+    _prefab: Assets/VNB - Home Set/Prefabs/Decoration/Small Lamp 3.prefab
+  - _gameObject: {fileID: 10920395}
+    _prefab: Assets/VNB - Home Set/Prefabs/Rugs/Vintage Rugs_006.prefab
+  - _gameObject: {fileID: 295877297}
+    _prefab: Assets/VNB - Home Set/Prefabs/Gaming Room/Puff.prefab
+  - _gameObject: {fileID: 1812339863}
+    _prefab: Assets/VNB - Home Set/Prefabs/Livingroom/Air Conditioner.prefab
+  - _gameObject: {fileID: 1000394835}
+    _prefab: Assets/VNB - Home Set/Prefabs/Livingroom/Controller (AC).prefab
+  - _gameObject: {fileID: 1409396842}
+    _prefab: Assets/VNB - Home Set/Prefabs/Bedroom/2P Bed 2.prefab
+  - _gameObject: {fileID: 223003028}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Wall Standard Border.prefab
+  - _gameObject: {fileID: 1704130497}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Curtains (Open Side).prefab
+  - _gameObject: {fileID: 872533443}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Curtains (Open Side).prefab
+  - _gameObject: {fileID: 2016315756}
+    _prefab: Assets/VNB - Home Set/Prefabs/Decoration/Ceiling Lamp 3.prefab
+  - _gameObject: {fileID: 178243640}
+    _prefab: Assets/VNB - Home Set/Prefabs/Decoration/Small Lamp 1.prefab
+  - _gameObject: {fileID: 676294049}
+    _prefab: Assets/VNB - Home Set/Prefabs/Decoration/Small Lamp 1.prefab
+  - _gameObject: {fileID: 457655190}
+    _prefab: Assets/VNB - Home Set/Prefabs/Livingroom/Modern Shelves.prefab
+  - _gameObject: {fileID: 833075651}
+    _prefab: Assets/VNB - Home Set/Prefabs/Decoration/Books II.prefab
+  - _gameObject: {fileID: 461378719}
+    _prefab: Assets/VNB - Home Set/Prefabs/Decoration/Books II.prefab
+  - _gameObject: {fileID: 1256223086}
+    _prefab: Assets/VNB - Home Set/Prefabs/Decoration/Books II.prefab
+  - _gameObject: {fileID: 1245449945}
+    _prefab: Assets/VNB - Home Set/Prefabs/Decoration/Books II.prefab
+  - _gameObject: {fileID: 617733009}
+    _prefab: Assets/VNB - Home Set/Prefabs/Decoration/Book (Open).prefab
+  - _gameObject: {fileID: 131779938}
+    _prefab: Assets/VNB - Home Set/Prefabs/Decoration/Books II.prefab
+  - _gameObject: {fileID: 1418369752}
+    _prefab: Assets/VNB - Home Set/Prefabs/Decoration/Painting Small Alt.prefab
+  - _gameObject: {fileID: 238307609}
+    _prefab: Assets/VNB - Home Set/Prefabs/Rugs/Vintage Rugs_008.prefab
+  - _gameObject: {fileID: 1957782703}
+    _prefab: Assets/VNB - Home Set/Prefabs/Bedroom/Wardrobe.prefab
+  - _gameObject: {fileID: 1084205081}
+    _prefab: Assets/VNB - Home Set/Prefabs/Bedroom/Wardrobe.prefab
+  - _gameObject: {fileID: 1880343041}
+    _prefab: Assets/VNB - Home Set/Prefabs/Livingroom/Sofa 2.prefab
+  - _gameObject: {fileID: 1289612971}
+    _prefab: Assets/VNB - Home Set/Prefabs/Backyard/Outside Sofa (Alt).prefab
+  - _gameObject: {fileID: 2008319723}
+    _prefab: Assets/VNB - Home Set/Prefabs/Gaming Room/TV 1.prefab
+  - _gameObject: {fileID: 446551169}
+    _prefab: Assets/VNB - Home Set/Prefabs/Livingroom/Controller (TV).prefab
+  - _gameObject: {fileID: 208766485}
+    _prefab: Assets/VNB - Home Set/Prefabs/Livingroom/Air Conditioner.prefab
+  - _gameObject: {fileID: 1487552042}
+    _prefab: Assets/VNB - Home Set/Prefabs/Livingroom/Controller (AC).prefab
+  - _gameObject: {fileID: 225623623}
+    _prefab: Assets/VNB - Home Set/Prefabs/Decoration/Painting 3.prefab
+  - _gameObject: {fileID: 843655816}
+    _prefab: Assets/VNB - Home Set/Prefabs/Decoration/Plant Deco 1.prefab
+  - _gameObject: {fileID: 1997309227}
+    _prefab: Assets/VNB - Home Set/Models/BunchOfRoses.fbx
+  - _gameObject: {fileID: 1274425357}
+    _prefab: Assets/VNB - Home Set/Prefabs/Decoration/Painting 2.prefab
+  - _gameObject: {fileID: 1782412432}
+    _prefab: Assets/Prefabs/Cajonera Piola.prefab
+  - _gameObject: {fileID: 449235669}
+    _prefab: Assets/Prefabs/Cajonera Piola.prefab
+  - _gameObject: {fileID: 1989883192}
+    _prefab: Assets/VNB - Home Set/Prefabs/Livingroom/Coffee Table.prefab
+  - _gameObject: {fileID: 122425420}
+    _prefab: Assets/VNB - Home Set/Prefabs/Livingroom/Coffee Table.prefab
+  - _gameObject: {fileID: 1274407656}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Wall Standard Border.prefab
+  - _gameObject: {fileID: 1836209522}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Curtains (Open Side).prefab
+  - _gameObject: {fileID: 2006561841}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Curtains (Open Side).prefab
+  - _gameObject: {fileID: 1630368934}
+    _prefab: Assets/VNB - Home Set/Prefabs/Decoration/Ceiling Lamp 3.prefab
+  - _gameObject: {fileID: 856533230}
+    _prefab: Assets/VNB - Home Set/Prefabs/Decoration/Ceiling Lamp 3.prefab
+  - _gameObject: {fileID: 1884885321}
+    _prefab: Assets/VNB - Home Set/Prefabs/Decoration/Ceiling Lamp 3.prefab
+  - _gameObject: {fileID: 474692523}
+    _prefab: Assets/VNB - Home Set/Prefabs/Livingroom/Modern Shelves.prefab
+  - _gameObject: {fileID: 482333442}
+    _prefab: Assets/VNB - Home Set/Prefabs/Decoration/Books II.prefab
+  - _gameObject: {fileID: 1967862789}
+    _prefab: Assets/VNB - Home Set/Prefabs/Decoration/Books II.prefab
+  - _gameObject: {fileID: 54576318}
+    _prefab: Assets/VNB - Home Set/Prefabs/Decoration/Books II.prefab
+  - _gameObject: {fileID: 1749882659}
+    _prefab: Assets/VNB - Home Set/Prefabs/Decoration/Books II.prefab
+  - _gameObject: {fileID: 901481696}
+    _prefab: Assets/VNB - Home Set/Prefabs/Decoration/Book (Open).prefab
+  - _gameObject: {fileID: 1284988252}
+    _prefab: Assets/VNB - Home Set/Prefabs/Decoration/Books II.prefab
+  - _gameObject: {fileID: 1437063214}
+    _prefab: Assets/VNB - Home Set/Prefabs/Decoration/Painting Small Alt.prefab
+  - _gameObject: {fileID: 970759911}
+    _prefab: Assets/VNB - Home Set/Prefabs/Gaming Room/Puff Variant.prefab
+  - _gameObject: {fileID: 892964229}
+    _prefab: Assets/VNB - Home Set/Prefabs/Livingroom/Coffee Table.prefab
+  - _gameObject: {fileID: 195159588}
+    _prefab: Assets/VNB - Home Set/Prefabs/Rugs/Vintage Rugs_015.prefab
+  - _gameObject: {fileID: 1070094668}
+    _prefab: Assets/VNB - Home Set/Prefabs/Decoration/Painting (Small A).prefab
+  - _gameObject: {fileID: 119541951}
+    _prefab: Assets/VNB - Home Set/Prefabs/Decoration/Vase 1.prefab
+  - _gameObject: {fileID: 2025387523}
+    _prefab: Assets/VNB - Home Set/Models/BunchOfRoses.fbx
+  - _gameObject: {fileID: 1647430273}
+    _prefab: Assets/VNB - Home Set/Prefabs/Decoration/Painting Small 3.prefab
+  - _gameObject: {fileID: 1214697330}
+    _prefab: Assets/VNB - Home Set/Prefabs/Decoration/Painting 3.prefab
+  - _gameObject: {fileID: 609640886}
+    _prefab: Assets/VNB - Home Set/Prefabs/Livingroom/Air Conditioner.prefab
+  - _gameObject: {fileID: 1681444945}
+    _prefab: Assets/VNB - Home Set/Prefabs/Livingroom/Controller (AC).prefab
+  - _gameObject: {fileID: 1623742643}
+    _prefab: Assets/Prefabs/Cajonera Piola.prefab
+  - _gameObject: {fileID: 543853130}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1234594108}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 934660305}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1154350091}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 749254571}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 223244897}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1471449060}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1528193894}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1163694960}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 937279404}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 921131313}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1005892609}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 926460286}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 425925386}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1354478762}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 2120106947}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 123024396}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1685437587}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 932395793}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 559613216}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 687433542}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1335071940}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 2122122350}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1577772085}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1769066375}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1117677605}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 875732150}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1830505190}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1788357514}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 207569085}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 707689416}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 293781703}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 297726967}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1801040329}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 572728977}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 584342794}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 902425223}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1530023980}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 712331353}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 93471503}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 2113039593}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 581591960}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 39166911}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 31402224}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1776737336}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 538972146}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1444590198}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1913866332}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 919599110}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 2047970220}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 572572065}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 707647165}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1591889430}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1851185134}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1933535054}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 976867423}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 411369506}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 408990365}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1483876281}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1014222240}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 864451703}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1798663414}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 1801580703}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Floor.prefab
+  - _gameObject: {fileID: 532718361}
+    _prefab: Assets/Prefabs/lightbulb.prefab
+  - _gameObject: {fileID: 544398017}
+    _prefab: Assets/Prefabs/lightbulb.prefab
+  - _gameObject: {fileID: 1440866811}
+    _prefab: Assets/Prefabs/lightbulb.prefab
+  - _gameObject: {fileID: 356423786}
+    _prefab: Assets/Prefabs/lightbulb.prefab
+  - _gameObject: {fileID: 146312956}
+    _prefab: Assets/Prefabs/CableRoot.prefab
+  - _gameObject: {fileID: 309999568}
+    _prefab: Assets/Prefabs/CableRoot.prefab
+  - _gameObject: {fileID: 610819419}
+    _prefab: Assets/Prefabs/CableRoot.prefab
+  - _gameObject: {fileID: 2119994715}
+    _prefab: Assets/Prefabs/CableRoot.prefab
+  - _gameObject: {fileID: 2012917001}
+    _prefab: Assets/Resources/Model3D/daughters_hat.glb
+  - _gameObject: {fileID: 937724192}
+    _prefab: Assets/Resources/Model3D/fathers_hat.glb
+  - _gameObject: {fileID: 55079210}
+    _prefab: Assets/Resources/Model3D/mothers_hat.glb
+  - _gameObject: {fileID: 1822041637}
+    _prefab: Assets/Resources/Model3D/sons_hat.glb
+  - _gameObject: {fileID: 1014511861}
+    _prefab: Assets/Prefabs/Mannequin.prefab
+  - _gameObject: {fileID: 1014511860}
+    _prefab: Assets/Resources/Model3D/wooden_artist_mannequin.glb
+  - _gameObject: {fileID: 1014511859}
+    _prefab: Assets/Prefabs/PushButton.prefab
+  - _gameObject: {fileID: 1014511858}
+    _prefab: Assets/Prefabs/PushButton.prefab
+  - _gameObject: {fileID: 1945416492}
+    _prefab: Assets/Prefabs/Mannequin.prefab
+  - _gameObject: {fileID: 1945416491}
+    _prefab: Assets/Resources/Model3D/wooden_artist_mannequin.glb
+  - _gameObject: {fileID: 1945416490}
+    _prefab: Assets/Prefabs/PushButton.prefab
+  - _gameObject: {fileID: 1945416489}
+    _prefab: Assets/Prefabs/PushButton.prefab
+  - _gameObject: {fileID: 952068613}
+    _prefab: Assets/Prefabs/Mannequin.prefab
+  - _gameObject: {fileID: 952068612}
+    _prefab: Assets/Resources/Model3D/wooden_artist_mannequin.glb
+  - _gameObject: {fileID: 952068611}
+    _prefab: Assets/Prefabs/PushButton.prefab
+  - _gameObject: {fileID: 952068610}
+    _prefab: Assets/Prefabs/PushButton.prefab
+  - _gameObject: {fileID: 658928874}
+    _prefab: Assets/Prefabs/Mannequin.prefab
+  - _gameObject: {fileID: 658928873}
+    _prefab: Assets/Resources/Model3D/wooden_artist_mannequin.glb
+  - _gameObject: {fileID: 658928872}
+    _prefab: Assets/Prefabs/PushButton.prefab
+  - _gameObject: {fileID: 658928871}
+    _prefab: Assets/Prefabs/PushButton.prefab
+  - _gameObject: {fileID: 1454306134}
+    _prefab: Assets/VNB - Home Set/Prefabs/Livingroom/Coffee Table.prefab
+  - _gameObject: {fileID: 1076554108}
+    _prefab: Assets/Prefabs/lightbulb.prefab
+  - _gameObject: {fileID: 489427951}
+    _prefab: Assets/Prefabs/lightbulb.prefab
+  - _gameObject: {fileID: 1695568117}
+    _prefab: Assets/Prefabs/lightbulb.prefab
+  - _gameObject: {fileID: 1056950065}
+    _prefab: Assets/Prefabs/lightbulb.prefab
+  - _gameObject: {fileID: 617558675}
+    _prefab: Assets/Prefabs/lightbulb.prefab
+  - _gameObject: {fileID: 886674356}
+    _prefab: Assets/Prefabs/PushButton.prefab
+  - _gameObject: {fileID: 1968561216}
+    _prefab: Assets/Prefabs/PushButton.prefab
+  - _gameObject: {fileID: 888527841}
+    _prefab: Assets/Prefabs/PushButton.prefab
+  - _gameObject: {fileID: 1137338764}
+    _prefab: Assets/Prefabs/PushButton.prefab
+  - _gameObject: {fileID: 61361339}
+    _prefab: Assets/Prefabs/PushButton.prefab
+  - _gameObject: {fileID: 2908171}
+    _prefab: Assets/Prefabs/PushButton.prefab
+  - _gameObject: {fileID: 1958336339}
+    _prefab: Assets/Prefabs/lightbulb.prefab
+  - _gameObject: {fileID: 1863719345}
+    _prefab: Assets/Prefabs/lightbulb.prefab
+  - _gameObject: {fileID: 1787023275}
+    _prefab: Assets/Prefabs/lightbulb.prefab
+  - _gameObject: {fileID: 558986114}
+    _prefab: Assets/Prefabs/PushButton.prefab
+  - _gameObject: {fileID: 296432641}
+    _prefab: Assets/Prefabs/PushButton.prefab
+  - _gameObject: {fileID: 1889068883}
+    _prefab: Assets/Prefabs/PushButton.prefab
+  - _gameObject: {fileID: 1235474389}
+    _prefab: Assets/Prefabs/PushButton.prefab
+  - _gameObject: {fileID: 1887967300}
+    _prefab: Assets/Prefabs/PushButton.prefab
+  - _gameObject: {fileID: 1904611617}
+    _prefab: Assets/Prefabs/Linterna.prefab
+  - _gameObject: {fileID: 295392958}
+    _prefab: Assets/Models/key-with-tag/source/Model/Key.fbx
+  - _gameObject: {fileID: 1539931660}
+    _prefab: Assets/Models/key-with-tag/source/Model/Key.fbx
+  - _gameObject: {fileID: 1583904471}
+    _prefab: Assets/Models/key-with-tag/source/Model/Key.fbx
+  - _gameObject: {fileID: 981018465}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Wall Standard.prefab
+  - _gameObject: {fileID: 1686352259}
+    _prefab: Assets/VNB - Home Set/Prefabs/Building/Wall Standard.prefab
+  - _gameObject: {fileID: 1948403463}
+    _prefab: Assets/Prefabs/Numeric Button.prefab
+  - _gameObject: {fileID: 1948403462}
+    _prefab: Assets/Prefabs/PushButton.prefab
+  - _gameObject: {fileID: 1616389729}
+    _prefab: Assets/Prefabs/Numeric Button.prefab
+  - _gameObject: {fileID: 1616389728}
+    _prefab: Assets/Prefabs/PushButton.prefab
+  - _gameObject: {fileID: 548331183}
+    _prefab: Assets/Prefabs/Numeric Button.prefab
+  - _gameObject: {fileID: 548331182}
+    _prefab: Assets/Prefabs/PushButton.prefab
+  - _gameObject: {fileID: 609821943}
+    _prefab: Assets/Prefabs/Numeric Button.prefab
+  - _gameObject: {fileID: 609821942}
+    _prefab: Assets/Prefabs/PushButton.prefab
+--- !u!4 &1331220717
+Transform:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1331220715}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1332866031
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -70503,7 +72162,7 @@ Transform:
   m_GameObject: {fileID: 1537520952}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.70710677, z: 0.70710677, w: 0}
-  m_LocalPosition: {x: -0.986, y: -5.895, z: 20.733}
+  m_LocalPosition: {x: -0.986, y: -5.895, z: 20.408}
   m_LocalScale: {x: 2.01, y: 2.2928445, z: 11.584445}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -70845,7 +72504,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 66fcf2238e8005e45b22ef9964e11226, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.71
+      value: 2.0290003
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 66fcf2238e8005e45b22ef9964e11226, type: 3}
       propertyPath: m_LocalRotation.w
@@ -75086,7 +76745,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8302937088191865143, guid: 62cb1421dd6b95449915fd2d97f5fd03, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.43669987
+      value: -0.134
       objectReference: {fileID: 0}
     - target: {fileID: 8302937088191865143, guid: 62cb1421dd6b95449915fd2d97f5fd03, type: 3}
       propertyPath: m_LocalRotation.w
@@ -86986,7 +88645,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7608631480210045294, guid: 8fe9784b41097af4cb2f06c4e113b00a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 9.8271
+      value: 9.502101
       objectReference: {fileID: 0}
     - target: {fileID: 7608631480210045294, guid: 8fe9784b41097af4cb2f06c4e113b00a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -90293,6 +91952,11 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!1 &1974959499 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5880168492367052118, guid: ab98e19e77dc68243a9506b49fc33edd, type: 3}
+  m_PrefabInstance: {fileID: 1670922031}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1976051229
 GameObject:
   m_ObjectHideFlags: 0
@@ -94649,7 +96313,7 @@ Transform:
   m_GameObject: {fileID: 2052720988}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.70710677, z: 0.70710677, w: 0}
-  m_LocalPosition: {x: -5.455, y: -2.865, z: 12.858}
+  m_LocalPosition: {x: -5.455, y: -2.865, z: 13.177}
   m_LocalScale: {x: 2.01, y: 2.2928445, z: 11.584445}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -96491,6 +98155,8 @@ MonoBehaviour:
   correct: 0
   color: 2
   light: {fileID: 1264718276}
+  lightBulb: {fileID: 0}
+  colorMaterial: {fileID: 0}
   currentCable: {fileID: 0}
 --- !u!136 &2071262004
 CapsuleCollider:
@@ -98865,6 +100531,13 @@ MonoBehaviour:
   - {fileID: 888527841}
   - {fileID: 1137338764}
   - {fileID: 61361339}
+  lightBulb: {fileID: 2100000, guid: ac9499536d5542745b7e51e3cff21df4, type: 2}
+  colorMaterial:
+  - {fileID: 2100000, guid: be4904135d2e87d458fe96e49ac3fa0f, type: 2}
+  - {fileID: 2100000, guid: 79d71416ce5ac64479c0229b9c10a742, type: 2}
+  - {fileID: 2100000, guid: 860f135247beedd4b9a8a247eb0bb297, type: 2}
+  - {fileID: 2100000, guid: 027cee341f9fd95428e681f03f876f59, type: 2}
+  - {fileID: 2100000, guid: 44c791397c984b74aaae4ef34a4c09d6, type: 2}
   daltonicMode: 0
   lightsOn: 0000000000
   sonidoGanar: {fileID: 2121615327}
@@ -102599,4 +104272,4 @@ SceneRoots:
   - {fileID: 422347365}
   - {fileID: 337337252}
   - {fileID: 784897994}
-  - {fileID: 1376513677}
+  - {fileID: 1331220717}
