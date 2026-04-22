@@ -234,7 +234,7 @@ public class SequenceManager : MonoBehaviour
 
         // 👉 (Opcional) mantener emisión
         Material mat = rend.material;
-        mat.EnableKeyword("_EMISSION");
+        // mat.EnableKeyword("_EMISSION");
         mat.SetColor("_EmissionColor", color * intensity);
     }
 

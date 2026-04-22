@@ -12,6 +12,10 @@ public class SimonGameManager : MonoBehaviour
     public Colors[] colors;
     public AudioSource[] audiosBombillas;
 
+    public Material winMaterial;
+    public Material loseMaterial;
+
+
     public Material lightBulb;
     public Material[] colorMaterial;
 
@@ -182,17 +186,12 @@ public class SimonGameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
 
-        for (int i = 0; i < bulbs.Length; i++)
-        {
-            SetEmission(i, Color.red, 3f);
-        }
+        SetAllBulbsMaterial(loseMaterial);
 
         yield return new WaitForSeconds(1f);
 
-        for (int i = 0; i < bulbs.Length; i++)
-        {
-            TurnOffEmission(i);
-        }
+        // volver al material normal apagado
+        SetAllBulbsMaterial(lightBulb);
 
         yield return new WaitForSeconds(1f);
 
@@ -205,10 +204,7 @@ public class SimonGameManager : MonoBehaviour
 
         yield return new WaitForSeconds(0.5f);
 
-        for (int i = 0; i < bulbs.Length; i++)
-        {
-            SetEmission(i, Color.green, 3f);
-        }
+        SetAllBulbsMaterial(winMaterial);
 
         yield return new WaitForSeconds(1f);
     }
@@ -222,21 +218,32 @@ public class SimonGameManager : MonoBehaviour
         TurnOffEmission(index);
     }
 
-    void SetEmission(int index, Color color, float intensity)
+    void SetAllBulbsMaterial(Material mat)
+    {
+        for (int i = 0; i < bulbs.Length; i++)
+        {
+            if (bulbs[i] != null)
+            {
+                bulbs[i].material = mat;
+            }
+        }
+    }
+
+    void SetEmission(int index, Color color, float intensity, bool forceColor = false)
     {
         Renderer rend = bulbs[index];
         if (rend == null) return;
 
         Material mat = rend.material;
 
-        // 👉 Cambiar material según color
-        if (colorMaterial != null && index < colorMaterial.Length)
+        // 👉 SOLO cambiar material si NO estamos forzando color global
+        if (!forceColor && colorMaterial != null && index < colorMaterial.Length)
         {
             rend.material = colorMaterial[index];
             mat = rend.material;
         }
 
-        mat.EnableKeyword("_EMISSION");
+        // mat.EnableKeyword("_EMISSION");
         mat.SetColor("_EmissionColor", color * intensity);
     }
 

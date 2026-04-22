@@ -7108,6 +7108,8 @@ MonoBehaviour:
   - {fileID: 1958336340}
   - {fileID: 2143869766}
   - {fileID: 1787023276}
+  winMaterial: {fileID: 2100000, guid: 79d71416ce5ac64479c0229b9c10a742, type: 2}
+  loseMaterial: {fileID: 2100000, guid: be4904135d2e87d458fe96e49ac3fa0f, type: 2}
   lightBulb: {fileID: 2100000, guid: ac9499536d5542745b7e51e3cff21df4, type: 2}
   colorMaterial:
   - {fileID: 2100000, guid: be4904135d2e87d458fe96e49ac3fa0f, type: 2}
@@ -56317,201 +56319,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1225925371 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7765850167803512011, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
-  m_PrefabInstance: {fileID: 2014471718}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1225925372 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1274065472193470612, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
-  m_PrefabInstance: {fileID: 2014471718}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1225925373 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4060179751472984462, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
-  m_PrefabInstance: {fileID: 2014471718}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1225925374 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7479942688483873616, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
-  m_PrefabInstance: {fileID: 2014471718}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1225925375 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6806275285152939489, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
-  m_PrefabInstance: {fileID: 2014471718}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1225925376 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 49681011085489242, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
-  m_PrefabInstance: {fileID: 2014471718}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1225925377 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5072945151925617363, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
-  m_PrefabInstance: {fileID: 2014471718}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1225925378 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2125989879111463233, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
-  m_PrefabInstance: {fileID: 2014471718}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1225925379 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6729284416056693189, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
-  m_PrefabInstance: {fileID: 2014471718}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1225925380 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7668979705419119993, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
-  m_PrefabInstance: {fileID: 2014471718}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1225925381 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6007638791231325746, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
-  m_PrefabInstance: {fileID: 2014471718}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1225925382 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 448059854302470658, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
-  m_PrefabInstance: {fileID: 2014471718}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1225925383 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3744608149160882425, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
-  m_PrefabInstance: {fileID: 2014471718}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1225925384 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3764488030055975293, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
-  m_PrefabInstance: {fileID: 2014471718}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1225925385 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5986047592855412579, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
-  m_PrefabInstance: {fileID: 2014471718}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1225925386 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2549852795527664844, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
-  m_PrefabInstance: {fileID: 2014471718}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1225925387 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1896984899998522259, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
-  m_PrefabInstance: {fileID: 2014471718}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1225925388 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7843088036046249280, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
-  m_PrefabInstance: {fileID: 2014471718}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1225925389 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8392884398759885241, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
-  m_PrefabInstance: {fileID: 2014471718}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1225925390 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5504175431979988263, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
-  m_PrefabInstance: {fileID: 2014471718}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1225925391 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6499544228280051517, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
-  m_PrefabInstance: {fileID: 2014471718}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1225925392 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3687882517670049787, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
-  m_PrefabInstance: {fileID: 2014471718}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1225925393 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2213327009077629666, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
-  m_PrefabInstance: {fileID: 2014471718}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1225925394 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3247306163589682660, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
-  m_PrefabInstance: {fileID: 2014471718}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1225925395 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 998297515602502964, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
-  m_PrefabInstance: {fileID: 2014471718}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1225925396 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5039970165592201446, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
-  m_PrefabInstance: {fileID: 2014471718}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1225925397 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5719479937204299986, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
-  m_PrefabInstance: {fileID: 2014471718}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1225925398 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4571971632455210579, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
-  m_PrefabInstance: {fileID: 2014471718}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1225925399 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7486505500252105379, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
-  m_PrefabInstance: {fileID: 2014471718}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1225925400 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1400217124441242246, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
-  m_PrefabInstance: {fileID: 2014471718}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1225925401 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 513035353708888767, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
-  m_PrefabInstance: {fileID: 2014471718}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1225925402 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2015765953170616061, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
-  m_PrefabInstance: {fileID: 2014471718}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1225925403 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7051804144104368537, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
-  m_PrefabInstance: {fileID: 2014471718}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1225925404 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2201560458843566666, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
-  m_PrefabInstance: {fileID: 2014471718}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1225925405 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 501562774428316732, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
-  m_PrefabInstance: {fileID: 2014471718}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1225925406 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2883773409530142200, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
-  m_PrefabInstance: {fileID: 2014471718}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1225925407 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2801747512757872294, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
-  m_PrefabInstance: {fileID: 2014471718}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1225925408 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4181051427608775396, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
-  m_PrefabInstance: {fileID: 2014471718}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1225925409 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5544019037672374346, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
-  m_PrefabInstance: {fileID: 2014471718}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1227570825
 GameObject:
   m_ObjectHideFlags: 0
@@ -61097,78 +60904,78 @@ MonoBehaviour:
   _scenePrefabInstances:
   - _gameObject: {fileID: 2014471726}
     _prefab: Assets/cosas/Victor/XR Origin Hands (XR Rig) (player).prefab
-  - _gameObject: {fileID: 1225925409}
+  - _gameObject: {fileID: 10989802}
     _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Starter Assets/Prefabs/Interactors/Gaze
       Interactor.prefab
-  - _gameObject: {fileID: 1225925408}
+  - _gameObject: {fileID: 10989801}
     _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Starter Assets/Prefabs/Interactors/Poke
       Interactor.prefab
-  - _gameObject: {fileID: 1225925407}
+  - _gameObject: {fileID: 10989800}
     _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Starter Assets/Models/Pinch_Pointer_LOD0.fbx
-  - _gameObject: {fileID: 1225925406}
+  - _gameObject: {fileID: 10989799}
     _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Starter Assets/Prefabs/Affordances/PokePointerAffordance.prefab
-  - _gameObject: {fileID: 1225925405}
+  - _gameObject: {fileID: 10989798}
     _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Starter Assets/Prefabs/Interactors/Left_NearFarInteractor.prefab
-  - _gameObject: {fileID: 1225925404}
+  - _gameObject: {fileID: 10989797}
     _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Starter Assets/Prefabs/Interactors/Teleport
       Interactor.prefab
-  - _gameObject: {fileID: 1225925403}
+  - _gameObject: {fileID: 10989796}
     _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Starter Assets/Prefabs/Controllers/XR
       Controller Left.prefab
-  - _gameObject: {fileID: 1225925402}
+  - _gameObject: {fileID: 10989795}
     _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Starter Assets/Prefabs/Interactors/Poke
       Interactor.prefab
-  - _gameObject: {fileID: 1225925401}
+  - _gameObject: {fileID: 10989794}
     _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Starter Assets/Models/Pinch_Pointer_LOD0.fbx
-  - _gameObject: {fileID: 1225925400}
+  - _gameObject: {fileID: 10989793}
     _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Starter Assets/Prefabs/Affordances/PokePointerAffordance.prefab
-  - _gameObject: {fileID: 1225925399}
+  - _gameObject: {fileID: 10989792}
     _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Starter Assets/Prefabs/Interactors/Right_NearFarInteractor.prefab
-  - _gameObject: {fileID: 1225925398}
+  - _gameObject: {fileID: 10989791}
     _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Starter Assets/Prefabs/Interactors/Teleport
       Interactor.prefab
-  - _gameObject: {fileID: 1225925397}
+  - _gameObject: {fileID: 10989790}
     _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Starter Assets/Prefabs/Controllers/XR
       Controller Right.prefab
-  - _gameObject: {fileID: 1225925396}
+  - _gameObject: {fileID: 10989789}
     _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Starter Assets/Prefabs/Interactors/Left_NearFarInteractor.prefab
   - _gameObject: {fileID: 2014471726}
     _prefab: Assets/cosas/Victor/XR Origin Hands (XR Rig) (player).prefab
   - _gameObject: {fileID: 2014471726}
     _prefab: Assets/cosas/Victor/XR Origin Hands (XR Rig) (player).prefab
-  - _gameObject: {fileID: 1225925395}
+  - _gameObject: {fileID: 10989788}
     _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Hands Interaction Demo/Prefabs/PinchPointStabilized.prefab
-  - _gameObject: {fileID: 1225925394}
+  - _gameObject: {fileID: 10989787}
     _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Hands Interaction Demo/Prefabs/LeftHandQuestVisual.prefab
-  - _gameObject: {fileID: 1225925393}
+  - _gameObject: {fileID: 10989786}
     _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Hands Interaction Demo/Prefabs/HandPokeInteractorAffordances.prefab
-  - _gameObject: {fileID: 1225925392}
+  - _gameObject: {fileID: 10989785}
     _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Hands Interaction Demo/Prefabs/HandInteractorAffordances.prefab
-  - _gameObject: {fileID: 1225925391}
+  - _gameObject: {fileID: 10989784}
     _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Hands Interaction Demo/Prefabs/LeftHandAndroidXRVisual.prefab
-  - _gameObject: {fileID: 1225925390}
+  - _gameObject: {fileID: 10989783}
     _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Hands Interaction Demo/Prefabs/HandPokeInteractorAffordances.prefab
-  - _gameObject: {fileID: 1225925389}
+  - _gameObject: {fileID: 10989782}
     _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Hands Interaction Demo/Prefabs/HandInteractorAffordances.prefab
-  - _gameObject: {fileID: 1225925388}
+  - _gameObject: {fileID: 10989781}
     _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Starter Assets/Prefabs/Interactors/Right_NearFarInteractor.prefab
   - _gameObject: {fileID: 2014471726}
     _prefab: Assets/cosas/Victor/XR Origin Hands (XR Rig) (player).prefab
   - _gameObject: {fileID: 2014471726}
     _prefab: Assets/cosas/Victor/XR Origin Hands (XR Rig) (player).prefab
-  - _gameObject: {fileID: 1225925387}
+  - _gameObject: {fileID: 10989780}
     _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Hands Interaction Demo/Prefabs/PinchPointStabilized.prefab
-  - _gameObject: {fileID: 1225925386}
+  - _gameObject: {fileID: 10989779}
     _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Hands Interaction Demo/Prefabs/RightHandQuestVisual.prefab
-  - _gameObject: {fileID: 1225925385}
+  - _gameObject: {fileID: 10989778}
     _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Hands Interaction Demo/Prefabs/HandPokeInteractorAffordances.prefab
-  - _gameObject: {fileID: 1225925384}
+  - _gameObject: {fileID: 10989777}
     _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Hands Interaction Demo/Prefabs/HandInteractorAffordances.prefab
-  - _gameObject: {fileID: 1225925383}
+  - _gameObject: {fileID: 10989776}
     _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Hands Interaction Demo/Prefabs/RightHandAndroidXRVisual.prefab
-  - _gameObject: {fileID: 1225925382}
+  - _gameObject: {fileID: 10989775}
     _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Hands Interaction Demo/Prefabs/HandPokeInteractorAffordances.prefab
-  - _gameObject: {fileID: 1225925381}
+  - _gameObject: {fileID: 10989774}
     _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Hands Interaction Demo/Prefabs/HandInteractorAffordances.prefab
   - _gameObject: {fileID: 2014471723}
     _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Hands Interaction Demo/HandsDemoSceneAssets/Prefabs/UI/ButtonHandMenu.prefab
@@ -61195,25 +61002,25 @@ MonoBehaviour:
     _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Starter Assets/DemoSceneAssets/Prefabs/UI/TextButton.prefab
   - _gameObject: {fileID: 23975918}
     _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Starter Assets/DemoSceneAssets/Prefabs/UI/TextButton.prefab
-  - _gameObject: {fileID: 1225925380}
+  - _gameObject: {fileID: 10989773}
     _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Hands Interaction Demo/HandsDemoSceneAssets/Prefabs/UI/ScrollView.prefab
-  - _gameObject: {fileID: 1225925379}
+  - _gameObject: {fileID: 10989772}
     _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Hands Interaction Demo/HandsDemoSceneAssets/Prefabs/UI/ScrollViewItem.prefab
-  - _gameObject: {fileID: 1225925378}
+  - _gameObject: {fileID: 10989771}
     _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Hands Interaction Demo/HandsDemoSceneAssets/Prefabs/UI/ScrollViewItem.prefab
-  - _gameObject: {fileID: 1225925377}
+  - _gameObject: {fileID: 10989770}
     _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Hands Interaction Demo/HandsDemoSceneAssets/Prefabs/UI/ScrollViewItem.prefab
-  - _gameObject: {fileID: 1225925376}
+  - _gameObject: {fileID: 10989769}
     _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Hands Interaction Demo/HandsDemoSceneAssets/Prefabs/UI/ScrollViewItem.prefab
-  - _gameObject: {fileID: 1225925375}
+  - _gameObject: {fileID: 10989768}
     _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Hands Interaction Demo/HandsDemoSceneAssets/Prefabs/UI/ScrollViewItem.prefab
-  - _gameObject: {fileID: 1225925374}
+  - _gameObject: {fileID: 10989767}
     _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Hands Interaction Demo/HandsDemoSceneAssets/Prefabs/UI/ScrollViewItem.prefab
-  - _gameObject: {fileID: 1225925373}
+  - _gameObject: {fileID: 10989766}
     _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Hands Interaction Demo/HandsDemoSceneAssets/Prefabs/UI/ScrollViewItem.prefab
-  - _gameObject: {fileID: 1225925372}
+  - _gameObject: {fileID: 10989765}
     _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Hands Interaction Demo/HandsDemoSceneAssets/Prefabs/UI/ScrollViewItem.prefab
-  - _gameObject: {fileID: 1225925371}
+  - _gameObject: {fileID: 10989764}
     _prefab: Assets/Samples/XR Interaction Toolkit/3.3.1/Hands Interaction Demo/HandsDemoSceneAssets/Prefabs/UI/ScrollViewItem.prefab
   - _gameObject: {fileID: 1888076752}
     _prefab: Assets/VNB - Home Set/HousePack/Perfabs/House5.prefab
@@ -65538,11 +65345,11 @@ MonoBehaviour:
       (Door) Interior.prefab
   - _gameObject: {fileID: 413086995}
     _prefab: Assets/Prefabs/Doors/LockedDoor.prefab
-  - _gameObject: {fileID: 1087442110}
+  - _gameObject: {fileID: 0}
     _prefab: Assets/Prefabs/Doors/InsideDoor.prefab
   - _gameObject: {fileID: 2002053080}
     _prefab: Assets/VNB - Home Set/Prefabs/Building/Door 1.prefab
-  - _gameObject: {fileID: 1256377885}
+  - _gameObject: {fileID: 0}
     _prefab: Assets/Prefabs/Doors/InsideDoor.prefab
   - _gameObject: {fileID: 1670922036}
     _prefab: Assets/VNB - Home Set/Prefabs/Building/Door 1.prefab
@@ -104273,3 +104080,4 @@ SceneRoots:
   - {fileID: 337337252}
   - {fileID: 784897994}
   - {fileID: 1331220717}
+  - {fileID: 1376513677}
