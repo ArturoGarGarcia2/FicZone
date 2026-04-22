@@ -1,53 +1,47 @@
-using System;
-using Unity.Mathematics;
 using UnityEngine;
 
 public class CinturonPlayerCoord : MonoBehaviour
 {
-
-    public GameObject jugador, configManager;
+    public Transform jugador;
+    public Transform camara;
+    public ConfigManager configManager;
 
     private ControlesExternos controles;
 
-    public float desfaseRotacion, tamaño, desfasePosicion;
+    private int vecesGiradas = 0;
 
-    public int vecesGiradas, rectificarGiro;
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        configManager = GameObject.FindWithTag("Config");
-
-        jugador = GameObject.FindGameObjectWithTag("Player");
+        jugador = GameObject.FindGameObjectWithTag("Player").transform;
+        configManager = GameObject.FindWithTag("Config").GetComponent<ConfigManager>();
 
         controles = jugador.GetComponent<ControlesExternos>();
 
-        this.gameObject.transform.position = jugador.transform.position;
+        if (camara == null)
+        {
+            camara = Camera.main.transform;
+        }
     }
 
-    // Update is called once per frame
     void Update()
     {
+        float desfasePosicion = configManager.alturaCinturon;
+        float desfaseRotacion = configManager.rotacionCinturon;
+        float tamaño = configManager.tamañoCinturón;
 
-
-        desfasePosicion = configManager.GetComponent<ConfigManager>().alturaCinturon;
-
-        desfaseRotacion = configManager.GetComponent<ConfigManager>().rotacionCinturon;
-
-        //this.gameObject.transform.rotation = quaternion.Euler(jugador.transform.rotation.x + controles.rotacionCabeza.x, jugador.transform.rotation.y + controles.rotacionCabeza.y + desfaseRotacion, jugador.transform.rotation.z + controles.rotacionCabeza.z);
-
-        if (configManager.GetComponent<ConfigManager>().rotacionASaltos)
+        // -----------------------------
+        // ROTACIÓN POR SALTOS (SNAP TURN)
+        // -----------------------------
+        if (configManager.rotacionASaltos)
         {
             if (controles.GirarDer)
             {
                 vecesGiradas++;
-                desfaseRotacion += VicGenLib.Calc.Angles.NormalToEulerSingleAngle(45f * vecesGiradas);
             }
 
             if (controles.GirarIzq)
             {
                 vecesGiradas--;
-                desfaseRotacion += VicGenLib.Calc.Angles.NormalToEulerSingleAngle(45f * vecesGiradas);
             }
         }
         else
@@ -55,26 +49,41 @@ public class CinturonPlayerCoord : MonoBehaviour
             vecesGiradas = 0;
         }
 
-        if (configManager.GetComponent<ConfigManager>().rectificarGiro)
-        {
-            rectificarGiro = -1;
-        }
-        else
-        {
-            rectificarGiro = 1;
-        }
+        float rotacionSnap = 45f * vecesGiradas;
 
-        if (!controles.gafasPuestas)
-        {
-            this.gameObject.transform.SetLocalPositionAndRotation(jugador.transform.position, jugador.transform.rotation);
-        }
-        else
-        {
-            this.gameObject.transform.SetLocalPositionAndRotation(jugador.transform.GetChild(0).GetChild(0).gameObject.transform.position + new UnityEngine.Vector3 (0, -1.5f, 0f) + controles.posicionCabeza + new Vector3(0, -desfasePosicion -1.3f, 0), quaternion.Euler(jugador.transform.rotation.x, jugador.transform.rotation.y + controles.rotacionCabeza.y * rectificarGiro * MathF.PI  - desfaseRotacion, jugador.transform.rotation.z));
+        // -----------------------------
+        // RECTIFICAR GIRO
+        // -----------------------------
+        int rectificarGiro = configManager.rectificarGiro ? -1 : 1;
 
-            tamaño = configManager.GetComponent<ConfigManager>().tamañoCinturón;
-        }
-    
-        this.gameObject.transform.localScale = new Vector3(1 * tamaño, 1 * tamaño, 1 * tamaño);
+        // -----------------------------
+        // POSICIÓN TIPO CINTURÓN (CLAVE)
+        // -----------------------------
+        Vector3 posicion = camara.position;
+
+        // Bajar a la altura de la cintura
+        posicion.y -= (desfasePosicion + 1.5f);
+
+        // Pequeño desplazamiento hacia atrás (muy importante para realismo)
+        Vector3 forwardPlano = new Vector3(camara.forward.x, 0, camara.forward.z).normalized;
+        posicion -= forwardPlano * 0.15f; // ajusta este valor si quieres más/menos retraso
+
+        transform.position = posicion;
+
+        // -----------------------------
+        // ROTACIÓN SOLO EN Y
+        // -----------------------------
+        float rotY =
+            camara.eulerAngles.y +
+            (controles.rotacionCabeza.y * rectificarGiro) -
+            desfaseRotacion +
+            rotacionSnap +90;
+
+        transform.rotation = Quaternion.Euler(0, rotY, 0);
+
+        // -----------------------------
+        // ESCALA
+        // -----------------------------
+        transform.localScale = Vector3.one * tamaño;
     }
 }
