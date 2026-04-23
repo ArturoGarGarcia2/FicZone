@@ -74,10 +74,11 @@ public class CinturonPlayerCoord : MonoBehaviour
         // ROTACIÓN SOLO EN Y
         // -----------------------------
         float rotY =
-            camara.eulerAngles.y +
+            -camara.eulerAngles.y +
             (controles.rotacionCabeza.y * rectificarGiro) -
-            desfaseRotacion +
-            rotacionSnap +90;
+            desfaseRotacion -
+            rotacionSnap +
+            90f;
 
         transform.rotation = Quaternion.Euler(0, rotY, 0);
 
