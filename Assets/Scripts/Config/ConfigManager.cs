@@ -115,19 +115,19 @@ public class ConfigManager : MonoBehaviour
 
         if (rotacionASaltos == true)
         {
-            controlRotacion.m_SmoothTurnEnabled = false;
-
-            tipoRotacion.image.color = Color.black;
-            tipoRotacion.transform.GetChild(0).GetChild(0).GetComponent<Text>().color = Color.white;
-            tipoRotacion.transform.GetChild(0).GetChild(0).GetComponent<Text>().text = "Actual: \n\nPor saltos";
-        }
-        else
-        {
             controlRotacion.m_SmoothTurnEnabled = true;
 
             tipoRotacion.image.color = Color.white;
             tipoRotacion.transform.GetChild(0).GetChild(0).GetComponent<Text>().color = Color.black;
             tipoRotacion.transform.GetChild(0).GetChild(0).GetComponent<Text>().text = "Actual: \n\nContinua (puede provocar mareos)";
+        }
+        else
+        {
+            controlRotacion.m_SmoothTurnEnabled = false;
+
+            tipoRotacion.image.color = Color.black;
+            tipoRotacion.transform.GetChild(0).GetChild(0).GetComponent<Text>().color = Color.white;
+            tipoRotacion.transform.GetChild(0).GetChild(0).GetComponent<Text>().text = "Actual: \n\nPor saltos";
         }
     }
 
