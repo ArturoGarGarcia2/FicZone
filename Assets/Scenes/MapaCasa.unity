@@ -94606,7 +94606,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5151375499728751961, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5151375499728751961, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
       propertyPath: m_EnableTurnAround
@@ -94615,6 +94615,10 @@ PrefabInstance:
     - target: {fileID: 5151375499728751961, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
       propertyPath: m_EnableTurnLeftRight
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5151375499728751961, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
+      propertyPath: m_TransformationPriority
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5256452183714637268, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
       propertyPath: m_ExcludeLayers.m_Bits
@@ -94634,7 +94638,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8895956759607944005, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9181327545074067139, guid: a1fdc9dc8adfaf84797a510df95fdae8, type: 3}
       propertyPath: m_Mediator

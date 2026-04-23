@@ -26,7 +26,7 @@ public class ConfigManager : MonoBehaviour
     void Start()
     {
 
-        
+        rotacionASaltos = true;
 
         if(instance == null)
         {
